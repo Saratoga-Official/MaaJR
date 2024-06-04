@@ -1,0 +1,89 @@
+{
+    "开始唤醒": {
+        "next": [
+            "打开游戏"
+        ]
+    },
+    "打开游戏": {
+        "action": "StartApp",
+        "package": "com.huanmeng.zhanjian2/com.unity3d.player.UnityPlayerActivity",
+        "post_wait_freezes": 10000,
+        "timeout": 60000,
+        "next": [
+            "进入游戏",
+            "登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
+    },
+    "进入游戏": {
+        "recognition": "TemplateMatch",
+        "template": "进入游戏.png",
+        "action": "Click",
+        "next": [
+            "退出公告",
+            "登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
+    },
+    "退出公告": {
+        "recognition": "TemplateMatch",
+        "template": "退出公告.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
+    },
+    "登录奖励": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "确认领取登录奖励"
+        ]
+    },
+    "确认领取登录奖励": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "next": [
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
+    },
+    "小长春的赠礼": {
+        "recognition": "TemplateMatch",
+        "template": "立即领取.png",
+        "action": "Click",
+        "next": [
+            "确认领取小长春的赠礼"
+        ]
+    },
+    "确认领取小长春的赠礼": {
+        "recognition": "TemplateMatch",
+        "template": "确认谢礼.png",
+        "action": "Click",
+        "next": [
+            "关闭小长春的赠礼"
+        ]
+    },
+    "关闭小长春的赠礼": {
+        "recognition": "TemplateMatch",
+        "template": "关闭谢礼.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "结束开始唤醒"
+        ]
+    },
+    "结束开始唤醒": {
+        "recognition": "TemplateMatch",
+        "template": "出征2.png",
+        "action": "DoNothing",
+        "green_mask": true
+    }
+}

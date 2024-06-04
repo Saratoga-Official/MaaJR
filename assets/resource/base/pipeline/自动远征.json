@@ -1,0 +1,88 @@
+{
+    "开始自动远征": {
+        "next": [
+            "退出远征",
+            "自动收远征",
+            "结束远征"
+        ]
+    },
+    "等待远征": {
+        "next": [
+            "自动收远征"
+        ],
+        "post_wait_freezes": 900000,
+        "timeout": 3600000,
+        "timeout_next": [
+            "开始自动远征"
+        ]
+    },
+    "自动收远征": {
+        "recognition": "TemplateMatch",
+        "template": "出征.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "点击远征",
+            "远征收获奖励",
+            "退出远征"
+        ]
+    },
+    "点击远征": {
+        "recognition": "TemplateMatch",
+        "template": "远征.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "next": [
+            "远征收获奖励",
+            "退出远征"
+        ]
+    },
+    "远征收获奖励": {
+        "recognition": "TemplateMatch",
+        "template": "远征收获奖励.png",
+        "action": "Click",
+        "next": [
+            "继续远征"
+        ]
+    },
+    "继续远征": {
+        "recognition": "TemplateMatch",
+        "template": "远征继续.png",
+        "action": "Click",
+        "next": [
+            "确认远征"
+        ]
+    },
+    "确认远征": {
+        "recognition": "TemplateMatch",
+        "template": "远征确认.png",
+        "action": "Click",
+        "next": [
+            "远征收获奖励",
+            "退出远征"
+        ]
+    },
+    "退出远征": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "退出远征",
+            "结束远征"
+        ]
+    },
+    "退出远征2": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "退出远征2",
+            "等待远征"
+        ]
+    },
+    "结束远征": {
+        "action": "DoNothing"
+    }
+}

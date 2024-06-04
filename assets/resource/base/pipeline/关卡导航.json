@@ -1,0 +1,251 @@
+{
+    "开始出征": {
+        "next": [
+            "点击出征",
+            "退出出征"
+        ]
+    },
+    "点击出征": {
+        "recognition": "TemplateMatch",
+        "template": "出征2.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "出征",
+            "第一章",
+            "第二章",
+            "第三章",
+            "第四章",
+            "第五章",
+            "第六章",
+            "第七章",
+            "第八章",
+            "第九章"
+        ]
+    },
+    "出征": {
+        "recognition": "TemplateMatch",
+        "template": "出征1.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "next": [
+            "第一章",
+            "第二章",
+            "第三章",
+            "第四章",
+            "第五章",
+            "第六章",
+            "第七章",
+            "第八章",
+            "第九章"
+        ]
+    },
+    "第一章": {
+        "recognition": "TemplateMatch",
+        "template": "第一章.png",
+        "action": "DoNothing",
+        "next": [
+            "1到2"
+        ]
+    },
+    "第二章": {
+        "recognition": "TemplateMatch",
+        "template": "第二章.png",
+        "action": "DoNothing",
+        "next": [
+            "2到3"
+        ]
+    },
+    "第三章": {
+        "recognition": "TemplateMatch",
+        "template": "第三章.png",
+        "action": "DoNothing",
+        "next": [
+            "3到4"
+        ]
+    },
+    "第四章": {
+        "recognition": "TemplateMatch",
+        "template": "第四章.png",
+        "action": "DoNothing",
+        "next": [
+            "4到5"
+        ]
+    },
+    "第五章": {
+        "recognition": "TemplateMatch",
+        "template": "第五章.png",
+        "action": "DoNothing",
+        "next": [
+            "5到6"
+        ]
+    },
+    "第七章": {
+        "recognition": "TemplateMatch",
+        "template": "第七章.png",
+        "action": "DoNothing",
+        "next": [
+            "7到6"
+        ]
+    },
+    "第八章": {
+        "recognition": "TemplateMatch",
+        "template": "第八章.png",
+        "action": "DoNothing",
+        "next": [
+            "8到7"
+        ]
+    },
+    "第九章": {
+        "recognition": "TemplateMatch",
+        "template": "第九章.png",
+        "action": "DoNothing",
+        "next": [
+            "9到8"
+        ]
+    },
+    "1到2": {
+        "recognition": "TemplateMatch",
+        "template": "1到2.png",
+        "action": "Click",
+        "next": [
+            "2到3"
+        ]
+    },
+    "2到3": {
+        "recognition": "TemplateMatch",
+        "template": "2到3.png",
+        "action": "Click",
+        "next": [
+            "3到4"
+        ]
+    },
+    "3到4": {
+        "recognition": "TemplateMatch",
+        "template": "3到4.png",
+        "action": "Click",
+        "next": [
+            "4到5"
+        ]
+    },
+    "4到5": {
+        "recognition": "TemplateMatch",
+        "template": "4到5.png",
+        "action": "Click",
+        "next": [
+            "5到6"
+        ]
+    },
+    "5到6": {
+        "recognition": "TemplateMatch",
+        "template": "5到6.png",
+        "action": "Click",
+        "next": [
+            "第六章"
+        ]
+    },
+    "7到6": {
+        "recognition": "TemplateMatch",
+        "template": "7到6.png",
+        "action": "Click",
+        "next": [
+            "第六章"
+        ]
+    },
+    "8到7": {
+        "recognition": "TemplateMatch",
+        "template": "8到7.png",
+        "action": "Click",
+        "next": [
+            "7到6"
+        ]
+    },
+    "9到8": {
+        "recognition": "TemplateMatch",
+        "template": "9到8.png",
+        "action": "Click",
+        "next": [
+            "8到7"
+        ]
+    },
+    "第六章": {
+        "recognition": "TemplateMatch",
+        "template": "第六章.png",
+        "action": "DoNothing",
+        "next": [
+            "6-1",
+            "6-2",
+            "6-3",
+            "6-4",
+            "终止寻路"
+        ]
+    },
+    "6-1": {
+        "recognition": "OCR",
+        "expected": [
+            "6-1",
+            "洛里昂南部海域"
+        ],
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50],
+        "next": [
+            "6-2"
+        ]
+    },
+    "6-2": {
+        "recognition": "OCR",
+        "expected": [
+            "6-2",
+            "英吉利海峡"
+        ],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50],
+        "next": [
+            "6-1",
+            "6-2"
+        ]
+    },
+    "6-3": {
+        "recognition": "OCR",
+        "expected": [
+            "6-3",
+            "斯卡帕湾"
+        ],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50],
+        "next": [
+            "6-2",
+            "6-3"
+        ]
+    },
+    "6-4": {
+        "recognition": "OCR",
+        "expected": [
+            "6-4",
+            "丹麦海峡"
+        ],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50],
+        "next": [
+            "6-3",
+            "6-4"
+        ]
+    },
+    "退出出征": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "点击出征",
+            "退出出征"
+        ]
+    },
+    "终止寻路": {
+        "action": "DoNothing"
+    }
+}
