@@ -1,6 +1,6 @@
-# MJR
+# MaaJR
 
-MJR，一款基于MaaFramework的战舰少女R助手
+MaaJR，一款基于MaaFramework的战舰少女R助手
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
@@ -26,17 +26,17 @@ MJR，一款基于MaaFramework的战舰少女R助手
 
 ### Windows
 
-- 对于绝大部分用户，请下载 MJR-win-x86_64-vXXX.zip
+- 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip
 
-- 若确定自己的电脑是 arm 架构，请下载 MJR-win-aarch64-vXXX.zip
+- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip
 
 - 解压后运行 MaaPiCli.exe 即可
 
 ### macOS
 
-- 若使用 Intel 处理器，请下载 MJR-macos-x86_64-vXXX.zip
+- 若使用 Intel 处理器，请下载 MaaJR-macos-x86_64-vXXX.zip
 
-- 若使用 M1, M2 等 arm 处理器，请下载 MJR-macos-aarch64-vXXX.zip
+- 若使用 M1, M2 等 arm 处理器，请下载 MaaJR-macos-aarch64-vXXX.zip
 
 - 使用方式：
   
@@ -49,7 +49,7 @@ MJR，一款基于MaaFramework的战舰少女R助手
 
 ~~我不懂Linux~~
 
-## 使用说明
+## 使用前说明
 
 在使用工具前完成以下工作：
 
@@ -63,7 +63,7 @@ MJR，一款基于MaaFramework的战舰少女R助手
 
 * 提前编好功能需要的队伍，本工具不能自动编队
 
-之后的操作流程：
+## 之后的说明
 
 * 解压后打开MaaPiCli.exe
 
@@ -76,17 +76,11 @@ MJR，一款基于MaaFramework的战舰少女R助手
 * Select Action里选项的翻译如下
 
 1. 切换adb
-
 2. 切换资源（目前没用，请无视）
-
 3. 增加任务
-
 4. 移动任务（即移动任务执行顺序）
-
 5. 删除任务
-
 6. 运行任务
-
 7. 退出picli
 
 ## 问题反馈
@@ -109,7 +103,7 @@ MJR，一款基于MaaFramework的战舰少女R助手
 
 感谢以下开发者对本项目作出的贡献:
 
-<a href="https://github.com/Saratoga-Official/MJR/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Saratoga-Official/MJR&max=1000" />
+<a href="https://github.com/Saratoga-Official/MaaJR/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Saratoga-Official/MaaJR&max=1000" />
 </a>
 
