@@ -181,11 +181,8 @@
         ]
     },
     "6-1": {
-        "recognition": "OCR",
-        "expected": [
-            "6-1",
-            "洛里昂南部海域"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "6-1.png",
         "action": "Swipe",
         "begin": [1000,250,50,50],
         "end": [500,250,50,50],
@@ -194,11 +191,8 @@
         ]
     },
     "6-2": {
-        "recognition": "OCR",
-        "expected": [
-            "6-2",
-            "英吉利海峡"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "6-2.png",
         "action": "Swipe",
         "begin": [500,250,50,50],
         "end": [1000,250,50,50],
@@ -208,11 +202,8 @@
         ]
     },
     "6-3": {
-        "recognition": "OCR",
-        "expected": [
-            "6-3",
-            "斯卡帕湾"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "6-3.png",
         "action": "Swipe",
         "begin": [500,250,50,50],
         "end": [1000,250,50,50],
@@ -222,11 +213,8 @@
         ]
     },
     "6-4": {
-        "recognition": "OCR",
-        "expected": [
-            "6-4",
-            "丹麦海峡"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "6-4.png",
         "action": "Swipe",
         "begin": [500,250,50,50],
         "end": [1000,250,50,50],

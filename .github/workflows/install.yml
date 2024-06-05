@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: MaaXXX-linux-${{ matrix.arch }}
+          name: MaaJR-linux-${{ matrix.arch }}
           path: "install"
 
   macos:

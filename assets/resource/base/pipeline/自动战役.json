@@ -54,6 +54,7 @@
             "珊瑚海海战"
         ],
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "战役自动补给",
             "战役确认"
@@ -62,6 +63,7 @@
     "战役自动补给": {
         "action": "Click",
         "target": [56,661,21,22],
+        "post_wait_freezes": 1000,
         "next": [
             "战役确认",
             "战役自动补给"

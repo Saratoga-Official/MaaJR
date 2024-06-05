@@ -1,10 +1,13 @@
 {
+    "炸鱼次数": {
+        "action": "DoNothing",
+        "next": [
+            "炸鱼6-1"
+        ]
+    },
     "炸鱼6-1": {
-        "recognition": "OCR",
-        "expected": [
-            "6-1",
-            "洛里昂南部海域"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "6-1.png",
         "action": "Click",
         "target": [1000,250,50,50],
         "post_wait_freezes": 1000,
@@ -177,7 +180,7 @@
         "template": "回港.png",
         "action": "Click",
         "next": [
-            "炸鱼6-1"
+            "炸鱼次数"
         ]
     },
     "炸鱼大破回港": {

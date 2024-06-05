@@ -20,6 +20,31 @@
         "recognition": "TemplateMatch",
         "template": "进入游戏.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "主界面",
+            "退出公告",
+            "登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
+    },
+    "主界面": {
+        "recognition": "TemplateMatch",
+        "template": "出征2.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "green_mask": true,
+        "next": [
+            "退出主界面"
+        ]
+    },
+    "退出主界面": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 1000,
         "next": [
             "退出公告",
             "登录奖励",
@@ -32,6 +57,7 @@
         "template": "退出公告.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 1000,
         "next": [
             "登录奖励",
             "小长春的赠礼",
@@ -42,6 +68,7 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "确认领取登录奖励"
         ]
@@ -49,6 +76,7 @@
     "确认领取登录奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "小长春的赠礼",
@@ -58,6 +86,7 @@
     "小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "立即领取.png",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "确认领取小长春的赠礼"
@@ -66,6 +95,7 @@
     "确认领取小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "确认谢礼.png",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "关闭小长春的赠礼"
@@ -74,6 +104,7 @@
     "关闭小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "关闭谢礼.png",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -83,6 +114,7 @@
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
+        "post_wait_freezes": 1000,
         "action": "DoNothing",
         "green_mask": true
     }
