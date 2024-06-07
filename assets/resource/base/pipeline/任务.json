@@ -1,0 +1,62 @@
+{
+    "收尾工作": {
+        "next": [
+            "回到主界面",
+            "点击任务"
+        ]
+    },
+    "回到主界面": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "回到主界面",
+            "点击任务"
+        ]
+    },
+    "点击任务": {
+        "recognition": "TemplateMatch",
+        "template": "任务.png",
+        "action": "Click",
+        "next": [
+            "全部领取",
+            "退出任务"
+        ]
+    },
+    "全部领取": {
+        "recognition": "TemplateMatch",
+        "template": "全部领取.png",
+        "action": "Click",
+        "next": [
+            "退出任务"
+        ]
+    },
+    "退出任务": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "点击船坞"
+        ]
+    },
+    "点击船坞": {
+        "recognition": "TemplateMatch",
+        "template": "船坞.png",
+        "action": "Click",
+        "next": [
+            "自动入浴"
+        ]
+    },
+    "退出船坞": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true
+    },
+    "关闭游戏": {
+        "action": "StopApp",
+        "package": "com.huanmeng.zhanjian2"
+    }
+}
