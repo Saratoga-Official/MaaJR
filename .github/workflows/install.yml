@@ -78,7 +78,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: MaaXXX-win-${{ matrix.arch }}
+          name: MaaJR-win-${{ matrix.arch }}
           path: "install"
 
   ubuntu:
@@ -142,7 +142,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: MaaXXX-macos-${{ matrix.arch }}
+          name: MaaJR-macos-${{ matrix.arch }}
           path: "install"
 
   release:

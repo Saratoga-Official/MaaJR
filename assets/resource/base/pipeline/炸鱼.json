@@ -35,6 +35,8 @@
         "recognition": "TemplateMatch",
         "template": "队.png",
         "post_wait_freezes": 1000,
+        "order": "Score",
+        "threshold": 0.95,
         "action": "Click",
         "next": [
             "炸鱼自动补给",
@@ -57,10 +59,28 @@
         "next": [
             "炸鱼识别潜艇",
             "炸鱼单横阵",
-            "炸鱼取消"
+            "炸鱼取消",
+            "炸鱼船舱满"
         ],
         "timeout": 30000,
         "timeout_next": [
+            "炸鱼退出"
+        ]
+    },
+    "炸鱼船舱满": {
+        "recognition": "TemplateMatch",
+        "template": "关闭船舱满提醒.png",
+        "action": "Click",
+        "next": [
+            "退出炸鱼"
+        ]
+    },
+    "退出炸鱼": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
             "炸鱼退出"
         ]
     },
@@ -131,7 +151,6 @@
         "recognition": "TemplateMatch",
         "template": "单横阵.png",
         "action": "Click",
-        "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
             "炸鱼追击",

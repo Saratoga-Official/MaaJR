@@ -124,7 +124,6 @@
         "recognition": "TemplateMatch",
         "template": "轮型阵.png",
         "action": "Click",
-        "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
             "战役追击",

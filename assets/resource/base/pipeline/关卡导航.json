@@ -108,6 +108,7 @@
         "recognition": "TemplateMatch",
         "template": "1到2.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "2到3"
         ]
@@ -116,6 +117,7 @@
         "recognition": "TemplateMatch",
         "template": "2到3.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "3到4"
         ]
@@ -124,6 +126,7 @@
         "recognition": "TemplateMatch",
         "template": "3到4.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "4到5"
         ]
@@ -132,6 +135,7 @@
         "recognition": "TemplateMatch",
         "template": "4到5.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "5到6"
         ]
@@ -140,6 +144,7 @@
         "recognition": "TemplateMatch",
         "template": "5到6.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "第六章"
         ]
@@ -148,6 +153,7 @@
         "recognition": "TemplateMatch",
         "template": "7到6.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "第六章"
         ]
@@ -156,6 +162,7 @@
         "recognition": "TemplateMatch",
         "template": "8到7.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "7到6"
         ]
@@ -164,6 +171,7 @@
         "recognition": "TemplateMatch",
         "template": "9到8.png",
         "action": "Click",
+        "order": "Score",
         "next": [
             "8到7"
         ]
