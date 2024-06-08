@@ -10,6 +10,7 @@
         "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 1000,
         "next": [
             "出征",
             "第一章",
