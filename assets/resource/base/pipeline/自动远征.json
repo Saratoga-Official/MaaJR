@@ -2,18 +2,43 @@
     "开始自动远征": {
         "next": [
             "退出远征",
-            "自动收远征",
+            "自动收远征"
+        ],
+        "timeout_next": [
             "结束远征"
+        ]
+    },
+    "点击出征2": {
+        "recognition": "TemplateMatch",
+        "template": "出征.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 1000,
+        "next": [
+            "远征收获奖励",
+            "点击出征3",
+            "等待远征"
+        ]
+    },
+    "点击出征3": {
+        "recognition": "TemplateMatch",
+        "template": "出征1.png",
+        "action": "Click",
+        "threshold": [0.9],
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击远征",
+            "等待远征"
         ]
     },
     "等待远征": {
         "next": [
-            "自动收远征"
+            "退出远征2"
         ],
-        "post_wait_freezes": 600000,
+        "post_wait_freezes": 60000,
         "timeout": 3600000,
         "timeout_next": [
-            "开始自动远征"
+            "退出远征2"
         ]
     },
     "自动收远征": {
@@ -30,12 +55,8 @@
     },
     "点击远征": {
         "recognition": "TemplateMatch",
-        "template": [
-            "远征.png"
-        ],
-        "threshold": [
-            0.9
-        ],
+        "template": ["远征.png"],
+        "threshold": [0.9],
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
@@ -79,6 +100,9 @@
         "post_wait_freezes": 1000,
         "next": [
             "退出远征",
+            "自动收远征"
+        ],
+        "timeout_next": [
             "结束远征"
         ]
     },
@@ -87,10 +111,9 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 1000,
         "next": [
             "退出远征2",
-            "等待远征"
+            "点击出征2"
         ]
     },
     "结束远征": {
