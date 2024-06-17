@@ -282,25 +282,29 @@
     },
     "6-1": {
         "recognition": "TemplateMatch",
-        "template": "6-1.png",
-        "next": [
-
-        ]
+        "template": "6-1.png"
     },
     "8-1": {
         "recognition": "TemplateMatch",
-        "template": "8-1.png",
-        "next": [
-
-        ]
+        "template": "8-1.png"
+    },
+    "9-1": {
+        "recognition": "TemplateMatch",
+        "template": "9-1.png"
+    },
+    "1-1": {
+        "recognition": "TemplateMatch",
+        "template": "1-1.png"
     },
     "往左滑": {
         "action": "Swipe",
         "begin": [500,250,50,50],
-        "end": [1000,250,50,50],
-        "next": [
-
-        ]
+        "end": [1000,250,50,50]
+    },
+    "往右滑": {
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50]
     },
     "退出出征": {
         "recognition": "TemplateMatch",

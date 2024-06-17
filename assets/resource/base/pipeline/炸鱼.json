@@ -60,19 +60,11 @@
             "炸鱼识别潜艇",
             "炸鱼单横阵",
             "炸鱼取消",
-            "炸鱼船舱满",
-            "点击加速"
-        ]
-    },
-    "点击加速": {
-        "action": "Click",
-        "target": [1000,250,50,50],
-        "next": [
-            "炸鱼识别潜艇",
-            "炸鱼单横阵",
-            "炸鱼取消",
-            "炸鱼船舱满",
-            "点击加速"
+            "炸鱼船舱满"
+        ],
+        "timeout": 30000,
+        "timeout_next": [
+            "自动修船"
         ]
     },
     "炸鱼船舱满": {
@@ -106,7 +98,8 @@
         "action": "Click",
         "next": [
             "炸鱼识别潜艇",
-            "炸鱼单横阵"
+            "炸鱼单横阵",
+            "炸鱼船舱满"
         ],
         "timeout": 30000,
         "timeout_next": [
@@ -197,9 +190,18 @@
         "action": "Click",
         "target": "炸鱼点击继续",
         "next": [
-            "炸鱼回港",
+            "舰队补给",
             "炸鱼大破回港",
             "炸鱼获得舰船"
+        ]
+    },
+    "舰队补给": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "炸鱼回港"
         ]
     },
     "炸鱼回港": {
@@ -217,7 +219,81 @@
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
-            "炸鱼退出"
+            "炸鱼次数"
+        ]
+    },
+    "炸鱼大破检测": {
+        "recognition": "TemplateMatch",
+        "template": "大破提醒.png",
+        "post_wait_freezes": 1000,
+        "action": "DoNothing",
+        "next": [
+            "炸鱼回港"
+        ]
+    },
+    "炸鱼前进": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "炸鱼开始战斗2",
+            "炸鱼单横阵2"
+        ]
+    },
+    "炸鱼开始战斗2": {
+        "recognition": "TemplateMatch",
+        "template": "开始战斗.png",
+        "action": "Click",
+        "next": [
+            "炸鱼单横阵2"
+        ]
+    },
+    "炸鱼单横阵2": {
+        "recognition": "TemplateMatch",
+        "template": "单横阵.png",
+        "action": "Click",
+        "timeout": 90000,
+        "next": [
+            "炸鱼追击2",
+            "炸鱼点击继续2"
+        ]
+    },
+    "炸鱼追击2": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_wait_freezes": 5000,
+        "timeout": 90000,
+        "next": [
+            "炸鱼点击继续2"
+        ]
+    },
+    "炸鱼点击继续2": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "炸鱼再点继续2"
+        ]
+    },
+    "炸鱼再点继续2": {
+        "action": "Click",
+        "target": "炸鱼点击继续2",
+        "post_wait_freezes": 1000,
+        "next": [
+            "炸鱼大破回港",
+            "炸鱼获得舰船2"
+        ]
+    },
+    "炸鱼获得舰船2": {
+        "action": "Click",
+        "target": "炸鱼点击继续2",
+        "next": [
+            "炸鱼回港",
+            "炸鱼大破回港",
+            "炸鱼获得舰船2"
         ]
     }
 }
