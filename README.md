@@ -67,6 +67,8 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 * 打开模拟器的ADB调试选项，关闭后台挂机时保活运行
 
+* 安装运行库 [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe) 
+
 * 完成所有游戏资源的下载
 
 ## MaaPiCli说明
