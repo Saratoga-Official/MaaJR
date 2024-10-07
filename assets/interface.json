@@ -34,7 +34,7 @@
                 "战役选择阵型",
                 "战役自动修船"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": [
                         "战役修理"
@@ -52,7 +52,7 @@
                 "炸鱼自动修船",
                 "任务途中远征"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": ["炸鱼修理"]
                 },
@@ -113,7 +113,7 @@
                 "炸鱼自动修船",
                 "任务途中远征"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": ["炸鱼修理"]
                 },
@@ -179,7 +179,7 @@
                 "炸鱼自动修船",
                 "任务途中远征"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": ["炸鱼修理"]
                 },
@@ -236,7 +236,7 @@
                 "刷狗粮次数",
                 "刷狗粮途中远征"
             ],
-            "param": {
+            "pipeline_override": {
                 "第一章": {
                     "next": [
                         "1-1",
@@ -289,7 +289,7 @@
                 "自动修船设置",
                 "任务途中远征"
             ],
-            "param": {
+            "pipeline_override": {
                 "炸鱼6-1": {
                     "template": [
                         "第一章.png",
@@ -335,7 +335,7 @@
             "option": [
                 "任务结束后是否关闭游戏"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": [
                         "退出船坞"
@@ -352,7 +352,7 @@
                 "活动选择阵型",
                 "活动自动修船设置"
             ],
-            "param": {
+            "pipeline_override": {
                 "退出浴场": {
                     "next": [
                         "活动修理"
@@ -366,7 +366,7 @@
             "cases": [
                 {
                     "name": "普通",
-                    "param": {
+                    "pipeline_override": {
                         "普通难度": {
                             "action": "Click",
                             "next": [
@@ -385,7 +385,7 @@
                 },
                 {
                     "name": "困难",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -395,7 +395,7 @@
             "cases": [
                 {
                     "name": "驱逐改造核心-纳尔维克海战",
-                    "param": {
+                    "pipeline_override": {
                         "选择战役": {
                             "expected": [
                                 "驱逐改造核心",
@@ -406,7 +406,7 @@
                 },
                 {
                     "name": "巡洋改造核心-马塔潘角海战",
-                    "param": {
+                    "pipeline_override": {
                         "选择战役": {
                             "expected": [
                                 "巡洋改造核心",
@@ -417,7 +417,7 @@
                 },
                 {
                     "name": "战列改造核心-丹麦海峡海战",
-                    "param": {
+                    "pipeline_override": {
                         "选择战役": {
                             "expected": [
                                 "战列改造核心",
@@ -428,7 +428,7 @@
                 },
                 {
                     "name": "航母改造核心-珊瑚海海战",
-                    "param": {
+                    "pipeline_override": {
                         "选择战役": {
                             "expected": [
                                 "航母改造核心",
@@ -439,7 +439,7 @@
                 },
                 {
                     "name": "潜艇改造核心-海峡伏击战",
-                    "param": {
+                    "pipeline_override": {
                         "选择战役": {
                             "expected": [
                                 "潜艇改造核心",
@@ -454,7 +454,7 @@
             "cases": [
                 {
                     "name": "单纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "战役阵型": {
                             "template": "单纵阵.png"
                         }
@@ -462,7 +462,7 @@
                 },
                 {
                     "name": "复纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "战役阵型": {
                             "template": "复纵阵.png"
                         }
@@ -470,7 +470,7 @@
                 },
                 {
                     "name": "轮型阵",
-                    "param": {
+                    "pipeline_override": {
                         "战役阵型": {
                             "template": "轮型阵.png"
                         }
@@ -478,7 +478,7 @@
                 },
                 {
                     "name": "梯形阵",
-                    "param": {
+                    "pipeline_override": {
                         "战役阵型": {
                             "template": "梯形阵.png"
                         }
@@ -486,7 +486,7 @@
                 },
                 {
                     "name": "单横阵",
-                    "param": {
+                    "pipeline_override": {
                         "战役阵型": {
                             "template": "单横阵.png"
                         }
@@ -498,7 +498,7 @@
             "cases": [
                 {
                     "name": "开启",
-                    "param": {
+                    "pipeline_override": {
                         "自动收远征": {
                             "next": [
                                 "点击远征",
@@ -522,7 +522,7 @@
                 },
                 {
                     "name": "关闭",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -532,13 +532,13 @@
             "cases": [
                 {
                     "name": "第一编队",
-                    "param": {
+                    "pipeline_override": {
                         
                     }
                 },
                 {
                     "name": "第二编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "2队.png"
                         }
@@ -546,7 +546,7 @@
                 },
                 {
                     "name": "第三编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "3队.png"
                         }
@@ -554,7 +554,7 @@
                 },
                 {
                     "name": "第四编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "4队.png"
                         }
@@ -566,7 +566,7 @@
             "cases": [
                 {
                     "name": "1次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 1
                         }
@@ -574,7 +574,7 @@
                 },
                 {
                     "name": "10次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 10
                         }
@@ -582,7 +582,7 @@
                 },
                 {
                     "name": "50次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 50
                         }
@@ -590,7 +590,7 @@
                 },
                 {
                     "name": "100次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 100
                         }
@@ -598,7 +598,7 @@
                 },
                 {
                     "name": "无限（直到船舱满或程序关闭等情况终止）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -608,13 +608,13 @@
             "cases": [
                 {
                     "name": "纯炸鱼策略（遇雷巡和轻母SL，只打纯潜艇）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "SL不打轻母，打雷巡和潜艇",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼识别雷巡": {
                             "enabled": false
                         }
@@ -622,7 +622,7 @@
                 },
                 {
                     "name": "无策略",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼识别轻母": {
                             "enabled": false
                         },
@@ -637,13 +637,13 @@
             "cases": [
                 {
                     "name": "舰船大破自动快速维修",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "不维修，大破终止炸鱼",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼取消": {
                             "next": [
                                 "退出炸鱼"
@@ -662,13 +662,13 @@
             "cases": [
                 {
                     "name": "舰船大破自动快速维修",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "不维修，大破终止战役",
-                    "param": {
+                    "pipeline_override": {
                         "战役取消": {
                             "next": [
                                 "退出炸鱼"
@@ -687,13 +687,13 @@
             "cases": [
                 {
                     "name": "第一编队",
-                    "param": {
+                    "pipeline_override": {
                         
                     }
                 },
                 {
                     "name": "第二编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "2队.png"
                         }
@@ -701,7 +701,7 @@
                 },
                 {
                     "name": "第三编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "3队.png"
                         }
@@ -709,7 +709,7 @@
                 },
                 {
                     "name": "第四编队",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼编队": {
                             "template": "4队.png"
                         }
@@ -721,7 +721,7 @@
             "cases": [
                 {
                     "name": "1次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 1
                         }
@@ -729,7 +729,7 @@
                 },
                 {
                     "name": "10次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 10
                         }
@@ -737,7 +737,7 @@
                 },
                 {
                     "name": "50次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 50
                         }
@@ -745,7 +745,7 @@
                 },
                 {
                     "name": "100次",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼次数": {
                             "times_limit": 100
                         }
@@ -753,7 +753,7 @@
                 },
                 {
                     "name": "无限（直到船舱满或程序关闭等情况终止）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -763,7 +763,7 @@
             "cases": [
                 {
                     "name": "单纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼单横阵": {
                             "template": "单纵阵.png"
                         }
@@ -771,7 +771,7 @@
                 },
                 {
                     "name": "复纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼单横阵": {
                             "template": "复纵阵.png"
                         }
@@ -779,7 +779,7 @@
                 },
                 {
                     "name": "轮型阵",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼单横阵": {
                             "template": "轮型阵.png"
                         }
@@ -787,7 +787,7 @@
                 },
                 {
                     "name": "梯形阵",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼单横阵": {
                             "template": "梯形阵.png"
                         }
@@ -795,7 +795,7 @@
                 },
                 {
                     "name": "单横阵",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼单横阵": {
                             "template": "单横阵.png"
                         }
@@ -807,13 +807,13 @@
             "cases": [
                 {
                     "name": "打夜战",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "不打夜战",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼追击": {
                             "template": "放弃.png",
                             "post_wait_freezes": 1000
@@ -826,13 +826,13 @@
             "cases": [
                 {
                     "name": "舰船大破自动快速维修",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "不维修，大破终止任务",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼取消": {
                             "next": [
                                 "退出炸鱼"
@@ -846,7 +846,7 @@
             "cases": [
                 {
                     "name": "关闭",
-                    "param": {
+                    "pipeline_override": {
                         "退出船坞": {
                             "next": [
                                 "关闭游戏"
@@ -856,7 +856,7 @@
                 },
                 {
                     "name": "不关闭",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -866,7 +866,7 @@
             "cases": [
                 {
                     "name": "自动收发",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼回港": {
                             "next": [
                                 "点击远征",
@@ -884,7 +884,7 @@
                 },
                 {
                     "name": "不自动收发",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -894,13 +894,13 @@
             "cases": [
                 {
                     "name": "纯炸鱼策略（遇重巡和轻巡SL，只打纯潜艇）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "SL不打重巡，打轻巡和潜艇",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼识别雷巡": {
                             "enabled": false
                         }
@@ -908,7 +908,7 @@
                 },
                 {
                     "name": "无策略",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼识别轻母": {
                             "enabled": false
                         },
@@ -923,13 +923,13 @@
             "cases": [
                 {
                     "name": "纯炸鱼策略（遇驱逐和轻巡SL，只打纯潜艇）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "无策略",
-                    "param": {
+                    "pipeline_override": {
                         "炸鱼识别轻母": {
                             "enabled": false
                         },
@@ -944,13 +944,13 @@
             "cases": [
                 {
                     "name": "只炸B点",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "炸B点和F点",
-                    "param": {
+                    "pipeline_override": {
                         "舰队补给": {
                             "next": [
                                 "炸鱼大破检测",
@@ -965,7 +965,7 @@
             "cases": [
                 {
                     "name": "第二编队",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮编队": {
                             "template": "2队.png"
                         }
@@ -973,7 +973,7 @@
                 },
                 {
                     "name": "第三编队",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮编队": {
                             "template": "3队.png"
                         }
@@ -981,7 +981,7 @@
                 },
                 {
                     "name": "第四编队",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮编队": {
                             "template": "4队.png"
                         }
@@ -993,7 +993,7 @@
             "cases": [
                 {
                     "name": "1次",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮继续": {
                             "times_limit": 0
                         }
@@ -1001,7 +1001,7 @@
                 },
                 {
                     "name": "10次",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮继续": {
                             "times_limit": 9
                         }
@@ -1009,7 +1009,7 @@
                 },
                 {
                     "name": "50次",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮继续": {
                             "times_limit": 49
                         }
@@ -1017,7 +1017,7 @@
                 },
                 {
                     "name": "100次",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮继续": {
                             "times_limit": 99
                         }
@@ -1025,7 +1025,7 @@
                 },
                 {
                     "name": "无限（直到船舱满或程序关闭等情况终止）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -1035,7 +1035,7 @@
             "cases": [
                 {
                     "name": "自动收发",
-                    "param": {
+                    "pipeline_override": {
                         "狗粮回港": {
                             "next": [
                                 "点击远征",
@@ -1059,7 +1059,7 @@
                 },
                 {
                     "name": "不自动收发",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -1069,13 +1069,13 @@
             "cases": [
                 {
                     "name": "只刷第一个点",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "刷完前进（三连夜战）",
-                    "param": {
+                    "pipeline_override": {
                         "活动舰队补给": {
                             "next": [
                                 "活动大破检测",
@@ -1090,7 +1090,7 @@
             "cases": [
                 {
                     "name": "1次",
-                    "param": {
+                    "pipeline_override": {
                         "活动次数": {
                             "times_limit": 0
                         }
@@ -1098,7 +1098,7 @@
                 },
                 {
                     "name": "10次",
-                    "param": {
+                    "pipeline_override": {
                         "活动次数": {
                             "times_limit": 9
                         }
@@ -1106,7 +1106,7 @@
                 },
                 {
                     "name": "50次",
-                    "param": {
+                    "pipeline_override": {
                         "活动次数": {
                             "times_limit": 49
                         }
@@ -1114,7 +1114,7 @@
                 },
                 {
                     "name": "100次",
-                    "param": {
+                    "pipeline_override": {
                         "活动次数": {
                             "times_limit": 99
                         }
@@ -1122,7 +1122,7 @@
                 },
                 {
                     "name": "无限（直到程序关闭等情况终止）",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 }
@@ -1132,7 +1132,7 @@
             "cases": [
                 {
                     "name": "单纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "活动阵型": {
                             "template": "单纵阵.png"
                         }
@@ -1140,7 +1140,7 @@
                 },
                 {
                     "name": "复纵阵",
-                    "param": {
+                    "pipeline_override": {
                         "活动阵型": {
                             "template": "复纵阵.png"
                         }
@@ -1148,7 +1148,7 @@
                 },
                 {
                     "name": "轮型阵",
-                    "param": {
+                    "pipeline_override": {
                         "活动阵型": {
                             "template": "轮型阵.png"
                         }
@@ -1156,7 +1156,7 @@
                 },
                 {
                     "name": "梯形阵",
-                    "param": {
+                    "pipeline_override": {
                         "活动阵型": {
                             "template": "梯形阵.png"
                         }
@@ -1164,7 +1164,7 @@
                 },
                 {
                     "name": "单横阵",
-                    "param": {
+                    "pipeline_override": {
                         "活动阵型": {
                             "template": "单横阵.png"
                         }
@@ -1176,13 +1176,13 @@
             "cases": [
                 {
                     "name": "舰船大破自动快速维修",
-                    "param": {
+                    "pipeline_override": {
 
                     }
                 },
                 {
                     "name": "不维修，大破终止任务",
-                    "param": {
+                    "pipeline_override": {
                         "活动取消": {
                             "next": [
                                 "退出活动"
