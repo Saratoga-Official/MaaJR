@@ -2,42 +2,14 @@
     "刷活动": {
         "action": "DoNothing",
         "next": [
-            "活动入口",
-            "活动紧急情况",
-            "活动退出"
+            "出击准备",
+            "活动自动补给",
+            "活动开始出征"
         ]
     },
-    "活动退出": {
+    "出击准备": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "活动入口",
-            "活动紧急情况",
-            "活动退出"
-        ]
-    },
-    "活动入口": {
-        "recognition": "TemplateMatch",
-        "template": "活动入口.png",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "活动紧急情况"
-        ]
-    },
-    "活动紧急情况": {
-        "recognition": "TemplateMatch",
-        "template": "活动紧急情况.png",
-        "action": "Click",
-        "next": [
-            "活动不处理"
-        ]
-    },
-    "活动不处理": {
-        "recognition": "TemplateMatch",
-        "template": "活动不处理.png",
+        "template": "出击准备.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -60,24 +32,16 @@
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
-            "活动前进",
+            "活动开始战斗",
+            "活动阵型",
             "活动取消",
             "活动船舱满"
         ],
         "timeout": 30000,
         "timeout_next": [
             "自动修船"
-        ]
-    },
-    "活动前进": {
-        "recognition": "TemplateMatch",
-        "template": "活动前进.png",
-        "action": "Click",
-        "next": [
-            "活动开始战斗",
-            "活动阵型"
         ]
     },
     "活动船舱满": {
@@ -91,15 +55,6 @@
     "退出活动": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
-        "action": "Click",
-        "green_mask": true,
-        "next": [
-            "退出活动2"
-        ]
-    },
-    "退出活动2": {
-        "recognition": "TemplateMatch",
-        "template": "活动退出.png",
         "action": "Click"
     },
     "活动取消": {
@@ -163,37 +118,66 @@
     "活动再点继续": {
         "action": "Click",
         "target": "炸鱼点击继续",
-        "post_wait_freezes": 1000,
         "next": [
-            "活动退出2",
+            "活动舰队补给",
+            "活动大破回港",
+            "活动次数",
             "活动再点继续"
         ]
     },
-    "活动退出2": {
+    "活动舰队补给": {
         "recognition": "TemplateMatch",
-        "template": "活动退出2.png",
+        "template": "舰队补给.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "活动回港"
+        ]
+    },
+    "活动回港": {
+        "recognition": "TemplateMatch",
+        "template": "回港.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "活动确认"
+            "活动次数"
         ]
     },
-    "活动确认": {
+    "活动大破回港": {
         "recognition": "TemplateMatch",
-        "template": "活动确认.png",
+        "template": "大破回港.png",
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "活动次数"
         ]
     },
-    "活动次数": {
+    "活动大破检测": {
+        "recognition": "TemplateMatch",
+        "template": "大破提醒.png",
+        "post_wait_freezes": 1000,
         "action": "DoNothing",
         "next": [
-            "活动紧急情况"
-        ],
-        "runout_next": [
-            "退出活动2"
+            "活动回港"
+        ]
+    },
+    "活动前进": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "活动开始战斗",
+            "活动阵型"
+        ]
+    },
+    "活动次数": {
+        "recognition": "TemplateMatch",
+        "template": "出击准备.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "出击准备"
         ]
     }
 }
