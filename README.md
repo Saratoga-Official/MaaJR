@@ -4,6 +4,8 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
+本项目自v2.0.0版本起采用 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 作为gui界面，仅限win-x86_64用户可用
+
 ## 功能
 
 1. 开始唤醒（打开游戏）
@@ -34,11 +36,9 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ### Windows
 
-- 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip
+- 对于绝大部分用户，请下载 MaaJR-win-x86_64-with-gui-vXXX.zip，解压后运行 MFAWPF.exe 即可
 
-- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip
-
-- 解压后运行 MaaPiCli.exe 即可
+- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip，解压后运行 MaaPiCli.exe 即可
 
 ### macOS
 
@@ -68,6 +68,10 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 * 打开模拟器的ADB调试选项，关闭后台挂机时保活运行
 
 * 完成所有游戏资源的下载
+
+* 完成必须运行库的下载：
+  [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+  [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.402-windows-x64-installer)
 
 ## MaaPiCli说明
 
