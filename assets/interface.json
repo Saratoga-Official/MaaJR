@@ -1,1228 +1,1173 @@
 {
-  "name": "MaaJR",
-  "version": "v2.0.0-beta.1",
-  "url": "https://github.com/Saratoga-Official/MaaJR",
-  "resource": [
-    {
-      "name": "国服",
-      "path": "{PROJECT_DIR}/resource/base"
+    "controller": [
+        {
+            "name": "安卓端",
+            "type": "Adb"
+        }
+    ],
+    "resource": [
+        {
+            "name": "国服",
+            "path": [
+                "{PROJECT_DIR}/resource/base"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "开始唤醒",
+            "entry": "开始唤醒"
+        },
+        {
+            "name": "自动远征",
+            "entry": "开始自动远征",
+            "option": [
+                "远征等待模式（在程序关闭前无限等待收发远征）"
+            ]
+        },
+        {
+            "name": "自动战役",
+            "entry": "开始自动战役",
+            "option": [
+                "战役选择难度",
+                "战役选择关卡",
+                "战役选择阵型",
+                "战役自动修船"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": [
+                        "战役修理"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "6-1自动炸鱼",
+            "entry": "开始出征",
+            "option": [
+                "炸鱼编队",
+                "炸鱼次数",
+                "6-1炸鱼策略",
+                "炸鱼自动修船",
+                "任务途中远征"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": ["炸鱼修理"]
+                },
+                "第一章": {
+                    "next": ["1到2"]
+                },
+                "第二章": {
+                    "next": ["2到3"]
+                },
+                "第三章": {
+                    "next": ["3到4"]
+                },
+                "第四章": {
+                    "next": ["4到5"]
+                },
+                "第五章": {
+                    "next": ["5到6"]
+                },
+                "第六章": {
+                    "next": [
+                        "6-1",
+                        "往左滑"
+                    ]
+                },
+                "往左滑": {
+                    "next": [
+                        "6-1",
+                        "往左滑"
+                    ]
+                },
+                "第七章": {
+                    "next": ["7到6"]
+                },
+                "第八章": {
+                    "next": ["8到7"]
+                },
+                "第九章": {
+                    "next": ["9到8"]
+                },
+                "5到6": {
+                    "next": ["第六章"]
+                },
+                "7到6": {
+                    "next": ["第六章"]
+                },
+                "6-1": {
+                    "next": ["炸鱼次数"]
+                }
+            }
+        },
+        {
+            "name": "8-1自动炸鱼",
+            "entry": "开始出征",
+            "option": [
+                "炸鱼编队",
+                "炸鱼次数",
+                "8-1炸鱼策略",
+                "炸鱼自动修船",
+                "任务途中远征"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": ["炸鱼修理"]
+                },
+                "第一章": {
+                    "next": ["1到2"]
+                },
+                "第二章": {
+                    "next": ["2到3"]
+                },
+                "第三章": {
+                    "next": ["3到4"]
+                },
+                "第四章": {
+                    "next": ["4到5"]
+                },
+                "第五章": {
+                    "next": ["5到6"]
+                },
+                "第六章": {
+                    "next": ["6到7"]
+                },
+                "第七章": {
+                    "next": ["7到8"]
+                },
+                "第八章": {
+                    "next": [
+                        "8-1",
+                        "往左滑"
+                    ]
+                },
+                "往左滑": {
+                    "next": [
+                        "8-1",
+                        "往左滑"
+                    ]
+                },
+                "第九章": {
+                    "next": ["9到8"]
+                },
+                "7到8": {
+                    "next": ["第八章"]
+                },
+                "9到8": {
+                    "next": ["第八章"]
+                },
+                "8-1": {
+                    "next": ["炸鱼次数"]
+                },
+                "炸鱼6-1": {"template": "8-1.png"},
+                "炸鱼识别潜艇": {"template": "8-1潜艇.png"},
+                "炸鱼识别轻母": {"template": "8-1重巡.png"},
+                "炸鱼识别雷巡": {"template": "8-1轻巡.png"}
+            }
+        },
+        {
+            "name": "9-1自动炸鱼",
+            "entry": "开始出征",
+            "option": [
+                "炸鱼编队",
+                "炸鱼次数",
+                "9-1炸鱼点",
+                "9-1炸鱼策略",
+                "炸鱼自动修船",
+                "任务途中远征"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": ["炸鱼修理"]
+                },
+                "第一章": {
+                    "next": ["1到2"]
+                },
+                "第二章": {
+                    "next": ["2到3"]
+                },
+                "第三章": {
+                    "next": ["3到4"]
+                },
+                "第四章": {
+                    "next": ["4到5"]
+                },
+                "第五章": {
+                    "next": ["5到6"]
+                },
+                "第六章": {
+                    "next": ["6到7"]
+                },
+                "第七章": {
+                    "next": ["7到8"]
+                },
+                "第八章": {
+                    "next": ["8到9"]
+                },
+                "第九章": {
+                    "next": [
+                        "9-1",
+                        "往左滑"
+                    ]
+                },
+                "往左滑": {
+                    "next": [
+                        "9-1",
+                        "往左滑"
+                    ]
+                },
+                "9-1": {
+                    "next": ["炸鱼次数"]
+                },
+                "炸鱼6-1": {"template": "9-1.png"},
+                "炸鱼识别潜艇": {"template": "9-1潜艇.png"},
+                "炸鱼识别轻母": {"template": "9-1驱逐.png"},
+                "炸鱼识别雷巡": {"template": "9-1轻巡.png"}
+            }
+        },
+        {
+            "name": "1-1刷鱼雷狗粮",
+            "entry": "开始出征",
+            "option": [
+                "刷狗粮编队",
+                "刷狗粮次数",
+                "刷狗粮途中远征"
+            ],
+            "pipeline_override": {
+                "第一章": {
+                    "next": [
+                        "1-1",
+                        "往左滑"
+                    ]
+                },
+                "第二章": {
+                    "next": ["2到1"]
+                },
+                "第三章": {
+                    "next": ["3到2"]
+                },
+                "第四章": {
+                    "next": ["4到3"]
+                },
+                "第五章": {
+                    "next": ["5到4"]
+                },
+                "第六章": {
+                    "next": ["6到5"]
+                },
+                "第七章": {
+                    "next": ["7到6"]
+                },
+                "第八章": {
+                    "next": ["8到7"]
+                },
+                "第九章": {
+                    "next": ["9到8"]
+                },
+                "往左滑": {
+                    "next": [
+                        "1-1",
+                        "往左滑"
+                    ]
+                },
+                "1-1": {
+                    "next": ["刷鱼雷狗粮"]
+                }
+            }
+        },
+        {
+            "name": "自定义地图练级（使用该功能需在关卡地图名界面开始）",
+            "entry": "炸鱼次数",
+            "option": [
+                "选择编队",
+                "选择次数",
+                "选择阵型",
+                "夜战追击设置",
+                "自动修船设置",
+                "任务途中远征"
+            ],
+            "pipeline_override": {
+                "炸鱼6-1": {
+                    "template": [
+                        "第一章.png",
+                        "第二章.png",
+                        "第三章.png",
+                        "第四章.png",
+                        "第五章.png",
+                        "第六章.png",
+                        "第七章.png",
+                        "第八章.png",
+                        "第九章.png"
+                    ],
+                    "threshold": [
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7,
+                        0.7
+                    ]
+                },
+                "退出浴场": {
+                    "next": [
+                        "炸鱼修理"
+                    ]
+                },
+                "炸鱼开始出征": {
+                    "next": [
+                        "炸鱼开始战斗",
+                        "炸鱼单横阵",
+                        "炸鱼取消",
+                        "炸鱼船舱满"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "自动领取任务奖励和入浴",
+            "entry": "收尾工作",
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": [
+                        "退出船坞"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "征程启航活动练级（请自行编队满足带路条件后在出击准备界面点开始）",
+            "entry": "刷活动",
+            "option": [
+                "活动选择练级类型",
+                "活动选择次数",
+                "活动选择阵型",
+                "活动自动修船设置"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": [
+                        "活动修理"
+                    ]
+                }
+            }
+        }
+    ],
+    "option": {
+        "战役选择难度": {
+            "cases": [
+                {
+                    "name": "普通",
+                    "pipeline_override": {
+                        "普通难度": {
+                            "action": "Click",
+                            "next": [
+                                "战役次数",
+                                "选择战役"
+                            ]
+                        },
+                        "困难难度": {
+                            "action": "DoNothing",
+                            "next": [
+                                "战役次数",
+                                "选择战役"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "困难",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "战役选择关卡": {
+            "cases": [
+                {
+                    "name": "驱逐改造核心-纳尔维克海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "驱逐改造核心",
+                                "纳尔维克海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "巡洋改造核心-马塔潘角海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "巡洋改造核心",
+                                "马塔潘角海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "战列改造核心-丹麦海峡海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "战列改造核心",
+                                "丹麦海峡海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "航母改造核心-珊瑚海海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "航母改造核心",
+                                "珊瑚海海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇改造核心-海峡伏击战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "潜艇改造核心",
+                                "海峡伏击战"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战役选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "template": "单纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "template": "复纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "template": "轮型阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "template": "梯形阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "template": "单横阵.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "远征等待模式（在程序关闭前无限等待收发远征）": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "自动收远征": {
+                            "next": [
+                                "点击远征",
+                                "远征收获奖励",
+                                "退出远征2"
+                            ]
+                        },
+                        "点击远征": {
+                            "next": [
+                                "远征收获奖励",
+                                "退出远征2"
+                            ]
+                        },
+                        "确认远征": {
+                            "next": [
+                                "远征收获奖励",
+                                "退出远征2"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "炸鱼编队": {
+            "cases": [
+                {
+                    "name": "第一编队",
+                    "pipeline_override": {
+                        
+                    }
+                },
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "炸鱼次数": {
+            "cases": [
+                {
+                    "name": "1次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 1
+                        }
+                    }
+                },
+                {
+                    "name": "10次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 10
+                        }
+                    }
+                },
+                {
+                    "name": "50次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 50
+                        }
+                    }
+                },
+                {
+                    "name": "100次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 100
+                        }
+                    }
+                },
+                {
+                    "name": "无限（直到船舱满或程序关闭等情况终止）",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "6-1炸鱼策略": {
+            "cases": [
+                {
+                    "name": "纯炸鱼策略（遇雷巡和轻母SL，只打纯潜艇）",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "SL不打轻母，打雷巡和潜艇",
+                    "pipeline_override": {
+                        "炸鱼识别雷巡": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "无策略",
+                    "pipeline_override": {
+                        "炸鱼识别轻母": {
+                            "enabled": false
+                        },
+                        "炸鱼识别雷巡": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "炸鱼自动修船": {
+            "cases": [
+                {
+                    "name": "舰船大破自动快速维修",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "不维修，大破终止炸鱼",
+                    "pipeline_override": {
+                        "炸鱼取消": {
+                            "next": [
+                                "退出炸鱼"
+                            ]
+                        },
+                        "炸鱼开始出征": {
+                            "timeout_next": [
+                                "退出炸鱼"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战役自动修船": {
+            "cases": [
+                {
+                    "name": "舰船大破自动快速维修",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "不维修，大破终止战役",
+                    "pipeline_override": {
+                        "战役取消": {
+                            "next": [
+                                "退出炸鱼"
+                            ]
+                        },
+                        "战役开始出征": {
+                            "timeout_next": [
+                                "退出炸鱼"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "选择编队": {
+            "cases": [
+                {
+                    "name": "第一编队",
+                    "pipeline_override": {
+                        
+                    }
+                },
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "炸鱼编队": {
+                            "template": "4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择次数": {
+            "cases": [
+                {
+                    "name": "1次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 1
+                        }
+                    }
+                },
+                {
+                    "name": "10次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 10
+                        }
+                    }
+                },
+                {
+                    "name": "50次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 50
+                        }
+                    }
+                },
+                {
+                    "name": "100次",
+                    "pipeline_override": {
+                        "炸鱼次数": {
+                            "times_limit": 100
+                        }
+                    }
+                },
+                {
+                    "name": "无限（直到船舱满或程序关闭等情况终止）",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "炸鱼单横阵": {
+                            "template": "单纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "炸鱼单横阵": {
+                            "template": "复纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "炸鱼单横阵": {
+                            "template": "轮型阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "炸鱼单横阵": {
+                            "template": "梯形阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "炸鱼单横阵": {
+                            "template": "单横阵.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "夜战追击设置": {
+            "cases": [
+                {
+                    "name": "打夜战",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "不打夜战",
+                    "pipeline_override": {
+                        "炸鱼追击": {
+                            "template": "放弃.png",
+                            "post_wait_freezes": 1000
+                        }
+                    }
+                }
+            ]
+        },
+        "自动修船设置": {
+            "cases": [
+                {
+                    "name": "舰船大破自动快速维修",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "不维修，大破终止任务",
+                    "pipeline_override": {
+                        "炸鱼取消": {
+                            "next": [
+                                "退出炸鱼"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "任务途中远征": {
+            "cases": [
+                {
+                    "name": "自动收发",
+                    "pipeline_override": {
+                        "炸鱼回港": {
+                            "next": [
+                                "点击远征",
+                                "炸鱼次数"
+                            ]
+                        },
+                        "退出远征": {
+                            "template": "出征1.png",
+                            "green_mask": false,
+                            "next": [
+                                "炸鱼次数"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "不自动收发",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "8-1炸鱼策略": {
+            "cases": [
+                {
+                    "name": "纯炸鱼策略（遇重巡和轻巡SL，只打纯潜艇）",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "SL不打重巡，打轻巡和潜艇",
+                    "pipeline_override": {
+                        "炸鱼识别雷巡": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "无策略",
+                    "pipeline_override": {
+                        "炸鱼识别轻母": {
+                            "enabled": false
+                        },
+                        "炸鱼识别雷巡": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "9-1炸鱼策略": {
+            "cases": [
+                {
+                    "name": "纯炸鱼策略（遇驱逐和轻巡SL，只打纯潜艇）",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "无策略",
+                    "pipeline_override": {
+                        "炸鱼识别轻母": {
+                            "enabled": false
+                        },
+                        "炸鱼识别雷巡": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "9-1炸鱼点": {
+            "cases": [
+                {
+                    "name": "只炸B点",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "炸B点和F点",
+                    "pipeline_override": {
+                        "舰队补给": {
+                            "next": [
+                                "炸鱼大破检测",
+                                "炸鱼前进"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "刷狗粮编队": {
+            "cases": [
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "刷狗粮次数": {
+            "cases": [
+                {
+                    "name": "1次",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "times_limit": 0
+                        }
+                    }
+                },
+                {
+                    "name": "10次",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "times_limit": 9
+                        }
+                    }
+                },
+                {
+                    "name": "50次",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "times_limit": 49
+                        }
+                    }
+                },
+                {
+                    "name": "100次",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "times_limit": 99
+                        }
+                    }
+                },
+                {
+                    "name": "无限（直到船舱满或程序关闭等情况终止）",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "刷狗粮途中远征": {
+            "cases": [
+                {
+                    "name": "自动收发",
+                    "pipeline_override": {
+                        "狗粮回港": {
+                            "next": [
+                                "点击远征",
+                                "狗粮继续"
+                            ]
+                        },
+                        "狗粮大破回港": {
+                            "next": [
+                                "点击远征",
+                                "狗粮继续"
+                            ]
+                        },
+                        "退出远征": {
+                            "template": "出征1.png",
+                            "green_mask": false,
+                            "next": [
+                                "狗粮继续"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "不自动收发",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "活动选择练级类型": {
+            "cases": [
+                {
+                    "name": "只刷第一个点",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "刷完前进（三连夜战）",
+                    "pipeline_override": {
+                        "活动舰队补给": {
+                            "next": [
+                                "活动大破检测",
+                                "活动前进"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "活动选择次数": {
+            "cases": [
+                {
+                    "name": "1次",
+                    "pipeline_override": {
+                        "活动次数": {
+                            "times_limit": 0
+                        }
+                    }
+                },
+                {
+                    "name": "10次",
+                    "pipeline_override": {
+                        "活动次数": {
+                            "times_limit": 9
+                        }
+                    }
+                },
+                {
+                    "name": "50次",
+                    "pipeline_override": {
+                        "活动次数": {
+                            "times_limit": 49
+                        }
+                    }
+                },
+                {
+                    "name": "100次",
+                    "pipeline_override": {
+                        "活动次数": {
+                            "times_limit": 99
+                        }
+                    }
+                },
+                {
+                    "name": "无限（直到程序关闭等情况终止）",
+                    "pipeline_override": {
+
+                    }
+                }
+            ]
+        },
+        "活动选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "活动阵型": {
+                            "template": "单纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "活动阵型": {
+                            "template": "复纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "活动阵型": {
+                            "template": "轮型阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "活动阵型": {
+                            "template": "梯形阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "活动阵型": {
+                            "template": "单横阵.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "活动自动修船设置": {
+            "cases": [
+                {
+                    "name": "舰船大破自动快速维修",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "不维修，大破终止任务",
+                    "pipeline_override": {
+                        "活动取消": {
+                            "next": [
+                                "退出活动"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
     }
-  ],
-  "task": [
-    {
-      "name": "开始唤醒",
-      "entry": "开始唤醒",
-      "check": true,
-      "repeatable": false
-    },
-    {
-      "name": "自动远征",
-      "entry": "开始自动远征",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "远征等待模式（在程序关闭前无限等待收发远征）",
-          "index": 0
-        }
-      ]
-    },
-    {
-      "name": "自动战役",
-      "entry": "开始自动战役",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "战役选择难度",
-          "index": 0
-        },
-        {
-          "name": "战役选择关卡",
-          "index": 0
-        },
-        {
-          "name": "战役选择阵型",
-          "index": 0
-        },
-        {
-          "name": "战役自动修船",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "战役修理"
-        }
-      }
-    },
-    {
-      "name": "6-1自动炸鱼",
-      "entry": "开始出征",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "炸鱼编队",
-          "index": 0
-        },
-        {
-          "name": "炸鱼次数",
-          "index": 0
-        },
-        {
-          "name": "6-1炸鱼策略",
-          "index": 0
-        },
-        {
-          "name": "炸鱼自动修船",
-          "index": 0
-        },
-        {
-          "name": "任务途中远征",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "炸鱼修理"
-        },
-        "第一章": {
-          "next": "1到2"
-        },
-        "第二章": {
-          "next": "2到3"
-        },
-        "第三章": {
-          "next": "3到4"
-        },
-        "第四章": {
-          "next": "4到5"
-        },
-        "第五章": {
-          "next": "5到6"
-        },
-        "第六章": {
-          "next": [
-            "6-1",
-            "往左滑"
-          ]
-        },
-        "往左滑": {
-          "next": [
-            "6-1",
-            "往左滑"
-          ]
-        },
-        "第七章": {
-          "next": "7到6"
-        },
-        "第八章": {
-          "next": "8到7"
-        },
-        "第九章": {
-          "next": "9到8"
-        },
-        "5到6": {
-          "next": "第六章"
-        },
-        "7到6": {
-          "next": "第六章"
-        },
-        "6-1": {
-          "next": "炸鱼次数"
-        }
-      }
-    },
-    {
-      "name": "8-1自动炸鱼",
-      "entry": "开始出征",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "炸鱼编队",
-          "index": 0
-        },
-        {
-          "name": "炸鱼次数",
-          "index": 0
-        },
-        {
-          "name": "8-1炸鱼策略",
-          "index": 0
-        },
-        {
-          "name": "炸鱼自动修船",
-          "index": 0
-        },
-        {
-          "name": "任务途中远征",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "炸鱼修理"
-        },
-        "第一章": {
-          "next": "1到2"
-        },
-        "第二章": {
-          "next": "2到3"
-        },
-        "第三章": {
-          "next": "3到4"
-        },
-        "第四章": {
-          "next": "4到5"
-        },
-        "第五章": {
-          "next": "5到6"
-        },
-        "第六章": {
-          "next": "6到7"
-        },
-        "第七章": {
-          "next": "7到8"
-        },
-        "第八章": {
-          "next": [
-            "8-1",
-            "往左滑"
-          ]
-        },
-        "往左滑": {
-          "next": [
-            "8-1",
-            "往左滑"
-          ]
-        },
-        "第九章": {
-          "next": "9到8"
-        },
-        "7到8": {
-          "next": "第八章"
-        },
-        "9到8": {
-          "next": "第八章"
-        },
-        "8-1": {
-          "next": "炸鱼次数"
-        },
-        "炸鱼6-1": {
-          "template": "8-1.png"
-        },
-        "炸鱼识别潜艇": {
-          "template": "8-1潜艇.png"
-        },
-        "炸鱼识别轻母": {
-          "template": "8-1重巡.png"
-        },
-        "炸鱼识别雷巡": {
-          "template": "8-1轻巡.png"
-        }
-      }
-    },
-    {
-      "name": "9-1自动炸鱼",
-      "entry": "开始出征",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "炸鱼编队",
-          "index": 0
-        },
-        {
-          "name": "炸鱼次数",
-          "index": 0
-        },
-        {
-          "name": "9-1炸鱼点",
-          "index": 0
-        },
-        {
-          "name": "9-1炸鱼策略",
-          "index": 0
-        },
-        {
-          "name": "炸鱼自动修船",
-          "index": 0
-        },
-        {
-          "name": "任务途中远征",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "炸鱼修理"
-        },
-        "第一章": {
-          "next": "1到2"
-        },
-        "第二章": {
-          "next": "2到3"
-        },
-        "第三章": {
-          "next": "3到4"
-        },
-        "第四章": {
-          "next": "4到5"
-        },
-        "第五章": {
-          "next": "5到6"
-        },
-        "第六章": {
-          "next": "6到7"
-        },
-        "第七章": {
-          "next": "7到8"
-        },
-        "第八章": {
-          "next": "8到9"
-        },
-        "第九章": {
-          "next": [
-            "9-1",
-            "往左滑"
-          ]
-        },
-        "往左滑": {
-          "next": [
-            "9-1",
-            "往左滑"
-          ]
-        },
-        "9-1": {
-          "next": "炸鱼次数"
-        },
-        "炸鱼6-1": {
-          "template": "9-1.png"
-        },
-        "炸鱼识别潜艇": {
-          "template": "9-1潜艇.png"
-        },
-        "炸鱼识别轻母": {
-          "template": "9-1驱逐.png"
-        },
-        "炸鱼识别雷巡": {
-          "template": "9-1轻巡.png"
-        }
-      }
-    },
-    {
-      "name": "1-1刷鱼雷狗粮",
-      "entry": "开始出征",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "刷狗粮编队",
-          "index": 0
-        },
-        {
-          "name": "刷狗粮次数",
-          "index": 0
-        },
-        {
-          "name": "刷狗粮途中远征",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "第一章": {
-          "next": [
-            "1-1",
-            "往左滑"
-          ]
-        },
-        "第二章": {
-          "next": "2到1"
-        },
-        "第三章": {
-          "next": "3到2"
-        },
-        "第四章": {
-          "next": "4到3"
-        },
-        "第五章": {
-          "next": "5到4"
-        },
-        "第六章": {
-          "next": "6到5"
-        },
-        "第七章": {
-          "next": "7到6"
-        },
-        "第八章": {
-          "next": "8到7"
-        },
-        "第九章": {
-          "next": "9到8"
-        },
-        "往左滑": {
-          "next": [
-            "1-1",
-            "往左滑"
-          ]
-        },
-        "1-1": {
-          "next": "刷鱼雷狗粮"
-        }
-      }
-    },
-    {
-      "name": "自定义地图练级（使用该功能需在关卡地图名界面开始）",
-      "entry": "炸鱼次数",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "选择编队",
-          "index": 0
-        },
-        {
-          "name": "选择次数",
-          "index": 0
-        },
-        {
-          "name": "选择阵型",
-          "index": 0
-        },
-        {
-          "name": "夜战追击设置",
-          "index": 0
-        },
-        {
-          "name": "自动修船设置",
-          "index": 0
-        },
-        {
-          "name": "任务途中远征",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "炸鱼6-1": {
-          "template": [
-            "第一章.png",
-            "第二章.png",
-            "第三章.png",
-            "第四章.png",
-            "第五章.png",
-            "第六章.png",
-            "第七章.png",
-            "第八章.png",
-            "第九章.png"
-          ],
-          "threshold": [
-            0.7,
-            0.7,
-            0.7,
-            0.7,
-            0.7,
-            0.7,
-            0.7,
-            0.7,
-            0.7
-          ]
-        },
-        "退出浴场": {
-          "next": "炸鱼修理"
-        },
-        "炸鱼开始出征": {
-          "next": [
-            "炸鱼开始战斗",
-            "炸鱼单横阵",
-            "炸鱼取消",
-            "炸鱼船舱满"
-          ]
-        }
-      }
-    },
-    {
-      "name": "自动领取任务奖励和入浴",
-      "entry": "收尾工作",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "任务结束后是否关闭游戏",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "退出船坞"
-        }
-      }
-    },
-    {
-      "name": "征程启航活动练级（请自行编队满足带路条件后在出击准备界面点开始）",
-      "entry": "刷活动",
-      "check": false,
-      "repeatable": false,
-      "option": [
-        {
-          "name": "活动选择练级类型",
-          "index": 0
-        },
-        {
-          "name": "活动选择次数",
-          "index": 0
-        },
-        {
-          "name": "活动选择阵型",
-          "index": 0
-        },
-        {
-          "name": "活动自动修船设置",
-          "index": 0
-        }
-      ],
-      "pipeline_override": {
-        "退出浴场": {
-          "next": "活动修理"
-        }
-      }
-    }
-  ],
-  "option": {
-    "战役选择难度": {
-      "cases": [
-        {
-          "name": "普通",
-          "pipeline_override": {
-            "普通难度": {
-              "action": "Click",
-              "next": [
-                "战役次数",
-                "选择战役"
-              ]
-            },
-            "困难难度": {
-              "action": "DoNothing",
-              "next": [
-                "战役次数",
-                "选择战役"
-              ]
-            }
-          }
-        },
-        {
-          "name": "困难",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "战役选择关卡": {
-      "cases": [
-        {
-          "name": "驱逐改造核心-纳尔维克海战",
-          "pipeline_override": {
-            "选择战役": {
-              "expected": [
-                "驱逐改造核心",
-                "纳尔维克海战"
-              ]
-            }
-          }
-        },
-        {
-          "name": "巡洋改造核心-马塔潘角海战",
-          "pipeline_override": {
-            "选择战役": {
-              "expected": [
-                "巡洋改造核心",
-                "马塔潘角海战"
-              ]
-            }
-          }
-        },
-        {
-          "name": "战列改造核心-丹麦海峡海战",
-          "pipeline_override": {
-            "选择战役": {
-              "expected": [
-                "战列改造核心",
-                "丹麦海峡海战"
-              ]
-            }
-          }
-        },
-        {
-          "name": "航母改造核心-珊瑚海海战",
-          "pipeline_override": {
-            "选择战役": {
-              "expected": [
-                "航母改造核心",
-                "珊瑚海海战"
-              ]
-            }
-          }
-        },
-        {
-          "name": "潜艇改造核心-海峡伏击战",
-          "pipeline_override": {
-            "选择战役": {
-              "expected": [
-                "潜艇改造核心",
-                "海峡伏击战"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "战役选择阵型": {
-      "cases": [
-        {
-          "name": "单纵阵",
-          "pipeline_override": {
-            "战役阵型": {
-              "template": "单纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "复纵阵",
-          "pipeline_override": {
-            "战役阵型": {
-              "template": "复纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "轮型阵",
-          "pipeline_override": {
-            "战役阵型": {
-              "template": "轮型阵.png"
-            }
-          }
-        },
-        {
-          "name": "梯形阵",
-          "pipeline_override": {
-            "战役阵型": {
-              "template": "梯形阵.png"
-            }
-          }
-        },
-        {
-          "name": "单横阵",
-          "pipeline_override": {
-            "战役阵型": {
-              "template": "单横阵.png"
-            }
-          }
-        }
-      ]
-    },
-    "远征等待模式（在程序关闭前无限等待收发远征）": {
-      "cases": [
-        {
-          "name": "关闭",
-          "pipeline_override": {}
-        },
-        {
-          "name": "开启",
-          "pipeline_override": {
-            "自动收远征": {
-              "next": [
-                "点击远征",
-                "远征收获奖励",
-                "退出远征2"
-              ]
-            },
-            "点击远征": {
-              "next": [
-                "远征收获奖励",
-                "退出远征2"
-              ]
-            },
-            "确认远征": {
-              "next": [
-                "远征收获奖励",
-                "退出远征2"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "炸鱼编队": {
-      "cases": [
-        {
-          "name": "第一编队",
-          "pipeline_override": {}
-        },
-        {
-          "name": "第二编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "2队.png"
-            }
-          }
-        },
-        {
-          "name": "第三编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "3队.png"
-            }
-          }
-        },
-        {
-          "name": "第四编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "4队.png"
-            }
-          }
-        }
-      ]
-    },
-    "炸鱼次数": {
-      "cases": [
-        {
-          "name": "1次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "10次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "50次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "100次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "无限（直到船舱满或程序关闭等情况终止）",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "6-1炸鱼策略": {
-      "cases": [
-        {
-          "name": "纯炸鱼策略（遇雷巡和轻母SL，只打纯潜艇）",
-          "pipeline_override": {}
-        },
-        {
-          "name": "SL不打轻母，打雷巡和潜艇",
-          "pipeline_override": {
-            "炸鱼识别雷巡": {
-              "enabled": false
-            }
-          }
-        },
-        {
-          "name": "无策略",
-          "pipeline_override": {
-            "炸鱼识别轻母": {
-              "enabled": false
-            },
-            "炸鱼识别雷巡": {
-              "enabled": false
-            }
-          }
-        }
-      ]
-    },
-    "炸鱼自动修船": {
-      "cases": [
-        {
-          "name": "舰船大破自动快速维修",
-          "pipeline_override": {}
-        },
-        {
-          "name": "不维修，大破终止炸鱼",
-          "pipeline_override": {
-            "炸鱼取消": {
-              "next": "退出炸鱼"
-            },
-            "炸鱼开始出征": {}
-          }
-        }
-      ]
-    },
-    "战役自动修船": {
-      "cases": [
-        {
-          "name": "舰船大破自动快速维修",
-          "pipeline_override": {}
-        },
-        {
-          "name": "不维修，大破终止战役",
-          "pipeline_override": {
-            "战役取消": {
-              "next": "退出炸鱼"
-            },
-            "战役开始出征": {}
-          }
-        }
-      ]
-    },
-    "选择编队": {
-      "cases": [
-        {
-          "name": "第一编队",
-          "pipeline_override": {}
-        },
-        {
-          "name": "第二编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "2队.png"
-            }
-          }
-        },
-        {
-          "name": "第三编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "3队.png"
-            }
-          }
-        },
-        {
-          "name": "第四编队",
-          "pipeline_override": {
-            "炸鱼编队": {
-              "template": "4队.png"
-            }
-          }
-        }
-      ]
-    },
-    "选择次数": {
-      "cases": [
-        {
-          "name": "1次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "10次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "50次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "100次",
-          "pipeline_override": {
-            "炸鱼次数": {}
-          }
-        },
-        {
-          "name": "无限（直到船舱满或程序关闭等情况终止）",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "选择阵型": {
-      "cases": [
-        {
-          "name": "单纵阵",
-          "pipeline_override": {
-            "炸鱼单横阵": {
-              "template": "单纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "复纵阵",
-          "pipeline_override": {
-            "炸鱼单横阵": {
-              "template": "复纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "轮型阵",
-          "pipeline_override": {
-            "炸鱼单横阵": {
-              "template": "轮型阵.png"
-            }
-          }
-        },
-        {
-          "name": "梯形阵",
-          "pipeline_override": {
-            "炸鱼单横阵": {
-              "template": "梯形阵.png"
-            }
-          }
-        },
-        {
-          "name": "单横阵",
-          "pipeline_override": {
-            "炸鱼单横阵": {
-              "template": "单横阵.png"
-            }
-          }
-        }
-      ]
-    },
-    "夜战追击设置": {
-      "cases": [
-        {
-          "name": "打夜战",
-          "pipeline_override": {}
-        },
-        {
-          "name": "不打夜战",
-          "pipeline_override": {
-            "炸鱼追击": {
-              "post_wait_freezes": 1000,
-              "template": "放弃.png"
-            }
-          }
-        }
-      ]
-    },
-    "自动修船设置": {
-      "cases": [
-        {
-          "name": "舰船大破自动快速维修",
-          "pipeline_override": {}
-        },
-        {
-          "name": "不维修，大破终止任务",
-          "pipeline_override": {
-            "炸鱼取消": {
-              "next": "退出炸鱼"
-            }
-          }
-        }
-      ]
-    },
-    "任务结束后是否关闭游戏": {
-      "cases": [
-        {
-          "name": "关闭",
-          "pipeline_override": {
-            "退出船坞": {
-              "next": "关闭游戏"
-            }
-          }
-        },
-        {
-          "name": "不关闭",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "任务途中远征": {
-      "cases": [
-        {
-          "name": "自动收发",
-          "pipeline_override": {
-            "炸鱼回港": {
-              "next": [
-                "点击远征",
-                "炸鱼次数"
-              ]
-            },
-            "退出远征": {
-              "next": "炸鱼次数",
-              "template": "出征1.png",
-              "green_mask": false
-            }
-          }
-        },
-        {
-          "name": "不自动收发",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "8-1炸鱼策略": {
-      "cases": [
-        {
-          "name": "纯炸鱼策略（遇重巡和轻巡SL，只打纯潜艇）",
-          "pipeline_override": {}
-        },
-        {
-          "name": "SL不打重巡，打轻巡和潜艇",
-          "pipeline_override": {
-            "炸鱼识别雷巡": {
-              "enabled": false
-            }
-          }
-        },
-        {
-          "name": "无策略",
-          "pipeline_override": {
-            "炸鱼识别轻母": {
-              "enabled": false
-            },
-            "炸鱼识别雷巡": {
-              "enabled": false
-            }
-          }
-        }
-      ]
-    },
-    "9-1炸鱼策略": {
-      "cases": [
-        {
-          "name": "纯炸鱼策略（遇驱逐和轻巡SL，只打纯潜艇）",
-          "pipeline_override": {}
-        },
-        {
-          "name": "无策略",
-          "pipeline_override": {
-            "炸鱼识别轻母": {
-              "enabled": false
-            },
-            "炸鱼识别雷巡": {
-              "enabled": false
-            }
-          }
-        }
-      ]
-    },
-    "9-1炸鱼点": {
-      "cases": [
-        {
-          "name": "只炸B点",
-          "pipeline_override": {}
-        },
-        {
-          "name": "炸B点和F点",
-          "pipeline_override": {
-            "舰队补给": {
-              "next": [
-                "炸鱼大破检测",
-                "炸鱼前进"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "刷狗粮编队": {
-      "cases": [
-        {
-          "name": "第二编队",
-          "pipeline_override": {
-            "狗粮编队": {
-              "template": "2队.png"
-            }
-          }
-        },
-        {
-          "name": "第三编队",
-          "pipeline_override": {
-            "狗粮编队": {
-              "template": "3队.png"
-            }
-          }
-        },
-        {
-          "name": "第四编队",
-          "pipeline_override": {
-            "狗粮编队": {
-              "template": "4队.png"
-            }
-          }
-        }
-      ]
-    },
-    "刷狗粮次数": {
-      "cases": [
-        {
-          "name": "1次",
-          "pipeline_override": {
-            "狗粮继续": {}
-          }
-        },
-        {
-          "name": "10次",
-          "pipeline_override": {
-            "狗粮继续": {}
-          }
-        },
-        {
-          "name": "50次",
-          "pipeline_override": {
-            "狗粮继续": {}
-          }
-        },
-        {
-          "name": "100次",
-          "pipeline_override": {
-            "狗粮继续": {}
-          }
-        },
-        {
-          "name": "无限（直到船舱满或程序关闭等情况终止）",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "刷狗粮途中远征": {
-      "cases": [
-        {
-          "name": "自动收发",
-          "pipeline_override": {
-            "狗粮回港": {
-              "next": [
-                "点击远征",
-                "狗粮继续"
-              ]
-            },
-            "狗粮大破回港": {
-              "next": [
-                "点击远征",
-                "狗粮继续"
-              ]
-            },
-            "退出远征": {
-              "next": "狗粮继续",
-              "template": "出征1.png",
-              "green_mask": false
-            }
-          }
-        },
-        {
-          "name": "不自动收发",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "活动选择练级类型": {
-      "cases": [
-        {
-          "name": "只刷第一个点",
-          "pipeline_override": {}
-        },
-        {
-          "name": "刷完前进（三连夜战）",
-          "pipeline_override": {
-            "活动舰队补给": {
-              "next": [
-                "活动大破检测",
-                "活动前进"
-              ]
-            }
-          }
-        }
-      ]
-    },
-    "活动选择次数": {
-      "cases": [
-        {
-          "name": "1次",
-          "pipeline_override": {
-            "活动次数": {}
-          }
-        },
-        {
-          "name": "10次",
-          "pipeline_override": {
-            "活动次数": {}
-          }
-        },
-        {
-          "name": "50次",
-          "pipeline_override": {
-            "活动次数": {}
-          }
-        },
-        {
-          "name": "100次",
-          "pipeline_override": {
-            "活动次数": {}
-          }
-        },
-        {
-          "name": "无限（直到程序关闭等情况终止）",
-          "pipeline_override": {}
-        }
-      ]
-    },
-    "活动选择阵型": {
-      "cases": [
-        {
-          "name": "单纵阵",
-          "pipeline_override": {
-            "活动阵型": {
-              "template": "单纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "复纵阵",
-          "pipeline_override": {
-            "活动阵型": {
-              "template": "复纵阵.png"
-            }
-          }
-        },
-        {
-          "name": "轮型阵",
-          "pipeline_override": {
-            "活动阵型": {
-              "template": "轮型阵.png"
-            }
-          }
-        },
-        {
-          "name": "梯形阵",
-          "pipeline_override": {
-            "活动阵型": {
-              "template": "梯形阵.png"
-            }
-          }
-        },
-        {
-          "name": "单横阵",
-          "pipeline_override": {
-            "活动阵型": {
-              "template": "单横阵.png"
-            }
-          }
-        }
-      ]
-    },
-    "活动自动修船设置": {
-      "cases": [
-        {
-          "name": "舰船大破自动快速维修",
-          "pipeline_override": {}
-        },
-        {
-          "name": "不维修，大破终止任务",
-          "pipeline_override": {
-            "活动取消": {
-              "next": "退出活动"
-            }
-          }
-        }
-      ]
-    }
-  }
 }
