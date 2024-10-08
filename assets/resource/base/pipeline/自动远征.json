@@ -100,9 +100,6 @@
         "post_wait_freezes": 1000,
         "next": [
             "退出远征",
-            "自动收远征"
-        ],
-        "timeout_next": [
             "结束远征"
         ]
     },

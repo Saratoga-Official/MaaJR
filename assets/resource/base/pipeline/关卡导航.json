@@ -1,7 +1,17 @@
 {
     "开始出征": {
         "next": [
+            "识别关卡",
             "点击出征",
+            "退出出征"
+        ]
+    },
+    "识别关卡": {
+        "recognition": "TemplateMatch",
+        "template": "1-1.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
             "退出出征"
         ]
     },
@@ -310,6 +320,7 @@
         "recognition": "TemplateMatch",
         "template": "退出.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "green_mask": true,
         "next": [
             "点击出征",

@@ -1,4 +1,7 @@
 {
+    "name": "MaaJR",
+    "version": "v2.0.0-beta.1",
+    "url": "https://github.com/Saratoga-Official/MaaJR",
     "controller": [
         {
             "name": "安卓端",
@@ -16,11 +19,15 @@
     "task": [
         {
             "name": "开始唤醒",
-            "entry": "开始唤醒"
+            "entry": "开始唤醒",
+            "check": true,
+            "repeatable": false
         },
         {
             "name": "自动远征",
             "entry": "开始自动远征",
+            "check": false,
+            "repeatable": false,
             "option": [
                 "远征等待模式（在程序关闭前无限等待收发远征）"
             ]
@@ -28,6 +35,8 @@
         {
             "name": "自动战役",
             "entry": "开始自动战役",
+            "check": false,
+            "repeatable": false,
             "option": [
                 "战役选择难度",
                 "战役选择关卡",
@@ -45,9 +54,12 @@
         {
             "name": "6-1自动炸鱼",
             "entry": "开始出征",
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
             "option": [
                 "炸鱼编队",
-                "炸鱼次数",
+                "炸鱼无限次数",
                 "6-1炸鱼策略",
                 "炸鱼自动修船",
                 "任务途中远征"
@@ -100,15 +112,22 @@
                 },
                 "6-1": {
                     "next": ["炸鱼次数"]
+                },
+                "识别关卡": {
+                    "template": "6-1.png",
+                    "next": ["炸鱼次数"]
                 }
             }
         },
         {
             "name": "8-1自动炸鱼",
             "entry": "开始出征",
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
             "option": [
                 "炸鱼编队",
-                "炸鱼次数",
+                "炸鱼无限次数",
                 "8-1炸鱼策略",
                 "炸鱼自动修船",
                 "任务途中远征"
@@ -165,15 +184,21 @@
                 "炸鱼6-1": {"template": "8-1.png"},
                 "炸鱼识别潜艇": {"template": "8-1潜艇.png"},
                 "炸鱼识别轻母": {"template": "8-1重巡.png"},
-                "炸鱼识别雷巡": {"template": "8-1轻巡.png"}
+                "炸鱼识别雷巡": {"template": "8-1轻巡.png"},
+                "识别关卡": {
+                    "template": "8-1.png",
+                    "next": ["炸鱼次数"]
+                }
             }
         },
         {
             "name": "9-1自动炸鱼",
             "entry": "开始出征",
+            "check": false,
+            "repeatable": true,
             "option": [
                 "炸鱼编队",
-                "炸鱼次数",
+                "炸鱼无限次数",
                 "9-1炸鱼点",
                 "9-1炸鱼策略",
                 "炸鱼自动修船",
@@ -225,15 +250,21 @@
                 "炸鱼6-1": {"template": "9-1.png"},
                 "炸鱼识别潜艇": {"template": "9-1潜艇.png"},
                 "炸鱼识别轻母": {"template": "9-1驱逐.png"},
-                "炸鱼识别雷巡": {"template": "9-1轻巡.png"}
+                "炸鱼识别雷巡": {"template": "9-1轻巡.png"},
+                "识别关卡": {
+                    "template": "9-1.png",
+                    "next": ["炸鱼次数"]
+                }
             }
         },
         {
             "name": "1-1刷鱼雷狗粮",
             "entry": "开始出征",
+            "check": false,
+            "repeatable": false,
             "option": [
                 "刷狗粮编队",
-                "刷狗粮次数",
+                "刷狗粮无限次数",
                 "刷狗粮途中远征"
             ],
             "pipeline_override": {
@@ -275,15 +306,21 @@
                 },
                 "1-1": {
                     "next": ["刷鱼雷狗粮"]
+                },
+                "识别关卡": {
+                    "template": "1-1.png",
+                    "next": ["刷鱼雷狗粮"]
                 }
             }
         },
         {
             "name": "自定义地图练级（使用该功能需在关卡地图名界面开始）",
             "entry": "炸鱼次数",
+            "check": false,
+            "repeatable": true,
             "option": [
                 "选择编队",
-                "选择次数",
+                "无限次数",
                 "选择阵型",
                 "夜战追击设置",
                 "自动修船设置",
@@ -332,6 +369,8 @@
         {
             "name": "自动领取任务奖励和入浴",
             "entry": "收尾工作",
+            "check": false,
+            "repeatable": false,
             "pipeline_override": {
                 "退出浴场": {
                     "next": [
@@ -343,9 +382,12 @@
         {
             "name": "征程启航活动练级（请自行编队满足带路条件后在出击准备界面点开始）",
             "entry": "刷活动",
+            "check": false,
+            "repeatable": true,
             "option": [
                 "活动选择练级类型",
-                "活动选择次数",
+                "活动编队",
+                "活动无限次数",
                 "活动选择阵型",
                 "活动自动修船设置"
             ],
@@ -559,37 +601,13 @@
                 }
             ]
         },
-        "炸鱼次数": {
+        "炸鱼无限次数": {
             "cases": [
                 {
-                    "name": "1次",
+                    "name": "关闭",
                     "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 1
-                        }
-                    }
-                },
-                {
-                    "name": "10次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 10
-                        }
-                    }
-                },
-                {
-                    "name": "50次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 50
-                        }
-                    }
-                },
-                {
-                    "name": "100次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 100
+                        "炸鱼继续": {
+                            "enabled": false
                         }
                     }
                 },
@@ -714,37 +732,13 @@
                 }
             ]
         },
-        "选择次数": {
+        "无限次数": {
             "cases": [
                 {
-                    "name": "1次",
+                    "name": "关闭",
                     "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 1
-                        }
-                    }
-                },
-                {
-                    "name": "10次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 10
-                        }
-                    }
-                },
-                {
-                    "name": "50次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 50
-                        }
-                    }
-                },
-                {
-                    "name": "100次",
-                    "pipeline_override": {
-                        "炸鱼次数": {
-                            "times_limit": 100
+                        "狗粮继续": {
+                            "enabled": false
                         }
                     }
                 },
@@ -847,14 +841,16 @@
                         "炸鱼回港": {
                             "next": [
                                 "点击远征",
-                                "炸鱼次数"
+                                "炸鱼继续",
+                                "炸鱼退出"
                             ]
                         },
                         "退出远征": {
                             "template": "出征1.png",
                             "green_mask": false,
                             "next": [
-                                "炸鱼次数"
+                                "炸鱼继续",
+                                "炸鱼退出"
                             ]
                         }
                     }
@@ -966,40 +962,8 @@
                 }
             ]
         },
-        "刷狗粮次数": {
+        "刷狗粮无限次数": {
             "cases": [
-                {
-                    "name": "1次",
-                    "pipeline_override": {
-                        "狗粮继续": {
-                            "times_limit": 0
-                        }
-                    }
-                },
-                {
-                    "name": "10次",
-                    "pipeline_override": {
-                        "狗粮继续": {
-                            "times_limit": 9
-                        }
-                    }
-                },
-                {
-                    "name": "50次",
-                    "pipeline_override": {
-                        "狗粮继续": {
-                            "times_limit": 49
-                        }
-                    }
-                },
-                {
-                    "name": "100次",
-                    "pipeline_override": {
-                        "狗粮继续": {
-                            "times_limit": 99
-                        }
-                    }
-                },
                 {
                     "name": "无限（直到船舱满或程序关闭等情况终止）",
                     "pipeline_override": {
@@ -1016,20 +980,23 @@
                         "狗粮回港": {
                             "next": [
                                 "点击远征",
-                                "狗粮继续"
+                                "狗粮继续",
+                                "狗粮退出"
                             ]
                         },
                         "狗粮大破回港": {
                             "next": [
                                 "点击远征",
-                                "狗粮继续"
+                                "狗粮继续",
+                                "狗粮退出"
                             ]
                         },
                         "退出远征": {
                             "template": "出征1.png",
                             "green_mask": false,
                             "next": [
-                                "狗粮继续"
+                                "狗粮继续",
+                                "狗粮退出"
                             ]
                         }
                     }
@@ -1063,42 +1030,20 @@
                 }
             ]
         },
-        "活动选择次数": {
+        "活动无限次数": {
             "cases": [
                 {
-                    "name": "1次",
+                    "name": "关闭",
                     "pipeline_override": {
                         "活动次数": {
-                            "times_limit": 0
+                            "next": [
+
+                            ]
                         }
                     }
                 },
                 {
-                    "name": "10次",
-                    "pipeline_override": {
-                        "活动次数": {
-                            "times_limit": 9
-                        }
-                    }
-                },
-                {
-                    "name": "50次",
-                    "pipeline_override": {
-                        "活动次数": {
-                            "times_limit": 49
-                        }
-                    }
-                },
-                {
-                    "name": "100次",
-                    "pipeline_override": {
-                        "活动次数": {
-                            "times_limit": 99
-                        }
-                    }
-                },
-                {
-                    "name": "无限（直到程序关闭等情况终止）",
+                    "name": "无限（直到船舱满或程序关闭等情况终止）",
                     "pipeline_override": {
 
                     }
@@ -1164,6 +1109,40 @@
                             "next": [
                                 "退出活动"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "活动编队": {
+            "cases": [
+                {
+                    "name": "第一编队",
+                    "pipeline_override": {
+                        
+                    }
+                },
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "活动编队": {
+                            "template": "2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "活动编队": {
+                            "template": "3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "活动编队": {
+                            "template": "4队.png"
                         }
                     }
                 }

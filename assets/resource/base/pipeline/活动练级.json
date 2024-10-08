@@ -13,6 +13,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "活动编队",
             "活动自动补给",
             "活动开始出征"
         ]
@@ -25,6 +26,18 @@
         "action": "Click",
         "target": [56,661,21,22],
         "next": [
+            "活动开始出征"
+        ]
+    },
+    "活动编队": {
+        "recognition": "TemplateMatch",
+        "template": "队.png",
+        "post_wait_freezes": 1000,
+        "order": "Score",
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "活动自动补给",
             "活动开始出征"
         ]
     },
