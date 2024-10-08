@@ -40,7 +40,7 @@
             "活动船舱满"
         ],
         "timeout": 30000,
-        "timeout_next": [
+        "on_error": [
             "自动修船"
         ]
     },
@@ -74,7 +74,7 @@
             "活动船舱满"
         ],
         "timeout": 30000,
-        "timeout_next": [
+        "on_error": [
             "退出活动"
         ]
     },

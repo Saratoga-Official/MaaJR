@@ -87,7 +87,7 @@
             "战役取消"
         ],
         "timeout": 20000,
-        "timeout_next": [
+        "on_error": [
             "自动修船"
         ]
     },
@@ -108,7 +108,7 @@
             "战役阵型"
         ],
         "timeout": 20000,
-        "timeout_next": [
+        "on_error": [
             "结束战役"
         ]
     },

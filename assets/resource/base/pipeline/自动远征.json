@@ -4,7 +4,7 @@
             "退出远征",
             "自动收远征"
         ],
-        "timeout_next": [
+        "on_error": [
             "结束远征"
         ]
     },
@@ -35,9 +35,9 @@
         "next": [
             "退出远征2"
         ],
-        "post_wait_freezes": 60000,
+        "post_delay": 60000,
         "timeout": 3600000,
-        "timeout_next": [
+        "on_error": [
             "退出远征3"
         ]
     },

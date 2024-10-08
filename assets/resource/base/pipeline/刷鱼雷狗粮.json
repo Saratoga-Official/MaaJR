@@ -206,7 +206,7 @@
         "template": "开始出征.png",
         "action": "Click",
         "timeout": 90000,
-        "timeout_next": [
+        "on_error": [
             "退出狗粮"
         ],
         "next": [
@@ -230,7 +230,7 @@
         "template": "开始出征.png",
         "action": "Click",
         "timeout": 90000,
-        "timeout_next": [
+        "on_error": [
             "退出狗粮"
         ],
         "next": [

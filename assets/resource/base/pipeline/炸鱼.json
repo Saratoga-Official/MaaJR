@@ -63,7 +63,7 @@
             "炸鱼船舱满"
         ],
         "timeout": 30000,
-        "timeout_next": [
+        "on_error": [
             "自动修船"
         ]
     },
@@ -102,7 +102,7 @@
             "炸鱼船舱满"
         ],
         "timeout": 30000,
-        "timeout_next": [
+        "on_error": [
             "炸鱼退出"
         ]
     },
