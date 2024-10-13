@@ -1,0 +1,573 @@
+{
+    "开始自动决战": {
+        "next": [
+            "自动决战",
+            "退出决战",
+            "识别决战点",
+            "结束决战"
+        ]
+    }, 
+    "自动决战": {
+        "recognition": "TemplateMatch",
+        "template": "出征.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 1000,
+        "next": [
+            "点击决战"
+        ]
+    },
+    "退出决战": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 1000,
+        "next": [
+            "开始自动决战"
+        ]
+    },
+    "结束决战": {
+        "action": "DoNothing"
+    },
+    "点击决战": {
+        "recognition": "TemplateMatch",
+        "template": "决战.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战沉默战士"
+        ]
+    },
+    "决战沉默战士": {
+        "recognition": "TemplateMatch",
+        "template": "沉默战士.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "识别决战点"
+        ]
+    },
+    "识别决战点": {
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战沉默战士E6-1"
+        ]
+    },
+    "决战沉默战士E6-1": {
+        "recognition": "TemplateMatch",
+        "template": "E6-1.png",
+        "roi": [625,55,278,247],
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "更换副官",
+            "进入沉默战士决战E6-1"
+        ]
+    },
+    "更换副官": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "紫貂.png",
+            "奇尔沙治.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "副官翻页"
+        ]
+    },
+    "副官翻页": {
+        "recognition": "TemplateMatch",
+        "template": "副官翻页.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "哈巴库克",
+            "副官翻页"
+        ]
+    },
+    "哈巴库克": {
+        "recognition": "TemplateMatch",
+        "template": "哈巴库克.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 1000,
+        "next": [
+            "副官替换"
+        ]
+    },
+    "副官替换": {
+        "recognition": "TemplateMatch",
+        "template": "副官替换.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "进入沉默战士决战E6-1"
+        ]
+    },
+    "进入沉默战士决战E6-1": {
+        "recognition": "TemplateMatch",
+        "template": "E6-1.png",
+        "roi": [625,55,278,247],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "上次选船",
+            "选择前进点A1"
+        ]
+    },
+    "上次选船": {
+        "recognition": "TemplateMatch",
+        "template": "上次选船.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "上次选船确认"
+        ]
+    },
+    "上次选船确认": {
+        "recognition": "TemplateMatch",
+        "template": "上次选船确认.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "选择前进点A1"
+        ]
+    },
+    "选择前进点A1": {
+        "recognition": "TemplateMatch",
+        "roi": [418,307,326,128],
+        "template": "前进点A1.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "前进点确认A1"
+        ]
+    },
+    "前进点确认A1": {
+        "recognition": "TemplateMatch",
+        "template": "前进点确认.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别1",
+            "初始识别2",
+            "初始识别3",
+            "初始识别4",
+            "战备舰队获取刷新"
+        ]
+    },
+    "战备舰队获取刷新": {
+        "recognition": "ColorMatch",
+        "roi": [399,646,187,42],
+        "lower": [30,114,194],
+        "upper": [30,114,194],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别1",
+            "初始识别2",
+            "初始识别3",
+            "初始识别4",
+            "放弃重开"
+        ]
+    },
+    "放弃重开": {
+        "action": "Click",
+        "target": [907,490,109,24],
+        "post_wait_freezes": 1000,
+        "next": [
+            "放弃确定"
+        ]
+    },
+    "放弃确定": {
+        "recognition": "TemplateMatch",
+        "template": "战备舰队获取确定.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "放弃撤退"
+        ]
+    },
+    "放弃撤退": {
+        "recognition": "TemplateMatch",
+        "template": "放弃撤退.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "确认退出"
+        ]
+    },
+    "确认退出": {
+        "recognition": "TemplateMatch",
+        "template": "确认退出.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "进入沉默战士决战E6-1"
+        ]
+    },
+    "初始识别1": {
+        "recognition": "OCR",
+        "roi": [260,489,117,25],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别2-2",
+            "初始识别3-2",
+            "初始识别4-2",
+            "初始识别5-2",
+            "战备舰队获取刷新",
+            "放弃重开"
+        ]
+    },
+    "初始识别2": {
+        "recognition": "OCR",
+        "roi": [424,490,113,23],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别3-2",
+            "初始识别4-2",
+            "初始识别5-2",
+            "战备舰队获取刷新",
+            "放弃重开"
+        ]
+    },
+    "初始识别3": {
+        "recognition": "OCR",
+        "roi": [584,490,115,24],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别4-2",
+            "初始识别5-2",
+            "战备舰队获取刷新",
+            "放弃重开"
+        ]
+    },
+    "初始识别4": {
+        "recognition": "OCR",
+        "roi": [742,489,119,26],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始识别5-2",
+            "战备舰队获取刷新",
+            "放弃重开"
+        ]
+    },
+    "初始识别2-2": {
+        "recognition": "OCR",
+        "roi": [424,490,113,23],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始确定"
+        ]
+    },
+    "初始识别3-2": {
+        "recognition": "OCR",
+        "roi": [584,490,115,24],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始确定"
+        ]
+    },
+    "初始识别4-2": {
+        "recognition": "OCR",
+        "roi": [742,489,119,26],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始确定"
+        ]
+    },
+    "初始识别5-2": {
+        "recognition": "OCR",
+        "roi": [907,490,109,24],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "初始确定"
+        ]
+    },
+    "初始确定": {
+        "recognition": "TemplateMatch",
+        "template": "战备舰队获取确定.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "哈巴库克技能"
+        ]
+    },
+    "哈巴库克技能": {
+        "recognition": "TemplateMatch",
+        "template": "哈巴库克技能.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "哈巴库克技能识别舰船",
+            "哈巴库克技能放弃"
+        ]
+    },
+    "哈巴库克技能放弃": {
+        "action": "Click",
+        "target": [907,490,109,24],
+        "post_wait_freezes": 1000,
+        "next": [
+            "放弃撤退"
+        ]
+    },
+    "哈巴库克技能识别舰船": {
+        "recognition": "OCR",
+        "roi": [594,488,89,30],
+        "expected": [
+            "U-47","U-1405","U-81","射水鱼","大青花鱼","鲃鱼","U-96","U-2540","U-1206","U-505","M-296","伊-25"
+        ],
+        "action": "Click",
+        "target": [907,490,109,24],
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战编队A1"
+        ]
+    },
+    "决战编队A1": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战自动补给A1",
+            "决战添加舰船A1",
+            "决战开始出征A1"
+        ]
+    },
+    "决战自动补给A1": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "inverse": true,
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "target": [56,661,21,22],
+        "next": [
+            "决战添加舰船A1",
+            "决战开始出征A1"
+        ]
+    },
+    "决战添加舰船A1": {
+        "recognition": "TemplateMatch",
+        "template": "添加舰船.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战优先添加A1",
+            "决战次级添加A1",
+            "决战退出添加A1"
+        ]
+    },
+    "决战优先添加A1": {
+        "recognition": "OCR",
+        "roi": [62,351,955,23],
+        "expected": [
+            "U-47","U-1405","U-81","射水鱼","大青花鱼","鲃鱼","U-96","U-2540","U-1206","U-505","M-296","伊-25"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战添加舰船A1",
+            "决战开始出征A1"
+        ]
+    },
+    "决战次级添加A1": {
+        "recognition": "OCR",
+        "roi": [62,351,955,23],
+        "expected": [
+            "M-296","鹦鹉螺","达·芬奇","鹰","K-21","U-441","IIIA","伊-201","潜甲","潜乙"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战添加舰船A1",
+            "决战开始出征A1"
+        ]
+    },
+    "决战退出添加A1": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战开始出征A1"
+        ]
+    },
+    "决战开始出征A1": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战开始战斗A1",
+            "决战点击继续A1"
+        ]
+    },
+    "决战开始战斗A1": {
+        "recognition": "TemplateMatch",
+        "template": "开始战斗.png",
+        "action": "Click",
+        "next": [
+            "决战点击继续A1"
+        ]
+    },
+    "决战点击继续A1": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战再点继续A1"
+        ]
+    },
+    "决战再点继续A1": {
+        "action": "Click",
+        "target": "决战点击继续",
+        "post_wait_freezes": 1000,
+        "next": [
+            "选择前进点B1"
+        ]
+    },
+    "选择前进点B1": {
+        "recognition": "TemplateMatch",
+        "roi": [418,307,326,128],
+        "template": "前进点B1.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "前进点确认B1"
+        ]
+    },
+    "前进点确认B1": {
+        "recognition": "TemplateMatch",
+        "template": "前进点确认.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "关闭B1"
+        ]
+    },
+    "关闭B1": {
+        "recognition": "TemplateMatch",
+        "template": "决战关闭.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "编队B1"
+        ]
+    },
+    "编队B1": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战大破检测B1",
+            "决战开始出征B1"
+        ]
+    },
+    "决战大破检测B1": {
+        "recognition": "TemplateMatch",
+        "template": "大破检测2.png",
+        "action": "DoNothing",
+        "next": [
+            "决战快速修理B1"
+        ]
+    },
+    "决战快速修理B1": {
+        "recognition": "TemplateMatch",
+        "template": "快速修理2.png",
+        "action": "Click",
+        "next": [
+            "决战修理舰船B1"
+        ]
+    },
+    "决战修理舰船B1": {
+        "recognition": "TemplateMatch",
+        "template": "大破检测2.png",
+        "action": "Click",
+        "next": [
+            "决战开始出征B1"
+        ]
+    },
+    "决战开始出征B1": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战开始战斗B1",
+            "决战点击继续B1"
+        ]
+    },
+    "决战开始战斗B1": {
+        "recognition": "TemplateMatch",
+        "template": "开始战斗.png",
+        "action": "Click",
+        "next": [
+            "决战点击继续B1"
+        ]
+    },
+    "决战点击继续B1": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "决战再点继续B1"
+        ]
+    },
+    "决战再点继续B1": {
+        "action": "Click",
+        "target": "决战点击继续",
+        "post_wait_freezes": 1000,
+        "next": [
+            "关闭C1"
+        ]
+    },
+    "关闭C1": {
+        "recognition": "TemplateMatch",
+        "template": "决战关闭.png",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "编队B1"
+        ]
+    }
+}

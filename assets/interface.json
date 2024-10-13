@@ -1,6 +1,6 @@
 {
     "name": "MaaJR",
-    "version": "v2.0.0-beta.1",
+    "version": "v2.0.0",
     "url": "https://github.com/Saratoga-Official/MaaJR",
     "controller": [
         {
@@ -21,15 +21,17 @@
             "name": "开始唤醒",
             "entry": "开始唤醒",
             "check": true,
-            "repeatable": false
+            "repeatable": false,
+            "doc": "[color:red]打开游戏，领取登录奖励等[/color]"
         },
         {
             "name": "自动远征",
             "entry": "开始自动远征",
             "check": false,
             "repeatable": false,
+            "doc": "[color:red]开启远征等待模式会在程序关闭前无限等待收发远征[/color]",
             "option": [
-                "远征等待模式（在程序关闭前无限等待收发远征）"
+                "远征等待模式"
             ]
         },
         {
@@ -37,6 +39,7 @@
             "entry": "开始自动战役",
             "check": false,
             "repeatable": false,
+            "doc": "[color:red]打指定战役直到打完次数，需提前编好队，再开始[/color]",
             "option": [
                 "战役选择难度",
                 "战役选择关卡",
@@ -52,10 +55,23 @@
             }
         },
         {
+            "name": "自动演习",
+            "entry": "开始自动演习",
+            "check": false,
+            "repeatable": false,
+            "doc": "[color:red]目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新[/color]",
+            "option": [
+                "演习编队",
+                "演习选择阵型",
+                "演习刷新策略"
+            ]
+        },
+        {
             "name": "6-1自动炸鱼",
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
+            "doc": "[color:red]需提前编好队，再开始[/color]",
             "repeat_count": 1,
             "option": [
                 "炸鱼编队",
@@ -124,6 +140,7 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
+            "doc": "[color:red]需提前编好队，再开始[/color]",
             "repeat_count": 1,
             "option": [
                 "炸鱼编队",
@@ -196,6 +213,7 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
+            "doc": "[color:red]需提前编好队，再开始[/color]",
             "option": [
                 "炸鱼编队",
                 "炸鱼无限次数",
@@ -262,6 +280,7 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": false,
+            "doc": "[color:red]会自动编队编入最近获得的小船，不能和其他编队混用[/color]",
             "option": [
                 "刷狗粮编队",
                 "刷狗粮无限次数",
@@ -314,10 +333,11 @@
             }
         },
         {
-            "name": "自定义地图练级（使用该功能需在关卡地图名界面开始）",
+            "name": "自定义地图练级",
             "entry": "炸鱼次数",
             "check": false,
             "repeatable": true,
+            "doc": "[color:red]使用该功能需在关卡地图名界面开始[/color]",
             "option": [
                 "选择编队",
                 "无限次数",
@@ -380,10 +400,11 @@
             }
         },
         {
-            "name": "征程启航活动练级（请自行编队满足带路条件后在出击准备界面点开始）",
+            "name": "征程启航活动练级",
             "entry": "刷活动",
             "check": false,
             "repeatable": true,
+            "doc": "[color:red]请自行编队满足带路条件后在出击准备界面点开始[/color]",
             "option": [
                 "活动选择练级类型",
                 "活动编队",
@@ -533,7 +554,7 @@
                 }
             ]
         },
-        "远征等待模式（在程序关闭前无限等待收发远征）": {
+        "远征等待模式": {
             "cases": [
                 {
                     "name": "关闭",
@@ -1143,6 +1164,223 @@
                     "pipeline_override": {
                         "活动编队": {
                             "template": "4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "演习编队": {
+            "cases": [
+                {
+                    "name": "第一编队",
+                    "pipeline_override": {
+                        
+                    }
+                },
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "演习编队": {
+                            "template": "2队.png"
+                        },
+                        "演习编队1": {
+                            "template": "2队.png"
+                        },
+                        "演习编队2": {
+                            "template": "2队.png"
+                        },
+                        "演习编队3": {
+                            "template": "2队.png"
+                        },
+                        "演习编队4": {
+                            "template": "2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "演习编队": {
+                            "template": "3队.png"
+                        },
+                        "演习编队1": {
+                            "template": "3队.png"
+                        },
+                        "演习编队2": {
+                            "template": "3队.png"
+                        },
+                        "演习编队3": {
+                            "template": "3队.png"
+                        },
+                        "演习编队4": {
+                            "template": "3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "演习编队": {
+                            "template": "4队.png"
+                        },
+                        "演习编队1": {
+                            "template": "4队.png"
+                        },
+                        "演习编队2": {
+                            "template": "4队.png"
+                        },
+                        "演习编队3": {
+                            "template": "4队.png"
+                        },
+                        "演习编队4": {
+                            "template": "4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "演习选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "演习阵型": {
+                            "template": "单纵阵.png"
+                        },
+                        "演习阵型1": {
+                            "template": "单纵阵.png"
+                        },
+                        "演习阵型2": {
+                            "template": "单纵阵.png"
+                        },
+                        "演习阵型3": {
+                            "template": "单纵阵.png"
+                        },
+                        "演习阵型4": {
+                            "template": "单纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "演习阵型": {
+                            "template": "复纵阵.png"
+                        },
+                        "演习阵型1": {
+                            "template": "复纵阵.png"
+                        },
+                        "演习阵型2": {
+                            "template": "复纵阵.png"
+                        },
+                        "演习阵型3": {
+                            "template": "复纵阵.png"
+                        },
+                        "演习阵型4": {
+                            "template": "复纵阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "演习阵型": {
+                            "template": "轮型阵.png"
+                        },
+                        "演习阵型1": {
+                            "template": "轮型阵.png"
+                        },
+                        "演习阵型2": {
+                            "template": "轮型阵.png"
+                        },
+                        "演习阵型3": {
+                            "template": "轮型阵.png"
+                        },
+                        "演习阵型4": {
+                            "template": "轮型阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "演习阵型": {
+                            "template": "梯形阵.png"
+                        },
+                        "演习阵型1": {
+                            "template": "梯形阵.png"
+                        },
+                        "演习阵型2": {
+                            "template": "梯形阵.png"
+                        },
+                        "演习阵型3": {
+                            "template": "梯形阵.png"
+                        },
+                        "演习阵型4": {
+                            "template": "梯形阵.png"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "演习阵型": {
+                            "template": "单横阵.png"
+                        },
+                        "演习阵型1": {
+                            "template": "单横阵.png"
+                        },
+                        "演习阵型2": {
+                            "template": "单横阵.png"
+                        },
+                        "演习阵型3": {
+                            "template": "单横阵.png"
+                        },
+                        "演习阵型4": {
+                            "template": "单横阵.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "演习刷新策略": {
+            "cases": [
+                {
+                    "name": "遇反潜和潜艇刷新",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "遇潜艇刷新",
+                    "pipeline_override": {
+                        "演习识别舰船": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船1": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船2": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船3": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "不刷新",
+                    "pipeline_override": {
+                        "演习识别舰船": {
+                            "enabled": false
                         }
                     }
                 }
