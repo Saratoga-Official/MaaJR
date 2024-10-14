@@ -82,6 +82,7 @@
     "演习刷新次数": {
         "recognition": "TemplateMatch",
         "template": "演习次数.png",
+        "threshold": 0.9,
         "action": "DoNothing",
         "post_wait_freezes": 1000,
         "next": [
