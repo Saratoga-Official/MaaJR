@@ -1,6 +1,6 @@
 {
     "name": "MaaJR",
-    "version": "v2.0.2",
+    "version": "v2.0.3",
     "url": "https://github.com/Saratoga-Official/MaaJR",
     "controller": [
         {
@@ -1357,6 +1357,44 @@
                         "演习识别舰船": {
                             "expected": [
                                 "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船1": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船2": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        },
+                        "演习识别舰船3": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "遇反潜和潜艇跳过",
+                    "pipeline_override": {
+                        "演习识别舰船": {
+                            "next": [
+                                "演习关闭"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "遇潜艇跳过",
+                    "pipeline_override": {
+                        "演习识别舰船": {
+                            "expected": [
+                                "潜艇","炮潜"
+                            ],
+                            "next": [
+                                "演习关闭"
                             ]
                         },
                         "演习识别舰船1": {
