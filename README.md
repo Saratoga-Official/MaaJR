@@ -1,10 +1,22 @@
+
+<!-- markdownlint-disable MD033 MD041 -->
+<p align="center">
+  <img alt="LOGO" src="Saratoga.png" width="256" height="256" />
+</p>
+
+<div align="center">
+
 # MaaJR
+
+</div>
 
 MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控制，解放双手！
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
 本项目自v2.0.0版本起采用 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 作为gui界面，仅限win-x86_64用户可用
+
+---
 
 ## 功能
 
@@ -26,11 +38,15 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 9. 不定期更新刷活动练级，出新活动可以找我催更
 
+---
+
 ## 问题反馈或功能建议
 
 如果使用中遇到bug或有其他功能建议可以提issue或者加入QQ群457094182
 
 反馈问题请附上日志文件 debug/maa.log，谢谢！
+
+---
 
 ## 下载及安装说明
 
@@ -59,6 +75,8 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ~~用 Linux 的大佬应该不需要我教~~
 
+---
+
 ## 使用前说明
 
 在使用工具前完成以下工作：
@@ -75,25 +93,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
   [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
   [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.402-windows-x64-installer)
 
-## MaaPiCli说明
-
-* Select controller选安卓端
-
-* Select ADB推荐选第一个自动检测
-
-* Select Device中选你模拟器的adb
-
-* Add task选择你想要运行的功能
-
-* Select Action里选项的翻译如下
-
-1. 切换adb
-2. 切换资源（目前没用，请无视）
-3. 增加任务
-4. 移动任务顺序
-5. 删除任务
-6. 运行任务
-7. 退出picli
+---
 
 ## 功能说明
 
@@ -113,6 +113,8 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 8. 不定期更新刷活动练级，出新活动可以找我催更
 
+---
+
 ## 声明
 
 本软件免费开源，仅供学习交流使用。开发者团队拥有本项目的最终解释权。
@@ -122,6 +124,8 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 使用本软件产生的任何问题或后果与本软件及开发者团队无关。任何商家利用本软件提供代练等商业服务所产生的任何问题或后果，与本软件及开发者团队无关。
 
 下载并使用本软件即表示您已阅读并同意上述声明。
+
+---
 
 ## 鸣谢
 
