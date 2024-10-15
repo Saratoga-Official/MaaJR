@@ -54,7 +54,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ### Windows
 
-- 对于绝大部分用户，请下载 MaaJR-win-x86_64-with-gui-vXXX.zip，解压后运行 MFAWPF.exe 即可
+- 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip，解压后运行 MFAWPF.exe 即可
 
 - 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip，解压后运行 MaaPiCli.exe 即可
 
