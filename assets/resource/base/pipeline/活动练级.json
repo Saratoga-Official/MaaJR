@@ -100,8 +100,11 @@
         ]
     },
     "活动阵型": {
-        "recognition": "TemplateMatch",
-        "template": "单横阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
+        "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
         "next": [
