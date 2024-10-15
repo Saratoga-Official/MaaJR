@@ -8,13 +8,13 @@
 
 # MaaJR
 
-</div>
-
 MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控制，解放双手！
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
 本项目自v2.0.0版本起采用 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 作为gui界面，仅限win-x86_64用户可用
+
+</div>
 
 ---
 
