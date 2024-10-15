@@ -129,6 +129,7 @@
         "expected": [
             "复纵阵"
         ],
+        "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -170,6 +171,7 @@
             "0/8",
             "0/12"
         ],
+        "roi": [187,579,1052,57],
         "action": "DoNothing",
         "post_wait_freezes": 1000,
         "next": [

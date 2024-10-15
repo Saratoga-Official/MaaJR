@@ -161,6 +161,7 @@
         "expected": [
             "单横阵"
         ],
+        "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -266,6 +267,7 @@
         "expected": [
             "单横阵"
         ],
+        "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
         "next": [
