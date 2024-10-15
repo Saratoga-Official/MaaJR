@@ -8,9 +8,10 @@
     },
     "自动战役": {
         "recognition": "TemplateMatch",
-        "template": "出征.png",
+        "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 1000,
         "next": [
             "点击战役",
             "普通难度",
@@ -22,6 +23,7 @@
         "template": "战役.png",
         "action": "Click",
         "threshold": 0.9,
+        "post_wait_freezes": 1000,
         "next": [
             "普通难度",
             "困难难度"
@@ -50,8 +52,8 @@
     "选择战役": {
         "recognition": "OCR",
         "expected": [
-            "航母改造核心",
-            "珊瑚海海战"
+            "驱逐改造核心",
+            "纳尔维克海战"
         ],
         "action": "Click",
         "post_wait_freezes": 1000,
@@ -95,6 +97,7 @@
         "recognition": "TemplateMatch",
         "template": "出击取消.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "自动修船"
         ]
@@ -116,13 +119,16 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "战役阵型"
         ]
     },
     "战役阵型": {
-        "recognition": "TemplateMatch",
-        "template": "轮型阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -175,6 +181,7 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 1000,
         "next": [
             "开始自动战役"
         ]

@@ -9,7 +9,7 @@
     },
     "自动演习": {
         "recognition": "TemplateMatch",
-        "template": "出征.png",
+        "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
@@ -153,8 +153,10 @@
         ]
     },
     "演习阵型": {
-        "recognition": "TemplateMatch",
-        "template": "梯形阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -379,8 +381,10 @@
         ]
     },
     "演习阵型1": {
-        "recognition": "TemplateMatch",
-        "template": "梯形阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -488,8 +492,10 @@
         ]
     },
     "演习阵型2": {
-        "recognition": "TemplateMatch",
-        "template": "梯形阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -597,8 +603,10 @@
         ]
     },
     "演习阵型3": {
-        "recognition": "TemplateMatch",
-        "template": "梯形阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -718,8 +726,10 @@
         ]
     },
     "演习阵型4": {
-        "recognition": "TemplateMatch",
-        "template": "梯形阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "复纵阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [

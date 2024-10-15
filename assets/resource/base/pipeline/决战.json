@@ -9,7 +9,7 @@
     }, 
     "自动决战": {
         "recognition": "TemplateMatch",
-        "template": "出征.png",
+        "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,

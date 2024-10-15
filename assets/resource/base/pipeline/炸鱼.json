@@ -157,8 +157,10 @@
         ]
     },
     "炸鱼单横阵": {
-        "recognition": "TemplateMatch",
-        "template": "单横阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -260,8 +262,10 @@
         ]
     },
     "炸鱼单横阵2": {
-        "recognition": "TemplateMatch",
-        "template": "单横阵.png",
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
