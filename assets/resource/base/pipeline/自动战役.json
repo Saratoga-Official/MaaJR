@@ -58,8 +58,8 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "战役自动补给",
-            "战役确认"
+            "战役确认",
+            "战役自动补给"
         ]
     },
     "战役自动补给": {
@@ -159,10 +159,11 @@
     "战役再点继续": {
         "action": "Click",
         "target": "战役点击继续",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "战役次数",
-            "选择战役"
+            "选择战役",
+            "战役再点继续"
         ]
     },
     "战役次数": {
@@ -173,7 +174,7 @@
         ],
         "roi": [187,579,1052,57],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "结束战役"
         ]
