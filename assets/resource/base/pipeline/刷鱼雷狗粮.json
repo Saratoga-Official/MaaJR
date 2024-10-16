@@ -135,15 +135,28 @@
         "post_wait_freezes": 1000,
         "next": [
             "换人检测",
+            "换人大破检测",
             "狗粮确认"
         ]
     },
     "换人检测": {
         "recognition": "TemplateMatch",
         "template": "换人检测.png",
+        "roi": [53,416,151,108],
         "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "点排序2"
+        ]
+    },
+    "换人大破检测": {
+        "recognition": "ColorMatch",
+        "roi": [53,416,151,108],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "点排序2"
@@ -187,6 +200,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "换人检测2",
+            "换人大破检测2",
             "狗粮开始出征2"
         ]
     },
@@ -196,6 +210,17 @@
         "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "退出狗粮"
+        ]
+    },
+    "换人大破检测2": {
+        "recognition": "ColorMatch",
+        "roi": [53,416,151,108],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "退出狗粮"
@@ -331,6 +356,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "换人检测",
+            "换人大破检测",
             "狗粮确认"
         ]
     },
