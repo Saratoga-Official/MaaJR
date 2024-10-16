@@ -207,6 +207,7 @@
     "换人检测2": {
         "recognition": "TemplateMatch",
         "template": "换人检测.png",
+        "roi": [53,416,151,108],
         "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
