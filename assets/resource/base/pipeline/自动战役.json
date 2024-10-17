@@ -55,6 +55,7 @@
             "驱逐改造核心",
             "纳尔维克海战"
         ],
+        "roi": [29,541,1219,89],
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -159,7 +160,7 @@
     "战役再点继续": {
         "action": "Click",
         "target": "战役点击继续",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 1000,
         "next": [
             "战役次数",
             "选择战役",
@@ -172,9 +173,9 @@
             "0/8",
             "0/12"
         ],
-        "roi": [187,579,1052,57],
+        "roi": [29,541,1219,89],
         "action": "DoNothing",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 1000,
         "next": [
             "结束战役"
         ]
