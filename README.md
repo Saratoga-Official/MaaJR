@@ -1,7 +1,7 @@
 
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="Saratoga.png" width="256" height="256" />
+  <img alt="LOGO" src="logo.ico" width="256" height="256" />
 </p>
 
 <div align="center">

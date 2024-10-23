@@ -302,6 +302,11 @@
         "recognition": "TemplateMatch",
         "template": "9-1.png"
     },
+    "8-5": {
+        "recognition": "OCR",
+        "expected": "地峡海湾",
+        "roi": [950,115,168,51]
+    },
     "1-1": {
         "recognition": "TemplateMatch",
         "template": "1-1.png"
