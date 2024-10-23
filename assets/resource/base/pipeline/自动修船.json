@@ -28,8 +28,10 @@
         ]
     },
     "大破检测": {
-        "recognition": "TemplateMatch",
-        "template": "大破检测.png",
+        "recognition": "ColorMatch",
+        "roi": [53,416,151,108],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
         "action": "Click",
         "next": [
             "大破检测",
