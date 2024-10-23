@@ -11,6 +11,7 @@
         "recognition": "TemplateMatch",
         "template": "选择舰船.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "快速修理",
             "大破检测",
@@ -21,6 +22,7 @@
         "recognition": "TemplateMatch",
         "template": "快速修理.png",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "target": [591, 114, 42, 15],
         "next": [
             "大破检测",
@@ -32,6 +34,7 @@
         "roi": [53,518,1168,14],
         "lower": [225,86,32],
         "upper": [229,106,57],
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "大破检测",

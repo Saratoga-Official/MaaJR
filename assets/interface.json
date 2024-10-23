@@ -287,6 +287,7 @@
             "option": [
                 "8-5编队",
                 "8-5无限次数",
+                "8-5选择阵型",
                 "5重巡1驱逐",
                 "4重巡2轻巡",
                 "4重巡1轻巡1驱逐",
@@ -1669,6 +1670,50 @@
                     "name": "不自动收发",
                     "pipeline_override": {
 
+                    }
+                }
+            ]
+        },
+        "8-5选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "8-5练级阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "8-5练级阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "8-5练级阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "8-5练级阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "8-5练级阵型": {
+                            "expected": "单横阵"
+                        }
                     }
                 }
             ]
