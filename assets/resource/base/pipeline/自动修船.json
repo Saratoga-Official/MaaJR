@@ -29,7 +29,7 @@
     },
     "大破检测": {
         "recognition": "ColorMatch",
-        "roi": [53,416,151,108],
+        "roi": [53,518,1168,14],
         "lower": [225,86,32],
         "upper": [229,106,57],
         "action": "Click",
