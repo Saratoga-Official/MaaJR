@@ -93,7 +93,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 * 完成必须运行库的下载：
   [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-  [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.402-windows-x64-installer)
+  [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 
 ---
 
