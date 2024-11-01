@@ -36,6 +36,7 @@
             "退出远征2"
         ],
         "post_delay": 60000,
+        "post_wait_freezes": 0,
         "timeout": 3600000,
         "on_error": [
             "退出远征3"

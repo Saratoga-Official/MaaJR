@@ -148,6 +148,7 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "演习阵型"
         ]
@@ -160,6 +161,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "演习追击",
             "演习点击继续"
@@ -377,6 +379,7 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "演习阵型1"
         ]
@@ -389,6 +392,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "演习追击1",
             "演习点击继续1"
@@ -489,6 +493,7 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "演习阵型2"
         ]
@@ -501,6 +506,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "演习追击2",
             "演习点击继续2"
@@ -601,6 +607,7 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "演习阵型3"
         ]
@@ -613,6 +620,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "演习追击3",
             "演习点击继续3"
@@ -725,6 +733,7 @@
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "演习阵型4"
         ]
@@ -737,6 +746,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "演习追击4",
             "演习点击继续4"

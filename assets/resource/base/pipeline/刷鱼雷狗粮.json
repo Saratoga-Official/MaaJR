@@ -232,6 +232,7 @@
         "template": "开始出征.png",
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "on_error": [
             "退出狗粮"
         ],
@@ -244,6 +245,7 @@
     },
     "狗粮确认": {
         "action": "DoNothing",
+        "post_wait_freezes": 0,
         "next": [
             "狗粮开始出征"
         ]
@@ -256,6 +258,7 @@
         "template": "开始出征.png",
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "on_error": [
             "退出狗粮"
         ],
@@ -270,6 +273,7 @@
         "recognition": "TemplateMatch",
         "template": "关闭船舱满提醒.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "退出狗粮"
         ]
@@ -279,6 +283,7 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 0,
         "next": [
             "狗粮退出"
         ]
@@ -288,6 +293,7 @@
         "template": "开始战斗.png",
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "狗粮追击",
             "狗粮点击继续"
@@ -324,6 +330,7 @@
     "获得狗粮": {
         "action": "Click",
         "target": "狗粮点击继续",
+        "post_wait_freezes": 0,
         "next": [
             "狗粮回港",
             "狗粮大破回港",

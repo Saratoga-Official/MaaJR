@@ -76,6 +76,7 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "action": "DoNothing",
+        "post_wait_freezes": 0,
         "next": [
             "战役开始出征"
         ]
@@ -90,6 +91,7 @@
             "战役取消"
         ],
         "timeout": 20000,
+        "post_wait_freezes": 0,
         "on_error": [
             "自动修船"
         ]
@@ -112,6 +114,7 @@
             "战役阵型"
         ],
         "timeout": 20000,
+        "post_wait_freezes": 0,
         "on_error": [
             "结束战役"
         ]
@@ -133,6 +136,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "战役追击",
             "战役点击继续"
