@@ -1,34 +1,46 @@
 {
     "开始唤醒": {
+        "action": "StartApp",
+        "package": "com.huanmeng.zhanjian2/com.unity3d.player.UnityPlayerActivity",
+        "post_delay": 5000,
         "next": [
             "打开游戏"
         ]
     },
     "打开游戏": {
-        "action": "StartApp",
-        "package": "com.huanmeng.zhanjian2/com.unity3d.player.UnityPlayerActivity",
-        "post_delay": 10000,
-        "post_wait_freezes": 1000,
-        "timeout": 120000,
+        "timeout": 300000,
         "next": [
+            "主界面"
+        ],
+        "interrupt": [
+            "退出",
+            "游戏更新",
             "进入游戏",
+            "退出公告",
             "登录奖励",
             "小长春的赠礼",
-            "结束开始唤醒"
+            "重新连接"
         ]
+    },
+    "游戏更新": {
+        "recognition": "OCR",
+        "expected": "有新的内容需要更新",
+        "roi": [366,223,572,255],
+        "action": "DoNothing",
+        "next": [
+            "更新确认"
+        ]
+    },
+    "更新确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [366,223,572,255],
+        "action": "Click"
     },
     "进入游戏": {
         "recognition": "TemplateMatch",
         "template": "进入游戏.png",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "主界面",
-            "退出公告",
-            "登录奖励",
-            "小长春的赠礼",
-            "结束开始唤醒"
-        ]
+        "action": "Click"
     },
     "主界面": {
         "recognition": "TemplateMatch",
@@ -45,31 +57,26 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 1000,
         "next": [
-            "退出公告",
+            "结束开始唤醒"
+        ],
+        "interrupt": [
             "登录奖励",
             "小长春的赠礼",
-            "结束开始唤醒"
+            "退出公告",
+            "重新连接"
         ]
     },
     "退出公告": {
         "recognition": "TemplateMatch",
         "template": "退出公告.png",
         "action": "Click",
-        "green_mask": true,
-        "post_wait_freezes": 1000,
-        "next": [
-            "登录奖励",
-            "小长春的赠礼",
-            "结束开始唤醒"
-        ]
+        "green_mask": true
     },
     "登录奖励": {
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "确认领取登录奖励"
         ]
@@ -77,17 +84,11 @@
     "确认领取登录奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
-        "post_wait_freezes": 1000,
-        "action": "Click",
-        "next": [
-            "小长春的赠礼",
-            "结束开始唤醒"
-        ]
+        "action": "Click"
     },
     "小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "立即领取.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "确认领取小长春的赠礼"
@@ -96,7 +97,6 @@
     "确认领取小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "确认谢礼.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "关闭小长春的赠礼"
@@ -105,17 +105,12 @@
     "关闭小长春的赠礼": {
         "recognition": "TemplateMatch",
         "template": "关闭谢礼.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
-        "green_mask": true,
-        "next": [
-            "结束开始唤醒"
-        ]
+        "green_mask": true
     },
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
-        "post_wait_freezes": 1000,
         "action": "DoNothing",
         "green_mask": true
     }

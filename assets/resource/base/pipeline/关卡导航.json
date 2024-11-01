@@ -1,18 +1,13 @@
 {
     "开始出征": {
         "next": [
-            "识别关卡",
+            "进入关卡",
             "点击出征",
-            "退出出征"
-        ]
-    },
-    "识别关卡": {
-        "recognition": "TemplateMatch",
-        "template": "1-1.png",
-        "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "next": [
-            "退出出征"
+            "导航前"
+        ],
+        "interrupt": [
+            "重新连接",
+            "退出"
         ]
     },
     "点击出征": {
@@ -20,18 +15,9 @@
         "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 1000,
         "next": [
             "出征",
-            "第一章",
-            "第二章",
-            "第三章",
-            "第四章",
-            "第五章",
-            "第六章",
-            "第七章",
-            "第八章",
-            "第九章"
+            "开始导航"
         ]
     },
     "出征": {
@@ -40,299 +26,279 @@
         "action": "Click",
         "threshold": 0.9,
         "next": [
-            "第一章",
-            "第二章",
-            "第三章",
-            "第四章",
-            "第五章",
-            "第六章",
-            "第七章",
-            "第八章",
-            "第九章"
+            "开始导航"
         ]
+    },
+    "导航前": {
+        "recognition": "OCR",
+        "expected": "第[一|二|三|四|五|六|七|八|九]章",
+        "roi": [44,369,105,52],
+        "action": "DoNothing",
+        "next": [
+            "开始导航"
+        ]
+    },
+    "开始导航": {
+        "action": "DoNothing"
+    },
+    "找关卡": {
+        "action": "DoNothing"
     },
     "第一章": {
-        "recognition": "TemplateMatch",
-        "template": "第一章.png",
+        "recognition": "OCR",
+        "expected": "第一章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第二章": {
-        "recognition": "TemplateMatch",
-        "template": "第二章.png",
+        "recognition": "OCR",
+        "expected": "第二章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第三章": {
-        "recognition": "TemplateMatch",
-        "template": "第三章.png",
+        "recognition": "OCR",
+        "expected": "第三章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第四章": {
-        "recognition": "TemplateMatch",
-        "template": "第四章.png",
+        "recognition": "OCR",
+        "expected": "第四章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第五章": {
-        "recognition": "TemplateMatch",
-        "template": "第五章.png",
+        "recognition": "OCR",
+        "expected": "第五章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第六章": {
-        "recognition": "TemplateMatch",
-        "template": "第六章.png",
+        "recognition": "OCR",
+        "expected": "第六章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第七章": {
-        "recognition": "TemplateMatch",
-        "template": "第七章.png",
+        "recognition": "OCR",
+        "expected": "第七章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第八章": {
-        "recognition": "TemplateMatch",
-        "template": "第八章.png",
+        "recognition": "OCR",
+        "expected": "第八章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "第九章": {
-        "recognition": "TemplateMatch",
-        "template": "第九章.png",
+        "recognition": "OCR",
+        "expected": "第九章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9
+        "next": [
+            "找关卡"
+        ]
     },
     "1到2": {
-        "recognition": "TemplateMatch",
-        "template": "1到2.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "2到3"
-        ]
+        "recognition": "OCR",
+        "expected": "第二章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "2到3": {
-        "recognition": "TemplateMatch",
-        "template": "2到3.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "3到4"
-        ]
+        "recognition": "OCR",
+        "expected": "第三章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "3到4": {
-        "recognition": "TemplateMatch",
-        "template": "3到4.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "4到5"
-        ]
+        "recognition": "OCR",
+        "expected": "第四章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "4到5": {
-        "recognition": "TemplateMatch",
-        "template": "4到5.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "5到6"
-        ]
+        "recognition": "OCR",
+        "expected": "第五章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "5到6": {
-        "recognition": "TemplateMatch",
-        "template": "5到6.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "6到7"
-        ]
+        "recognition": "OCR",
+        "expected": "第六章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "6到7": {
-        "recognition": "TemplateMatch",
-        "template": "6到7.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "7到8"
-        ]
+        "recognition": "OCR",
+        "expected": "第七章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "7到8": {
-        "recognition": "TemplateMatch",
-        "template": "7到8.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "8到9"
-        ]
+        "recognition": "OCR",
+        "expected": "第八章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "8到9": {
-        "recognition": "TemplateMatch",
-        "template": "8到9.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "第九章"
-        ]
+        "recognition": "OCR",
+        "expected": "第九章",
+        "roi": [68,457,102,53],
+        "action": "Click"
     },
     "9到8": {
-        "recognition": "TemplateMatch",
-        "template": "9到8.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "8到7"
-        ]
+        "recognition": "OCR",
+        "expected": "第八章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "8到7": {
-        "recognition": "TemplateMatch",
-        "template": "8到7.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "7到6"
-        ]
+        "recognition": "OCR",
+        "expected": "第七章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "7到6": {
-        "recognition": "TemplateMatch",
-        "template": "7到6.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "6到5"
-        ]
+        "recognition": "OCR",
+        "expected": "第六章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "6到5": {
-        "recognition": "TemplateMatch",
-        "template": "6到5.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "5到4"
-        ]
+        "recognition": "OCR",
+        "expected": "第五章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "5到4": {
-        "recognition": "TemplateMatch",
-        "template": "5到4.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "4到3"
-        ]
+        "recognition": "OCR",
+        "expected": "第四章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "4到3": {
-        "recognition": "TemplateMatch",
-        "template": "4到3.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "3到2"
-        ]
+        "recognition": "OCR",
+        "expected": "第三章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "3到2": {
-        "recognition": "TemplateMatch",
-        "template": "3到2.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "2到1"
-        ]
+        "recognition": "OCR",
+        "expected": "第二章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
     "2到1": {
-        "recognition": "TemplateMatch",
-        "template": "2到1.png",
-        "action": "Click",
-        "order": "Score",
-        "post_wait_freezes": 1000,
-        "threshold": 0.9,
-        "next": [
-            "第一章"
-        ]
-    },
-    "6-1": {
-        "recognition": "TemplateMatch",
-        "template": "6-1.png"
-    },
-    "8-1": {
-        "recognition": "TemplateMatch",
-        "template": "8-1.png"
-    },
-    "9-1": {
-        "recognition": "TemplateMatch",
-        "template": "9-1.png"
-    },
-    "8-5": {
         "recognition": "OCR",
-        "expected": "地峡海湾",
-        "roi": [950,115,168,51]
+        "expected": "第一章",
+        "roi": [77,293,88,40],
+        "action": "Click"
     },
-    "1-1": {
-        "recognition": "TemplateMatch",
-        "template": "1-1.png"
-    },
-    "往左滑": {
-        "action": "Swipe",
-        "begin": [500,250,50,50],
-        "end": [1000,250,50,50]
-    },
-    "往右滑": {
+    "X-1": {
+        "recognition": "OCR",
+        "expected": "\\d+-1",
+        "roi": [933,122,207,40],
         "action": "Swipe",
         "begin": [1000,250,50,50],
         "end": [500,250,50,50]
     },
-    "退出出征": {
-        "recognition": "TemplateMatch",
-        "template": "退出.png",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "green_mask": true,
-        "next": [
-            "点击出征",
-            "退出出征"
-        ]
+    "X-2右": {
+        "recognition": "OCR",
+        "expected": "\\d+-2",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50]
     },
-    "终止寻路": {
-        "action": "DoNothing"
+    "X-2左": {
+        "recognition": "OCR",
+        "expected": "\\d+-2",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50]
+    },
+    "X-3右": {
+        "recognition": "OCR",
+        "expected": "\\d+-3",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50]
+    },
+    "X-3左": {
+        "recognition": "OCR",
+        "expected": "\\d+-3",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50]
+    },
+    "X-4右": {
+        "recognition": "OCR",
+        "expected": "\\d+-4",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50]
+    },
+    "X-4左": {
+        "recognition": "OCR",
+        "expected": "\\d+-4",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50]
+    },
+    "X-5右": {
+        "recognition": "OCR",
+        "expected": "\\d+-5",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [1000,250,50,50],
+        "end": [500,250,50,50]
+    },
+    "X-5左": {
+        "recognition": "OCR",
+        "expected": "\\d+-5",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50]
+    },
+    "X-6": {
+        "recognition": "OCR",
+        "expected": "\\d+-6",
+        "roi": [933,122,207,40],
+        "action": "Swipe",
+        "begin": [500,250,50,50],
+        "end": [1000,250,50,50]
     }
 }

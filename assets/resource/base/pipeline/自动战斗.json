@@ -1,0 +1,329 @@
+{
+    "回到关卡了": {
+        "recognition": "OCR",
+        "expected": [
+            "\\d+-\\d+"
+        ],
+        "roi": [933,122,207,40],
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
+        "next": [
+            "无限战斗",
+            "战斗退出"
+        ]
+    },
+    "无限战斗": {
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
+        "next": [
+            "进入关卡"
+        ]
+    },
+    "进入关卡": {
+        "recognition": "OCR",
+        "expected": "\\d+-1",
+        "roi": [933,122,207,40],
+        "action": "Click",
+        "next": [
+            "战斗编队",
+            "战斗自动补给",
+            "战斗修理检测大破",
+            "战斗修理检测中破",
+            "战斗开始出征"
+        ],
+        "focus": true,
+        "focus_tip": "进入关卡"
+    },
+    "战斗编队": {
+        "recognition": "TemplateMatch",
+        "template": "队.png",
+        "order": "Score",
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "战斗自动补给",
+            "战斗修理检测大破",
+            "战斗修理检测中破",
+            "战斗开始出征"
+        ],
+        "focus": true,
+        "focus_tip": "切换编队"
+    },
+    "战斗自动补给": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "inverse": true,
+        "action": "Click",
+        "target": [56,661,21,22],
+        "next": [
+            "战斗修理检测大破",
+            "战斗修理检测中破",
+            "战斗开始出征"
+        ],
+        "focus": true,
+        "focus_tip": "切换自动补给"
+    },
+    "战斗修理检测大破": {
+        "recognition": "ColorMatch",
+        "roi": [60,423,888,11],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
+        "action": "Click",
+        "next": [
+            "自动修船"
+        ],
+        "focus": true,
+        "focus_tip": "检测舰船达到修理阈值，尝试快速修理",
+        "focus_tip_color": "Red"
+    },
+    "战斗修理检测中破": {
+        "recognition": "ColorMatch",
+        "roi": [60,423,888,11],
+        "lower": [233,172,25],
+        "upper": [237,182,52],
+        "action": "Click",
+        "next": [
+            "自动修船"
+        ],
+        "focus": true,
+        "focus_tip": "检测舰船达到修理阈值，尝试快速修理",
+        "focus_tip_color": "Red"
+    },
+    "战斗开始出征": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗索敌成功",
+            "战斗阵型",
+            "战斗船舱满"
+        ],
+        "interrupt": [
+            "点击加速",
+            "重新连接"
+        ],
+        "timeout": 60000,
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "战斗船舱满": {
+        "recognition": "TemplateMatch",
+        "template": "关闭船舱满提醒.png",
+        "action": "Click",
+        "next": [
+            "战斗船舱满退出"
+        ],
+        "focus": true,
+        "focus_tip": "船舱已满，停止战斗",
+        "focus_tip_color": "Red"
+    },
+    "战斗船舱满退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "战斗退出"
+        ]
+    },
+    "战斗退出": {
+        "action": "StopTask"
+    },
+    "战斗索敌成功": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [1039,621,229,89],
+        "action": "DoNothing",
+        "next": [
+            "战斗识别SL目标1",
+            "战斗识别SL目标2",
+            "战斗开始"
+        ]
+    },
+    "战斗识别SL目标1": {
+        "recognition": "OCR",
+        "expected": "雷巡",
+        "roi": [42,182,452,299],
+        "action": "DoNothing",
+        "next": [
+            "战斗SL"
+        ],
+        "focus": true,
+        "focus_tip": "识别到SL目标"
+    },
+    "战斗识别SL目标2": {
+        "recognition": "OCR",
+        "expected": "轻母",
+        "roi": [42,182,452,299],
+        "action": "DoNothing",
+        "next": [
+            "战斗SL"
+        ],
+        "focus": true,
+        "focus_tip": "识别到SL目标"
+    },
+    "战斗SL": {
+        "recognition": "OCR",
+        "expected": "撤退",
+        "roi": [844,627,192,87],
+        "action": "Click",
+        "next": [
+            "进入关卡"
+        ]
+    },
+    "战斗开始": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [1039,621,229,89],
+        "action": "Click",
+        "next": [
+            "战斗阵型"
+        ],
+        "focus": true,
+        "focus_tip": "战斗开始（1）"
+    },
+    "战斗阵型": {
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
+        "roi": [702,99,560,612],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗点击继续"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "选择预设阵型（1）"
+    },
+    "战斗点击继续": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "战斗再点继续"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束（1）"
+    },
+    "战斗再点继续": {
+        "action": "Click",
+        "target": "战斗点击继续",
+        "next": [
+            "战斗舰队补给",
+            "战斗大破回港",
+            "回到关卡了",
+            "战斗再点继续"
+        ]
+    },
+    "战斗舰队补给": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "action": "DoNothing",
+        "next": [
+            "战斗回港"
+        ]
+    },
+    "战斗回港": {
+        "recognition": "TemplateMatch",
+        "template": "回港.png",
+        "action": "Click",
+        "next": [
+            "回到关卡了"
+        ],
+        "focus": true,
+        "focus_tip": "回港"
+    },
+    "战斗大破回港": {
+        "recognition": "TemplateMatch",
+        "template": "大破回港.png",
+        "action": "Click",
+        "next": [
+            "回到关卡了"
+        ],
+        "focus": true,
+        "focus_tip": "大破回港",
+        "focus_tip_color": "Red"
+    },
+    "战斗大破检测": {
+        "recognition": "TemplateMatch",
+        "template": "大破提醒.png",
+        "action": "DoNothing",
+        "next": [
+            "战斗回港"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破提醒",
+        "focus_tip_color": "Red"
+    },
+    "战斗前进": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "action": "Click",
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗开始2",
+            "战斗阵型2"
+        ],
+        "interrupt": [
+            "点击加速"
+        ],
+        "focus": true,
+        "focus_tip": "前进"
+    },
+    "战斗开始2": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [1039,621,229,89],
+        "action": "Click",
+        "next": [
+            "战斗阵型2"
+        ],
+        "focus": true,
+        "focus_tip": "战斗开始（2）"
+    },
+    "战斗阵型2": {
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
+        "roi": [702,99,560,612],
+        "action": "Click",
+        "timeout": 90000,
+        "next": [
+            "战斗点击继续2"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "选择预设阵型（2）"
+    },
+    "战斗点击继续2": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "战斗再点继续2"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束（2）"
+    },
+    "战斗再点继续2": {
+        "action": "Click",
+        "target": "战斗点击继续2",
+        "next": [
+            "战斗回港",
+            "战斗大破回港",
+            "回到关卡了",
+            "战斗再点继续2"
+        ]
+    }
+}

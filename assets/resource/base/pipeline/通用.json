@@ -1,0 +1,44 @@
+{
+    "点击加速": {
+        "recognition": "OCR",
+        "expected": [
+            "\\d+-\\d+"
+        ],
+        "roi": [516,7,332,64],
+        "action": "Click",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 0
+    },
+    "任务出错": {
+        "action": "StopTask",
+        "focus": true,
+        "focus_tip": "任务出错",
+        "focus_tip_color": "Red",
+        "post_wait_freezes": 0
+    },
+    "重新连接": {
+        "recognition": "OCR",
+        "expected": "重试",
+        "roi": [366,223,572,255],
+        "action": "Click",
+        "post_wait_freezes": 0,
+        "focus": true,
+        "focus_tip": "网络断开，重新连接",
+        "focus_tip_color": "Red"
+    },
+    "战斗追击": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_wait_freezes": 0,
+        "focus": true,
+        "focus_tip": "夜战追击"
+    },
+    "退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true
+    }
+}
