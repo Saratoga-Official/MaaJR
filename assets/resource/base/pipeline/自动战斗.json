@@ -6,7 +6,6 @@
         ],
         "roi": [933,122,207,40],
         "action": "DoNothing",
-        "post_wait_freezes": 0,
         "next": [
             "无限战斗",
             "战斗退出"
