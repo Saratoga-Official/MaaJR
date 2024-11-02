@@ -68,7 +68,7 @@
         "roi": [60,423,888,11],
         "lower": [225,86,32],
         "upper": [229,106,57],
-        "action": "Click",
+        "action": "DoNothing",
         "next": [
             "自动修船"
         ],
@@ -81,7 +81,7 @@
         "roi": [60,423,888,11],
         "lower": [233,172,25],
         "upper": [237,182,52],
-        "action": "Click",
+        "action": "DoNothing",
         "next": [
             "自动修船"
         ],
