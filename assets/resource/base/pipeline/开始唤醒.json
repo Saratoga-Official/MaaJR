@@ -10,15 +10,15 @@
     "打开游戏": {
         "timeout": 300000,
         "next": [
-            "主界面"
-        ],
-        "interrupt": [
-            "退出",
             "游戏更新",
             "进入游戏",
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
+            "结束开始唤醒"
+        ],
+        "interrupt": [
+            "退出",
             "重新连接"
         ]
     },
@@ -35,18 +35,29 @@
         "recognition": "OCR",
         "expected": "确认",
         "roi": [366,223,572,255],
-        "action": "Click"
+        "action": "Click",
+        "timeout": 300000,
+        "next": [
+            "进入游戏"
+        ]
     },
     "进入游戏": {
         "recognition": "TemplateMatch",
         "template": "进入游戏.png",
-        "action": "Click"
+        "action": "Click",
+        "timeout": 300000,
+        "next": [
+            "退出公告",
+            "登录奖励",
+            "小长春的赠礼",
+            "主界面",
+            "结束开始唤醒"
+        ]
     },
     "主界面": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "green_mask": true,
         "next": [
             "退出主界面"
@@ -58,20 +69,22 @@
         "action": "Click",
         "green_mask": true,
         "next": [
-            "结束开始唤醒"
-        ],
-        "interrupt": [
+            "退出公告",
             "登录奖励",
             "小长春的赠礼",
-            "退出公告",
-            "重新连接"
+            "结束开始唤醒"
         ]
     },
     "退出公告": {
         "recognition": "TemplateMatch",
         "template": "退出公告.png",
         "action": "Click",
-        "green_mask": true
+        "green_mask": true,
+        "next": [
+            "登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
     },
     "登录奖励": {
         "recognition": "TemplateMatch",
@@ -84,7 +97,11 @@
     "确认领取登录奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ]
     },
     "小长春的赠礼": {
         "recognition": "TemplateMatch",
@@ -106,7 +123,10 @@
         "recognition": "TemplateMatch",
         "template": "关闭谢礼.png",
         "action": "Click",
-        "green_mask": true
+        "green_mask": true,
+        "next": [
+            "结束开始唤醒"
+        ]
     },
     "结束开始唤醒": {
         "recognition": "TemplateMatch",

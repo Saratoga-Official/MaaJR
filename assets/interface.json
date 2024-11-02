@@ -1,6 +1,6 @@
 {
     "name": "MaaJR",
-    "version": "v2.1.0",
+    "version": "DEBUG_VERSION",
     "url": "https://github.com/Saratoga-Official/MaaJR",
     "custom_title": "MaaJR",
     "default_controller": "adb",
