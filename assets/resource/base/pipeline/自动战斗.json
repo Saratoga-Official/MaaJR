@@ -72,7 +72,7 @@
             "自动修船"
         ],
         "focus": true,
-        "focus_tip": "检测舰船达到修理阈值，尝试快速修理",
+        "focus_tip": "检测到大破舰船",
         "focus_tip_color": "Red"
     },
     "战斗修理检测中破": {
@@ -85,7 +85,7 @@
             "自动修船"
         ],
         "focus": true,
-        "focus_tip": "检测舰船达到修理阈值，尝试快速修理",
+        "focus_tip": "检测到中破舰船",
         "focus_tip_color": "Red"
     },
     "战斗开始出征": {
