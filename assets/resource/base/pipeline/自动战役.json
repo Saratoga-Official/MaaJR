@@ -11,7 +11,6 @@
         "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 1000,
         "next": [
             "点击战役",
             "普通难度",
@@ -23,7 +22,6 @@
         "template": "战役.png",
         "action": "Click",
         "threshold": 0.9,
-        "post_wait_freezes": 1000,
         "next": [
             "普通难度",
             "困难难度"
@@ -33,7 +31,6 @@
         "recognition": "TemplateMatch",
         "template": "困难难度.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "战役次数",
             "选择战役"
@@ -43,7 +40,6 @@
         "recognition": "TemplateMatch",
         "template": "普通难度.png",
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
         "next": [
             "战役次数",
             "选择战役"
@@ -57,7 +53,6 @@
         ],
         "roi": [29,541,1219,89],
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "战役确认",
             "战役自动补给"
@@ -66,7 +61,6 @@
     "战役自动补给": {
         "action": "Click",
         "target": [56,661,21,22],
-        "post_wait_freezes": 1000,
         "next": [
             "战役确认",
             "战役自动补给"
@@ -78,55 +72,69 @@
         "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
+            "战役修理检测大破",
+            "战役修理检测中破",
             "战役开始出征"
         ]
+    },
+    "战役修理检测大破": {
+        "recognition": "ColorMatch",
+        "roi": [60,423,888,11],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
+        "action": "DoNothing",
+        "next": [
+            "自动修船"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破舰船",
+        "focus_tip_color": "Red"
+    },
+    "战役修理检测中破": {
+        "recognition": "ColorMatch",
+        "roi": [60,423,888,11],
+        "lower": [233,172,25],
+        "upper": [237,182,52],
+        "action": "DoNothing",
+        "next": [
+            "自动修船"
+        ],
+        "focus": true,
+        "focus_tip": "检测到中破舰船",
+        "focus_tip_color": "Red"
     },
     "战役开始出征": {
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "战役开始战斗",
             "战役阵型",
-            "战役取消"
+            "战役点击继续"
         ],
-        "timeout": 20000,
-        "post_wait_freezes": 0,
-        "on_error": [
-            "自动修船"
-        ]
-    },
-    "战役取消": {
-        "recognition": "TemplateMatch",
-        "template": "出击取消.png",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "自动修船"
-        ]
-    },
-    "战役修理": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
-        "action": "Click",
-        "next": [
-            "战役开始战斗",
-            "战役阵型"
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
         ],
-        "timeout": 20000,
-        "post_wait_freezes": 0,
-        "on_error": [
-            "结束战役"
-        ]
+        "timeout": 60000,
+        "focus": true,
+        "focus_tip": "开始出征"
     },
     "战役开始战斗": {
         "recognition": "TemplateMatch",
         "template": "开始战斗.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 0,
         "next": [
-            "战役阵型"
-        ]
+            "战役阵型",
+            "战役点击继续"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "timeout": 90000
     },
     "战役阵型": {
         "recognition": "OCR",
@@ -138,25 +146,17 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
-            "战役追击",
             "战役点击继续"
-        ]
-    },
-    "战役追击": {
-        "recognition": "TemplateMatch",
-        "template": "追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 90000,
-        "next": [
-            "战役点击继续"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
         ]
     },
     "战役点击继续": {
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "战役再点继续"
         ]
@@ -164,7 +164,6 @@
     "战役再点继续": {
         "action": "Click",
         "target": "战役点击继续",
-        "post_wait_freezes": 1000,
         "next": [
             "战役次数",
             "选择战役",
@@ -174,12 +173,11 @@
     "战役次数": {
         "recognition": "OCR",
         "expected": [
-            "0/8",
-            "0/12"
+            "^0/8$",
+            "^0/12$"
         ],
         "roi": [29,541,1219,89],
         "action": "DoNothing",
-        "post_wait_freezes": 1000,
         "next": [
             "结束战役"
         ]
@@ -189,7 +187,6 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 1000,
         "next": [
             "开始自动战役"
         ]

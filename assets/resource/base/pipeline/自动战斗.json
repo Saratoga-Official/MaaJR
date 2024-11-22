@@ -1,10 +1,8 @@
 {
     "回到关卡了": {
         "recognition": "OCR",
-        "expected": [
-            "\\d+-\\d+"
-        ],
-        "roi": [933,122,207,40],
+        "expected": "第[一|二|三|四|五|六|七|八|九]章",
+        "roi": [44,369,105,52],
         "action": "DoNothing",
         "next": [
             "无限战斗",
@@ -96,10 +94,12 @@
         "next": [
             "战斗索敌成功",
             "战斗阵型",
-            "战斗船舱满"
+            "战斗船舱满",
+            "战斗点击继续"
         ],
         "interrupt": [
             "点击加速",
+            "战斗追击",
             "重新连接"
         ],
         "timeout": 60000,
@@ -114,7 +114,7 @@
             "战斗船舱满退出"
         ],
         "focus": true,
-        "focus_tip": "船舱已满，停止战斗",
+        "focus_tip": "船舱已满",
         "focus_tip_color": "Red"
     },
     "战斗船舱满退出": {
@@ -176,8 +176,15 @@
         "expected": "开始战斗",
         "roi": [1039,621,229,89],
         "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
-            "战斗阵型"
+            "战斗阵型",
+            "战斗点击继续"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
         ],
         "focus": true,
         "focus_tip": "战斗开始（1）"
@@ -265,13 +272,17 @@
         "recognition": "TemplateMatch",
         "template": "前进.png",
         "action": "Click",
+        "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
             "战斗开始2",
-            "战斗阵型2"
+            "战斗阵型2",
+            "战斗点击继续2"
         ],
         "interrupt": [
-            "点击加速"
+            "点击加速",
+            "战斗追击",
+            "重新连接"
         ],
         "focus": true,
         "focus_tip": "前进"
@@ -281,8 +292,15 @@
         "expected": "开始战斗",
         "roi": [1039,621,229,89],
         "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
-            "战斗阵型2"
+            "战斗阵型2",
+            "战斗点击继续2"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
         ],
         "focus": true,
         "focus_tip": "战斗开始（2）"
@@ -295,6 +313,7 @@
         "roi": [702,99,560,612],
         "action": "Click",
         "timeout": 90000,
+        "post_wait_freezes": 0,
         "next": [
             "战斗点击继续2"
         ],
@@ -323,6 +342,110 @@
             "战斗大破回港",
             "回到关卡了",
             "战斗再点继续2"
+        ]
+    },
+    "战斗船舱满尝试拆船": {
+        "recognition": "TemplateMatch",
+        "template": "出征2.png",
+        "action": "Click",
+        "green_mask": true,
+        "target": [45,630,38,28],
+        "next": [
+            "拆船点击建造"
+        ]
+    },
+    "拆船点击建造": {
+        "recognition": "OCR",
+        "expected": [
+            "建造"
+        ],
+        "roi": [54,224,70,36],
+        "action": "Click",
+        "next": [
+            "拆船点击建造2"
+        ]
+    },
+    "拆船点击建造2": {
+        "recognition": "OCR",
+        "expected": [
+            "建造"
+        ],
+        "roi": [477,245,87,41],
+        "action": "Click",
+        "next": [
+            "拆船点击解装"
+        ]
+    },
+    "拆船点击解装": {
+        "recognition": "OCR",
+        "expected": [
+            "解装"
+        ],
+        "roi": [360,11,77,42],
+        "action": "Click",
+        "next": [
+            "拆船点击添加"
+        ]
+    },
+    "拆船点击添加": {
+        "recognition": "TemplateMatch",
+        "template": "添加舰船.png",
+        "roi": [18,111,156,298],
+        "action": "Click",
+        "next": [
+            "拆船点击添加"
+        ]
+    },
+    "拆船点击快速选择": {
+        "recognition": "OCR",
+        "expected": [
+            "快速选择"
+        ],
+        "roi": [1106,195,121,49],
+        "action": "Click",
+        "next": [
+            "拆船点击确定"
+        ]
+    },
+    "拆船点击确定": {
+        "recognition": "OCR",
+        "expected": [
+            "确定"
+        ],
+        "roi": [1124,628,85,44],
+        "action": "Click",
+        "next": [
+            "拆船点击解装2"
+        ]
+    },
+    "拆船点击解装2": {
+        "recognition": "OCR",
+        "expected": [
+            "解装"
+        ],
+        "roi": [1087,619,107,51],
+        "action": "Click",
+        "next": [
+            "拆船结束退出"
+        ]
+    },
+    "拆船结束退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "拆船结束退出2"
+        ]
+    },
+    "拆船结束退出2": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "green_mask": true,
+        "roi": [13,627,74,73],
+        "action": "Click",
+        "next": [
+            "开始出征"
         ]
     }
 }

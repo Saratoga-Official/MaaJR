@@ -20,7 +20,7 @@
     "重新连接": {
         "recognition": "OCR",
         "expected": "重试",
-        "roi": [366,223,572,255],
+        "roi": [570,385,142,48],
         "action": "Click",
         "post_wait_freezes": 0,
         "focus": true,
