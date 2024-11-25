@@ -22,9 +22,16 @@
         "expected": "重试",
         "roi": [570,385,142,48],
         "action": "Click",
-        "post_wait_freezes": 0,
+        "post_wait_freezes": 5000,
+        "timeout": 35000,
+        "next": [
+            "重新连接"
+        ],
+        "on_error": [
+            "无动作结束"
+        ],
         "focus": true,
-        "focus_tip": "网络断开，重新连接",
+        "focus_tip": "网络断开，尝试重新连接",
         "focus_tip_color": "Red"
     },
     "战斗追击": {
@@ -42,9 +49,15 @@
         "green_mask": true
     },
     "无动作结束": {
-        "action": "DoNothing"
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
+        "interrupt": [ ],
+        "on_error": [ ]
     },
     "任务结束": {
-        "action": "StopTask"
+        "action": "StopTask",
+        "post_wait_freezes": 0,
+        "interrupt": [ ],
+        "on_error": [ ]
     }
 }
