@@ -67,7 +67,7 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
-            "doc": "[color:red]需提前编好队，满足带路条件，再开始[/color]\n[color:red]自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航[/color]\n[color:red]门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL[/color]\n[color:red]战斗点位，设置几点就打到几点[/color]",
+            "doc": "[color:red]①需提前编好队，满足带路条件，再开始[/color]\n[color:red]②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航[/color]\n[color:red]③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL[/color]\n[color:red]④战斗点位，设置几点就打到几点[/color]\n[color:red]⑤自动拆船，确保船舱想保留的船均锁好才可使用[/color]",
             "repeat_count": 1,
             "option": [
                 "自动导航章节",
@@ -88,12 +88,13 @@
             "name": "1-1刷鱼雷狗粮",
             "entry": "开始出征",
             "check": false,
-            "repeatable": false,
-            "doc": "[color:red]会自动编队编入最近获得的小船，不能和其他编队混用[/color]",
+            "repeatable": true,
+            "doc": "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]\n[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]",
             "option": [
                 "刷狗粮编队",
                 "刷狗粮无限次数",
-                "刷狗粮途中远征"
+                "刷狗粮途中远征",
+                "刷满船舱后自动拆船"
             ],
             "pipeline_override": {
                 "开始导航": {
@@ -844,9 +845,25 @@
                     }
                 },
                 {
-                    "name": "开启",
+                    "name": "直到捞船达到上限停止",
                     "pipeline_override": {
-
+                        "无限战斗": {
+                            "recognition": "OCR",
+                            "expected": "^500/500$",
+                            "roi": [1153,19,89,30],
+                            "inverse": true
+                        }
+                    }
+                },
+                {
+                    "name": "直到战利品刷满后停止",
+                    "pipeline_override": {
+                        "无限战斗": {
+                            "recognition": "OCR",
+                            "expected": "^50/50$",
+                            "roi": [1021,19,80,29],
+                            "inverse": true
+                        }
                     }
                 }
             ]
@@ -1051,7 +1068,7 @@
                             "next": [
                                 "点击远征",
                                 "无限战斗",
-                                "战斗退出"
+                                "无动作结束"
                             ]
                         },
                         "退出远征": {
@@ -1059,7 +1076,7 @@
                             "green_mask": false,
                             "next": [
                                 "无限战斗",
-                                "战斗退出"
+                                "无动作结束"
                             ]
                         }
                     }
@@ -1166,7 +1183,15 @@
         "刷狗粮无限次数": {
             "cases": [
                 {
-                    "name": "默认开启",
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "开启",
                     "pipeline_override": {
 
                     }
@@ -1178,26 +1203,19 @@
                 {
                     "name": "自动收发",
                     "pipeline_override": {
-                        "狗粮回港": {
+                        "狗粮回到关卡": {
                             "next": [
                                 "点击远征",
+                                "狗粮检测刷满",
                                 "狗粮继续",
-                                "狗粮退出"
-                            ]
-                        },
-                        "狗粮大破回港": {
-                            "next": [
-                                "点击远征",
-                                "狗粮继续",
-                                "狗粮退出"
+                                "无动作结束"
                             ]
                         },
                         "退出远征": {
                             "template": "出征1.png",
                             "green_mask": false,
                             "next": [
-                                "狗粮继续",
-                                "狗粮退出"
+                                "狗粮回到关卡"
                             ]
                         }
                     }
@@ -1206,6 +1224,30 @@
                     "name": "不自动收发",
                     "pipeline_override": {
 
+                    }
+                }
+            ]
+        },
+        "刷满船舱后自动拆船": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+
+                    }
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "退出狗粮": {
+                            "next": [
+                                "战斗船舱满尝试拆船"
+                            ],
+                            "interrupt": [
+                                "重新连接",
+                                "退出"
+                            ]
+                        }
                     }
                 }
             ]

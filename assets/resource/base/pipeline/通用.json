@@ -40,5 +40,11 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true
+    },
+    "无动作结束": {
+        "action": "DoNothing"
+    },
+    "任务结束": {
+        "action": "StopTask"
     }
 }

@@ -1,74 +1,71 @@
 {
-    "刷鱼雷狗粮": {
-        "action": "DoNothing",
-        "next": [
-            "狗粮1-1"
-        ]
-    },
     "狗粮1-1": {
         "recognition": "TemplateMatch",
         "template": "1-1.png",
         "action": "Click",
         "target": [1000,250,50,50],
-        "post_wait_freezes": 1000,
         "next": [
             "狗粮编队",
             "狗粮自动补给",
-            "换狗粮"
-        ]
-    },
-    "狗粮自动补给": {
-        "recognition": "TemplateMatch",
-        "template": "对号.png",
-        "post_wait_freezes": 1000,
-        "action": "Click",
-        "target": [56,661,21,22],
-        "next": [
-            "换狗粮"
+            "换狗粮检测"
         ]
     },
     "狗粮编队": {
         "recognition": "TemplateMatch",
         "template": "4队.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
             "狗粮自动补给",
+            "换狗粮检测"
+        ]
+    },
+    "狗粮自动补给": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "action": "Click",
+        "target": [56,661,21,22],
+        "next": [
+            "换狗粮检测"
+        ]
+    },
+    "换狗粮检测": {
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
+        "next": [
+            "狗粮编队检测",
             "换狗粮"
         ]
     },
     "换狗粮": {
         "action": "Click",
         "target": [89,203,76,258],
-        "post_wait_freezes": 1000,
         "next": [
             "点离队",
+            "点星星",
             "点排序"
-        ]
-    },
-    "换狗粮2": {
-        "action": "Click",
-        "target": [89,203,76,258],
-        "post_wait_freezes": 1000,
-        "next": [
-            "点排序2"
         ]
     },
     "点离队": {
         "recognition": "TemplateMatch",
         "template": "离队.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "换狗粮"
         ]
     },
+    "点星星": {
+        "recognition": "TemplateMatch",
+        "template": "星星.png",
+        "action": "Click",
+        "next": [
+            "点排序"
+        ]
+    },
     "点排序": {
         "recognition": "TemplateMatch",
         "template": "排列顺序.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -80,7 +77,6 @@
     "点获得时间": {
         "recognition": "TemplateMatch",
         "template": "获得时间.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -91,7 +87,6 @@
     "点排序确定": {
         "recognition": "TemplateMatch",
         "template": "排序确定.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "点类型"
@@ -100,7 +95,6 @@
     "点类型": {
         "recognition": "TemplateMatch",
         "template": "类型.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -112,7 +106,6 @@
     "点护卫": {
         "recognition": "TemplateMatch",
         "template": "护卫.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -123,7 +116,6 @@
     "点类型确定": {
         "recognition": "TemplateMatch",
         "template": "排序确定.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "点狗粮"
@@ -132,31 +124,62 @@
     "点狗粮": {
         "action": "Click",
         "target": [83,138,73,202],
-        "post_wait_freezes": 1000,
         "next": [
             "换人检测",
             "换人大破检测",
-            "狗粮确认"
+            "狗粮开始出征"
+        ]
+    },
+    "狗粮编队检测": {
+        "recognition": "TemplateMatch",
+        "template": "狗粮编队检测.png",
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
+        "order": "Score",
+        "threshold": 0.95,
+        "next": [
+            "狗粮编队检测2",
+            "换狗粮"
+        ]
+    },
+    "狗粮编队检测2": {
+        "recognition": "TemplateMatch",
+        "template": "添加舰船.png",
+        "inverse": true,
+        "action": "DoNothing",
+        "roi": [26,136,219,415],
+        "post_wait_freezes": 0,
+        "next": [
+            "换人检测",
+            "换人大破检测",
+            "狗粮开始出征"
         ]
     },
     "换人检测": {
-        "recognition": "TemplateMatch",
-        "template": "换人检测.png",
-        "roi": [53,416,151,108],
-        "post_wait_freezes": 1000,
-        "order": "Score",
-        "threshold": 0.95,
+        "recognition": "ColorMatch",
+        "roi": [59,423,141,92],
+        "lower": [233,172,25],
+        "upper": [237,182,52],
         "action": "Click",
         "next": [
+            "点星星2",
             "点排序2"
         ]
     },
     "换人大破检测": {
         "recognition": "ColorMatch",
-        "roi": [53,416,151,108],
+        "roi": [59,423,141,92],
         "lower": [225,86,32],
         "upper": [229,106,57],
-        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "点星星2",
+            "点排序2"
+        ]
+    },
+    "点星星2": {
+        "recognition": "TemplateMatch",
+        "template": "星星.png",
         "action": "Click",
         "next": [
             "点排序2"
@@ -165,7 +188,6 @@
     "点排序2": {
         "recognition": "TemplateMatch",
         "template": "排列顺序.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -177,7 +199,6 @@
     "点获得时间2": {
         "recognition": "TemplateMatch",
         "template": "获得时间.png",
-        "post_wait_freezes": 1000,
         "order": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -188,7 +209,6 @@
     "点排序确定2": {
         "recognition": "TemplateMatch",
         "template": "排序确定.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "点狗粮2"
@@ -197,61 +217,46 @@
     "点狗粮2": {
         "action": "Click",
         "target": [225,134,72,195],
-        "post_wait_freezes": 1000,
         "next": [
             "换人检测2",
             "换人大破检测2",
-            "狗粮开始出征2"
-        ]
-    },
-    "换人检测2": {
-        "recognition": "TemplateMatch",
-        "template": "换人检测.png",
-        "roi": [53,416,151,108],
-        "post_wait_freezes": 1000,
-        "order": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "退出狗粮"
-        ]
-    },
-    "换人大破检测2": {
-        "recognition": "ColorMatch",
-        "roi": [53,416,151,108],
-        "lower": [225,86,32],
-        "upper": [229,106,57],
-        "post_wait_freezes": 1000,
-        "action": "Click",
-        "next": [
-            "退出狗粮"
-        ]
-    },
-    "狗粮开始出征2": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
-        "action": "Click",
-        "timeout": 90000,
-        "post_wait_freezes": 0,
-        "on_error": [
-            "退出狗粮"
-        ],
-        "next": [
-            "狗粮开始战斗",
-            "狗粮追击",
-            "狗粮船舱满",
-            "狗粮点击继续"
-        ]
-    },
-    "狗粮确认": {
-        "action": "DoNothing",
-        "post_wait_freezes": 0,
-        "next": [
             "狗粮开始出征"
         ]
     },
-    "狗粮退出": {
-        "action": "DoNothing"
+    "换人检测2": {
+        "recognition": "ColorMatch",
+        "roi": [59,423,141,92],
+        "lower": [233,172,25],
+        "upper": [237,182,52],
+        "action": "Click",
+        "next": [
+            "狗粮不满足出征要求"
+        ],
+        "focus": true,
+        "focus_tip": "新获得舰船不满足出征要求，结束任务",
+        "focus_tip_color": "Red"
+    },
+    "换人大破检测2": {
+        "recognition": "ColorMatch",
+        "roi": [59,423,141,92],
+        "lower": [225,86,32],
+        "upper": [229,106,57],
+        "action": "Click",
+        "next": [
+            "狗粮不满足出征要求"
+        ],
+        "focus": true,
+        "focus_tip": "新获得舰船不满足出征要求，结束任务",
+        "focus_tip_color": "Red"
+    },
+    "狗粮不满足出征要求": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "任务结束"
+        ]
     },
     "狗粮开始出征": {
         "recognition": "TemplateMatch",
@@ -259,9 +264,6 @@
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
-        "on_error": [
-            "退出狗粮"
-        ],
         "next": [
             "狗粮开始战斗",
             "狗粮追击",
@@ -276,7 +278,10 @@
         "post_wait_freezes": 0,
         "next": [
             "退出狗粮"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "船舱已满",
+        "focus_tip_color": "Red"
     },
     "退出狗粮": {
         "recognition": "TemplateMatch",
@@ -285,7 +290,7 @@
         "green_mask": true,
         "post_wait_freezes": 0,
         "next": [
-            "狗粮退出"
+            "任务结束"
         ]
     },
     "狗粮开始战斗": {
@@ -303,7 +308,6 @@
         "recognition": "TemplateMatch",
         "template": "追击.png",
         "action": "Click",
-        "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
             "狗粮点击继续"
@@ -313,7 +317,6 @@
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "狗粮再点继续"
         ]
@@ -321,61 +324,56 @@
     "狗粮再点继续": {
         "action": "Click",
         "target": "狗粮点击继续",
-        "post_wait_freezes": 1000,
         "next": [
             "狗粮大破回港",
-            "获得狗粮"
-        ]
-    },
-    "获得狗粮": {
-        "action": "Click",
-        "target": "狗粮点击继续",
-        "post_wait_freezes": 0,
-        "next": [
             "狗粮回港",
-            "狗粮大破回港",
-            "获得狗粮"
+            "狗粮再点继续"
         ]
     },
     "狗粮回港": {
         "recognition": "TemplateMatch",
         "template": "回港.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
-            "狗粮继续",
-            "狗粮退出"
+            "狗粮回到关卡"
         ]
     },
     "狗粮大破回港": {
         "recognition": "TemplateMatch",
         "template": "大破回港.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
-            "狗粮大破继续"
+            "狗粮回到关卡"
+        ]
+    },
+    "狗粮回到关卡": {
+        "recognition": "OCR",
+        "expected": "第[一|二|三|四|五|六|七|八|九]章",
+        "roi": [44,369,105,52],
+        "action": "DoNothing",
+        "next": [
+            "狗粮检测刷满",
+            "狗粮继续",
+            "无动作结束"
         ]
     },
     "狗粮继续": {
-        "recognition": "TemplateMatch",
-        "template": "1-1.png",
-        "action": "Click",
-        "target": [1000,250,50,50],
-        "post_wait_freezes": 1000,
+        "action": "DoNothing",
+        "post_wait_freezes": 0,
         "next": [
-            "换人检测",
-            "换人大破检测",
-            "狗粮确认"
+            "狗粮1-1"
         ]
     },
-    "狗粮大破继续": {
-        "recognition": "TemplateMatch",
-        "template": "1-1.png",
-        "action": "Click",
-        "target": [1000,250,50,50],
-        "post_wait_freezes": 1000,
+    "狗粮检测刷满": {
+        "recognition": "OCR",
+        "expected": "^500/500$",
+        "roi": [1153,19,89,30],
+        "action": "DoNothing",
         "next": [
-            "换狗粮2"
-        ]
+            "任务结束"
+        ],
+        "focus": true,
+        "focus_tip": "今日捞船已达上限",
+        "focus_tip_color": "Red"
     }
 }
