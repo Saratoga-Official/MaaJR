@@ -6,12 +6,16 @@
         ],
         "roi": [516,7,332,64],
         "action": "Click",
+        "interrupt": [ ],
+        "on_error": [ ],
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 0
     },
     "任务出错": {
         "action": "StopTask",
+        "interrupt": [ ],
+        "on_error": [ ],
         "focus": true,
         "focus_tip": "任务出错",
         "focus_tip_color": "Red",
@@ -27,6 +31,7 @@
         "next": [
             "重新连接"
         ],
+        "interrupt": [ ],
         "on_error": [
             "无动作结束"
         ],
