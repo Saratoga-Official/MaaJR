@@ -163,6 +163,15 @@
             "任务结束"
         ]
     },
+    "战斗退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "任务结束"
+        ]
+    },
     "战斗索敌成功": {
         "recognition": "OCR",
         "expected": "开始战斗",
