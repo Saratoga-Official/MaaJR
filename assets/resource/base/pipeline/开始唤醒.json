@@ -25,8 +25,12 @@
     "游戏更新": {
         "recognition": "OCR",
         "expected": "有新的内容需要更新",
-        "roi": [366,223,572,255],
-        "action": "DoNothing",
+        "roi": [
+            366,
+            223,
+            572,
+            255
+        ],
         "next": [
             "更新确认"
         ]
@@ -34,7 +38,12 @@
     "更新确认": {
         "recognition": "OCR",
         "expected": "确认",
-        "roi": [366,223,572,255],
+        "roi": [
+            366,
+            223,
+            572,
+            255
+        ],
         "action": "Click",
         "timeout": 300000,
         "next": [
@@ -131,7 +140,6 @@
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
-        "action": "DoNothing",
         "green_mask": true
     }
 }

@@ -2,15 +2,18 @@
     "回到关卡了": {
         "recognition": "OCR",
         "expected": "第[一|二|三|四|五|六|七|八|九]章",
-        "roi": [44,369,105,52],
-        "action": "DoNothing",
+        "roi": [
+            44,
+            369,
+            105,
+            52
+        ],
         "next": [
             "无限战斗",
             "无动作结束"
         ]
     },
     "无限战斗": {
-        "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
             "进入关卡"
@@ -19,7 +22,12 @@
     "进入关卡": {
         "recognition": "OCR",
         "expected": "\\d+-1",
-        "roi": [933,122,207,40],
+        "roi": [
+            933,
+            122,
+            207,
+            40
+        ],
         "action": "Click",
         "next": [
             "战斗编队",
@@ -34,7 +42,7 @@
     "战斗编队": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -51,7 +59,12 @@
         "template": "对号.png",
         "inverse": true,
         "action": "Click",
-        "target": [56,661,21,22],
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
         "next": [
             "战斗修理检测大破",
             "战斗修理检测中破",
@@ -62,10 +75,22 @@
     },
     "战斗修理检测大破": {
         "recognition": "ColorMatch",
-        "roi": [60,423,888,11],
-        "lower": [225,86,32],
-        "upper": [229,106,57],
-        "action": "DoNothing",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
         "next": [
             "自动修船"
         ],
@@ -75,10 +100,22 @@
     },
     "战斗修理检测中破": {
         "recognition": "ColorMatch",
-        "roi": [60,423,888,11],
-        "lower": [233,172,25],
-        "upper": [237,182,52],
-        "action": "DoNothing",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
         "next": [
             "自动修船"
         ],
@@ -129,8 +166,12 @@
     "战斗索敌成功": {
         "recognition": "OCR",
         "expected": "开始战斗",
-        "roi": [1039,621,229,89],
-        "action": "DoNothing",
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
         "next": [
             "战斗识别SL目标1",
             "战斗识别SL目标2",
@@ -140,8 +181,12 @@
     "战斗识别SL目标1": {
         "recognition": "OCR",
         "expected": "雷巡",
-        "roi": [42,182,452,299],
-        "action": "DoNothing",
+        "roi": [
+            42,
+            182,
+            452,
+            299
+        ],
         "next": [
             "战斗SL"
         ],
@@ -151,8 +196,12 @@
     "战斗识别SL目标2": {
         "recognition": "OCR",
         "expected": "轻母",
-        "roi": [42,182,452,299],
-        "action": "DoNothing",
+        "roi": [
+            42,
+            182,
+            452,
+            299
+        ],
         "next": [
             "战斗SL"
         ],
@@ -162,7 +211,12 @@
     "战斗SL": {
         "recognition": "OCR",
         "expected": "撤退",
-        "roi": [844,627,192,87],
+        "roi": [
+            844,
+            627,
+            192,
+            87
+        ],
         "action": "Click",
         "next": [
             "进入关卡"
@@ -171,7 +225,12 @@
     "战斗开始": {
         "recognition": "OCR",
         "expected": "开始战斗",
-        "roi": [1039,621,229,89],
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -191,7 +250,12 @@
         "expected": [
             "单横阵"
         ],
-        "roi": [702,99,560,612],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
         "action": "Click",
         "timeout": 120000,
         "post_wait_freezes": 0,
@@ -228,7 +292,6 @@
     "战斗舰队补给": {
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
-        "action": "DoNothing",
         "next": [
             "战斗回港"
         ]
@@ -257,7 +320,6 @@
     "战斗大破检测": {
         "recognition": "TemplateMatch",
         "template": "大破提醒.png",
-        "action": "DoNothing",
         "next": [
             "战斗回港"
         ],
@@ -287,7 +349,12 @@
     "战斗开始2": {
         "recognition": "OCR",
         "expected": "开始战斗",
-        "roi": [1039,621,229,89],
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -307,7 +374,12 @@
         "expected": [
             "单横阵"
         ],
-        "roi": [702,99,560,612],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -346,7 +418,12 @@
         "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
-        "target": [45,630,38,28],
+        "target": [
+            45,
+            630,
+            38,
+            28
+        ],
         "next": [
             "拆船点击建造"
         ]
@@ -356,7 +433,12 @@
         "expected": [
             "建造"
         ],
-        "roi": [54,224,70,36],
+        "roi": [
+            54,
+            224,
+            70,
+            36
+        ],
         "action": "Click",
         "next": [
             "拆船点击建造2"
@@ -367,7 +449,12 @@
         "expected": [
             "建造"
         ],
-        "roi": [477,245,87,41],
+        "roi": [
+            477,
+            245,
+            87,
+            41
+        ],
         "action": "Click",
         "next": [
             "拆船点击解装"
@@ -378,7 +465,12 @@
         "expected": [
             "解装"
         ],
-        "roi": [360,11,77,42],
+        "roi": [
+            360,
+            11,
+            77,
+            42
+        ],
         "action": "Click",
         "next": [
             "拆船点击添加"
@@ -387,7 +479,12 @@
     "拆船点击添加": {
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
-        "roi": [18,111,156,298],
+        "roi": [
+            18,
+            111,
+            156,
+            298
+        ],
         "action": "Click",
         "next": [
             "拆船点击快速选择"
@@ -398,7 +495,12 @@
         "expected": [
             "快速选择"
         ],
-        "roi": [1106,195,121,49],
+        "roi": [
+            1106,
+            195,
+            121,
+            49
+        ],
         "action": "Click",
         "next": [
             "拆船点击确定"
@@ -409,7 +511,12 @@
         "expected": [
             "确定"
         ],
-        "roi": [1124,628,85,44],
+        "roi": [
+            1124,
+            628,
+            85,
+            44
+        ],
         "action": "Click",
         "next": [
             "拆船点击解装2"
@@ -420,7 +527,12 @@
         "expected": [
             "解装"
         ],
-        "roi": [1087,619,107,51],
+        "roi": [
+            1087,
+            619,
+            107,
+            51
+        ],
         "action": "Click",
         "next": [
             "拆船点击确认",
@@ -432,7 +544,12 @@
         "expected": [
             "确认"
         ],
-        "roi": [402,373,169,70],
+        "roi": [
+            402,
+            373,
+            169,
+            70
+        ],
         "action": "Click",
         "next": [
             "拆船结束退出"
@@ -451,7 +568,12 @@
         "recognition": "TemplateMatch",
         "template": "退出.png",
         "green_mask": true,
-        "roi": [13,627,74,73],
+        "roi": [
+            13,
+            627,
+            74,
+            73
+        ],
         "action": "Click",
         "next": [
             "开始出征"

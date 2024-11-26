@@ -1,6 +1,5 @@
 {
     "刷活动": {
-        "action": "DoNothing",
         "next": [
             "出击准备",
             "活动自动补给",
@@ -11,7 +10,6 @@
         "recognition": "TemplateMatch",
         "template": "出击准备.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "活动编队",
             "活动自动补给",
@@ -22,9 +20,13 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
-        "target": [56,661,21,22],
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
         "next": [
             "活动开始出征"
         ]
@@ -32,8 +34,7 @@
     "活动编队": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -104,7 +105,12 @@
         "expected": [
             "复纵阵"
         ],
-        "roi": [702,99,560,612],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -126,14 +132,13 @@
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "活动再点继续"
         ]
     },
     "活动再点继续": {
         "action": "Click",
-        "target": "炸鱼点击继续",
+        "target": "活动点击继续",
         "next": [
             "活动舰队补给",
             "活动大破回港",
@@ -144,8 +149,6 @@
     "活动舰队补给": {
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
-        "action": "DoNothing",
-        "post_wait_freezes": 1000,
         "next": [
             "活动回港"
         ]
@@ -154,7 +157,6 @@
         "recognition": "TemplateMatch",
         "template": "回港.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "活动次数"
         ]
@@ -162,7 +164,6 @@
     "活动大破回港": {
         "recognition": "TemplateMatch",
         "template": "大破回港.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "活动次数"
@@ -171,8 +172,6 @@
     "活动大破检测": {
         "recognition": "TemplateMatch",
         "template": "大破提醒.png",
-        "post_wait_freezes": 1000,
-        "action": "DoNothing",
         "next": [
             "活动回港"
         ]
@@ -180,7 +179,6 @@
     "活动前进": {
         "recognition": "TemplateMatch",
         "template": "前进.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "活动开始战斗",
@@ -190,8 +188,6 @@
     "活动次数": {
         "recognition": "TemplateMatch",
         "template": "出击准备.png",
-        "action": "DoNothing",
-        "post_wait_freezes": 1000,
         "next": [
             "出击准备"
         ]

@@ -3,9 +3,6 @@
         "next": [
             "退出远征",
             "自动收远征"
-        ],
-        "on_error": [
-            "结束远征"
         ]
     },
     "点击出征2": {
@@ -24,7 +21,9 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "action": "Click",
-        "threshold": [0.9],
+        "threshold": [
+            0.9
+        ],
         "post_wait_freezes": 1000,
         "next": [
             "点击远征",
@@ -56,8 +55,12 @@
     },
     "点击远征": {
         "recognition": "TemplateMatch",
-        "template": ["远征.png"],
-        "threshold": [0.9],
+        "template": [
+            "远征.png"
+        ],
+        "threshold": [
+            0.9
+        ],
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
@@ -101,7 +104,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "退出远征",
-            "结束远征"
+            "无动作结束"
         ]
     },
     "退出远征2": {
@@ -115,12 +118,8 @@
         ]
     },
     "退出远征3": {
-        "action": "DoNothing",
         "next": [
             "退出远征2"
         ]
-    },
-    "结束远征": {
-        "action": "DoNothing"
     }
 }
