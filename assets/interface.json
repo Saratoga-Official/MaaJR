@@ -4,7 +4,7 @@
     "url": "https://github.com/Saratoga-Official/MaaJR",
     "custom_title": "MaaJR",
     "default_controller": "adb",
-    "lock_controller":true,
+    "lock_controller": true,
     "controller": [
         {
             "name": "安卓端",
@@ -41,13 +41,14 @@
             "name": "自动战役",
             "entry": "开始自动战役",
             "check": false,
-            "repeatable": false,
-            "doc": "[color:red]打指定战役直到打完次数，需提前编好队，再开始[/color]",
+            "repeatable": true,
+            "doc": "[color:red]①需提前编好队，再开始[/color]\n[color:red]②不开启战役打完次数将按照重复次数来执行[/color]",
             "option": [
                 "战役选择难度",
                 "战役选择关卡",
                 "战役选择阵型",
-                "战役快速修船"
+                "战役快速修船",
+                "战役打完次数"
             ]
         },
         {
@@ -55,7 +56,7 @@
             "entry": "开始自动演习",
             "check": false,
             "repeatable": false,
-            "doc": "[color:red]目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新[/color]\n[color:red]需提前编好队，再开始[/color]",
+            "doc": "[color:red]①目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新[/color]\n[color:red]②需提前编好队，再开始[/color]",
             "option": [
                 "演习编队",
                 "演习选择阵型",
@@ -171,9 +172,7 @@
                 },
                 {
                     "name": "困难",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 }
             ]
         },
@@ -351,13 +350,30 @@
                 }
             ]
         },
+        "战役打完次数": {
+            "cases": [
+                {
+                    "name": "开启",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "战役再点继续": {
+                            "next": [
+                                "回到战役界面",
+                                "战役再点继续"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "远征等待模式": {
             "cases": [
                 {
                     "name": "关闭",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "开启",
@@ -745,9 +761,7 @@
             "cases": [
                 {
                     "name": "第一编队",
-                    "pipeline_override": {
-                        
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "第二编队",
@@ -850,7 +864,12 @@
                         "无限战斗": {
                             "recognition": "OCR",
                             "expected": "^500/500$",
-                            "roi": [1153,19,89,30],
+                            "roi": [
+                                1153,
+                                19,
+                                89,
+                                30
+                            ],
                             "inverse": true
                         }
                     }
@@ -861,7 +880,12 @@
                         "无限战斗": {
                             "recognition": "OCR",
                             "expected": "^50/50$",
-                            "roi": [1021,19,80,29],
+                            "roi": [
+                                1021,
+                                19,
+                                80,
+                                29
+                            ],
                             "inverse": true
                         }
                     }
@@ -1083,9 +1107,7 @@
                 },
                 {
                     "name": "不自动收发",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 }
             ]
         },
@@ -1093,9 +1115,7 @@
             "cases": [
                 {
                     "name": "打夜战",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "不打夜战",
@@ -1111,9 +1131,7 @@
             "cases": [
                 {
                     "name": "仅第一个点",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "打到第二个点",
@@ -1132,14 +1150,12 @@
             "cases": [
                 {
                     "name": "不开启",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "开启",
                     "pipeline_override": {
-                        "战斗船舱满退出": {
+                        "战斗船舱满": {
                             "next": [
                                 "战斗船舱满尝试拆船"
                             ],
@@ -1192,9 +1208,7 @@
                 },
                 {
                     "name": "开启",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 }
             ]
         },
@@ -1222,9 +1236,7 @@
                 },
                 {
                     "name": "不自动收发",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 }
             ]
         },
@@ -1232,9 +1244,7 @@
             "cases": [
                 {
                     "name": "关闭",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "开启",
@@ -1256,9 +1266,7 @@
             "cases": [
                 {
                     "name": "第一编队",
-                    "pipeline_override": {
-                        
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "第二编队",
@@ -1430,31 +1438,33 @@
             "cases": [
                 {
                     "name": "遇反潜和潜艇刷新",
-                    "pipeline_override": {
-
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "遇潜艇刷新",
                     "pipeline_override": {
                         "演习识别舰船": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         },
                         "演习识别舰船1": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         },
                         "演习识别舰船2": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         },
                         "演习识别舰船3": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         }
                     }
@@ -1474,7 +1484,8 @@
                     "pipeline_override": {
                         "演习识别舰船": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ],
                             "next": [
                                 "演习关闭"
@@ -1482,17 +1493,20 @@
                         },
                         "演习识别舰船1": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         },
                         "演习识别舰船2": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         },
                         "演习识别舰船3": {
                             "expected": [
-                                "潜艇","炮潜"
+                                "潜艇",
+                                "炮潜"
                             ]
                         }
                     }

@@ -4,18 +4,23 @@
         "expected": [
             "\\d+-\\d+"
         ],
-        "roi": [516,7,332,64],
+        "roi": [
+            516,
+            7,
+            332,
+            64
+        ],
         "action": "Click",
-        "interrupt": [ ],
-        "on_error": [ ],
+        "interrupt": [],
+        "on_error": [],
         "pre_delay": 0,
         "post_delay": 0,
         "post_wait_freezes": 0
     },
     "任务出错": {
         "action": "StopTask",
-        "interrupt": [ ],
-        "on_error": [ ],
+        "interrupt": [],
+        "on_error": [],
         "focus": true,
         "focus_tip": "任务出错",
         "focus_tip_color": "Red",
@@ -24,14 +29,19 @@
     "重新连接": {
         "recognition": "OCR",
         "expected": "重试",
-        "roi": [570,385,142,48],
+        "roi": [
+            570,
+            385,
+            142,
+            48
+        ],
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 35000,
+        "timeout": 60000,
         "next": [
             "重新连接"
         ],
-        "interrupt": [ ],
+        "interrupt": [],
         "on_error": [
             "无动作结束"
         ],
@@ -44,8 +54,7 @@
         "template": "追击.png",
         "action": "Click",
         "post_wait_freezes": 0,
-        "focus": true,
-        "focus_tip": "夜战追击"
+        "focus": true
     },
     "退出": {
         "recognition": "TemplateMatch",
@@ -54,15 +63,14 @@
         "green_mask": true
     },
     "无动作结束": {
-        "action": "DoNothing",
         "post_wait_freezes": 0,
-        "interrupt": [ ],
-        "on_error": [ ]
+        "interrupt": [],
+        "on_error": []
     },
     "任务结束": {
         "action": "StopTask",
         "post_wait_freezes": 0,
-        "interrupt": [ ],
-        "on_error": [ ]
+        "interrupt": [],
+        "on_error": []
     }
 }

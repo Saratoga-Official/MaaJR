@@ -3,7 +3,12 @@
         "recognition": "TemplateMatch",
         "template": "1-1.png",
         "action": "Click",
-        "target": [1000,250,50,50],
+        "target": [
+            1000,
+            250,
+            50,
+            50
+        ],
         "next": [
             "狗粮编队",
             "狗粮自动补给",
@@ -13,7 +18,7 @@
     "狗粮编队": {
         "recognition": "TemplateMatch",
         "template": "4队.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -25,13 +30,17 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "action": "Click",
-        "target": [56,661,21,22],
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
         "next": [
             "换狗粮检测"
         ]
     },
     "换狗粮检测": {
-        "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
             "狗粮编队检测",
@@ -40,7 +49,12 @@
     },
     "换狗粮": {
         "action": "Click",
-        "target": [89,203,76,258],
+        "target": [
+            89,
+            203,
+            76,
+            258
+        ],
         "next": [
             "点离队",
             "点星星",
@@ -66,7 +80,7 @@
     "点排序": {
         "recognition": "TemplateMatch",
         "template": "排列顺序.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -77,7 +91,7 @@
     "点获得时间": {
         "recognition": "TemplateMatch",
         "template": "获得时间.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -95,7 +109,7 @@
     "点类型": {
         "recognition": "TemplateMatch",
         "template": "类型.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -106,7 +120,7 @@
     "点护卫": {
         "recognition": "TemplateMatch",
         "template": "护卫.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -123,7 +137,12 @@
     },
     "点狗粮": {
         "action": "Click",
-        "target": [83,138,73,202],
+        "target": [
+            83,
+            138,
+            73,
+            202
+        ],
         "next": [
             "换人检测",
             "换人大破检测",
@@ -133,9 +152,8 @@
     "狗粮编队检测": {
         "recognition": "TemplateMatch",
         "template": "狗粮编队检测.png",
-        "action": "DoNothing",
         "post_wait_freezes": 0,
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "next": [
             "狗粮编队检测2",
@@ -146,8 +164,12 @@
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
         "inverse": true,
-        "action": "DoNothing",
-        "roi": [26,136,219,415],
+        "roi": [
+            26,
+            136,
+            219,
+            415
+        ],
         "post_wait_freezes": 0,
         "next": [
             "换人检测",
@@ -157,9 +179,22 @@
     },
     "换人检测": {
         "recognition": "ColorMatch",
-        "roi": [59,423,141,92],
-        "lower": [233,172,25],
-        "upper": [237,182,52],
+        "roi": [
+            59,
+            423,
+            141,
+            92
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
         "action": "Click",
         "next": [
             "点星星2",
@@ -168,9 +203,22 @@
     },
     "换人大破检测": {
         "recognition": "ColorMatch",
-        "roi": [59,423,141,92],
-        "lower": [225,86,32],
-        "upper": [229,106,57],
+        "roi": [
+            59,
+            423,
+            141,
+            92
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
         "action": "Click",
         "next": [
             "点星星2",
@@ -188,7 +236,7 @@
     "点排序2": {
         "recognition": "TemplateMatch",
         "template": "排列顺序.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -199,7 +247,7 @@
     "点获得时间2": {
         "recognition": "TemplateMatch",
         "template": "获得时间.png",
-        "order": "Score",
+        "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
         "next": [
@@ -216,7 +264,12 @@
     },
     "点狗粮2": {
         "action": "Click",
-        "target": [225,134,72,195],
+        "target": [
+            225,
+            134,
+            72,
+            195
+        ],
         "next": [
             "换人检测2",
             "换人大破检测2",
@@ -225,9 +278,22 @@
     },
     "换人检测2": {
         "recognition": "ColorMatch",
-        "roi": [59,423,141,92],
-        "lower": [233,172,25],
-        "upper": [237,182,52],
+        "roi": [
+            59,
+            423,
+            141,
+            92
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
         "action": "Click",
         "next": [
             "狗粮不满足出征要求"
@@ -238,9 +304,22 @@
     },
     "换人大破检测2": {
         "recognition": "ColorMatch",
-        "roi": [59,423,141,92],
-        "lower": [225,86,32],
-        "upper": [229,106,57],
+        "roi": [
+            59,
+            423,
+            141,
+            92
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
         "action": "Click",
         "next": [
             "狗粮不满足出征要求"
@@ -349,8 +428,12 @@
     "狗粮回到关卡": {
         "recognition": "OCR",
         "expected": "第[一|二|三|四|五|六|七|八|九]章",
-        "roi": [44,369,105,52],
-        "action": "DoNothing",
+        "roi": [
+            44,
+            369,
+            105,
+            52
+        ],
         "next": [
             "狗粮检测刷满",
             "狗粮继续",
@@ -358,7 +441,6 @@
         ]
     },
     "狗粮继续": {
-        "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
             "狗粮1-1"
@@ -367,8 +449,12 @@
     "狗粮检测刷满": {
         "recognition": "OCR",
         "expected": "^500/500$",
-        "roi": [1153,19,89,30],
-        "action": "DoNothing",
+        "roi": [
+            1153,
+            19,
+            89,
+            30
+        ],
         "next": [
             "任务结束"
         ],

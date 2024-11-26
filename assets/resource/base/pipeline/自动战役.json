@@ -2,8 +2,7 @@
     "开始自动战役": {
         "next": [
             "自动战役",
-            "退出战役",
-            "结束战役"
+            "退出战役"
         ]
     },
     "自动战役": {
@@ -13,6 +12,7 @@
         "green_mask": true,
         "next": [
             "点击战役",
+            "战役次数",
             "普通难度",
             "困难难度"
         ]
@@ -23,6 +23,7 @@
         "action": "Click",
         "threshold": 0.9,
         "next": [
+            "战役次数",
             "普通难度",
             "困难难度"
         ]
@@ -39,7 +40,6 @@
     "普通难度": {
         "recognition": "TemplateMatch",
         "template": "普通难度.png",
-        "action": "DoNothing",
         "next": [
             "战役次数",
             "选择战役"
@@ -51,7 +51,12 @@
             "驱逐改造核心",
             "纳尔维克海战"
         ],
-        "roi": [29,541,1219,89],
+        "roi": [
+            29,
+            541,
+            1219,
+            89
+        ],
         "action": "Click",
         "next": [
             "战役确认",
@@ -60,7 +65,12 @@
     },
     "战役自动补给": {
         "action": "Click",
-        "target": [56,661,21,22],
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
         "next": [
             "战役确认",
             "战役自动补给"
@@ -69,7 +79,6 @@
     "战役确认": {
         "recognition": "TemplateMatch",
         "template": "对号.png",
-        "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
             "战役修理检测大破",
@@ -79,10 +88,22 @@
     },
     "战役修理检测大破": {
         "recognition": "ColorMatch",
-        "roi": [60,423,888,11],
-        "lower": [225,86,32],
-        "upper": [229,106,57],
-        "action": "DoNothing",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
         "next": [
             "自动修船"
         ],
@@ -92,10 +113,22 @@
     },
     "战役修理检测中破": {
         "recognition": "ColorMatch",
-        "roi": [60,423,888,11],
-        "lower": [233,172,25],
-        "upper": [237,182,52],
-        "action": "DoNothing",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
         "next": [
             "自动修船"
         ],
@@ -141,7 +174,12 @@
         "expected": [
             "复纵阵"
         ],
-        "roi": [702,99,560,612],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -176,11 +214,18 @@
             "^0/8$",
             "^0/12$"
         ],
-        "roi": [29,541,1219,89],
-        "action": "DoNothing",
+        "roi": [
+            29,
+            541,
+            1219,
+            89
+        ],
         "next": [
-            "结束战役"
-        ]
+            "任务结束"
+        ],
+        "focus": true,
+        "focus_tip": "战役次数已达上限",
+        "focus_tip_color": "Red"
     },
     "退出战役": {
         "recognition": "TemplateMatch",
@@ -191,7 +236,9 @@
             "开始自动战役"
         ]
     },
-    "结束战役": {
-        "action": "DoNothing"
+    "回到战役界面": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "green_mask": true
     }
 }
