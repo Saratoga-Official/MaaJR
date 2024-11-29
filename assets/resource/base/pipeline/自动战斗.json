@@ -23,10 +23,10 @@
         "recognition": "OCR",
         "expected": "\\d+-1",
         "roi": [
-            933,
-            122,
-            207,
-            40
+            870,
+            105,
+            308,
+            63
         ],
         "action": "Click",
         "next": [
@@ -38,6 +38,127 @@
         ],
         "focus": true,
         "focus_tip": "进入关卡"
+    },
+    "启用军阶buff": {
+        "recognition": "ColorMatch",
+        "roi": [
+            817,
+            91,
+            58,
+            56
+        ],
+        "lower": [
+            31,
+            86,
+            143
+        ],
+        "upper": [
+            39,
+            149,
+            253
+        ],
+        "action": "Click",
+        "next": [
+            "识别当前BUFF",
+            "更换BUFF"
+        ],
+        "focus": true,
+        "focus_tip": "选择军阶buff"
+    },
+    "识别当前BUFF": {
+        "recognition": "OCR",
+        "expected": [
+            "千伪之王",
+            "伪造情报",
+            "截取情报"
+        ],
+        "roi": [
+            978,
+            154,
+            193,
+            40
+        ],
+        "action": "Click",
+        "target": [
+            970,
+            339,
+            77,
+            39
+        ],
+        "next": [
+            "退出当前BUFF"
+        ]
+    },
+    "退出当前BUFF": {
+        "action": "Click",
+        "target": "识别当前BUFF",
+        "next": [
+            "战斗编队",
+            "战斗自动补给",
+            "战斗修理检测大破",
+            "战斗修理检测中破",
+            "战斗开始出征"
+        ]
+    },
+    "更换BUFF": {
+        "action": "Click",
+        "target": [
+            862,
+            184,
+            80,
+            96
+        ],
+        "next": [
+            "点击buff"
+        ]
+    },
+    "点击buff": {
+        "recognition": "OCR",
+        "expected": [
+            "千伪之王",
+            "伪造情报",
+            "截取情报"
+        ],
+        "order_by": "Vertical",
+        "roi": [
+            567,
+            84,
+            647,
+            603
+        ],
+        "action": "Click",
+        "next": [
+            "点击上阵buff",
+            "退出buff"
+        ]
+    },
+    "点击上阵buff": {
+        "recognition": "OCR",
+        "expected": "上阵",
+        "roi": [
+            236,
+            639,
+            91,
+            42
+        ],
+        "action": "Click",
+        "next": [
+            "退出buff"
+        ]
+    },
+    "退出buff": {
+        "recognition": "TemplateMatch",
+        "template": "退出buff.png",
+        "roi": [
+            18,
+            13,
+            46,
+            46
+        ],
+        "action": "Click",
+        "next": [
+            "识别当前BUFF"
+        ]
     },
     "战斗编队": {
         "recognition": "TemplateMatch",
@@ -69,6 +190,10 @@
             "战斗修理检测大破",
             "战斗修理检测中破",
             "战斗开始出征"
+        ],
+        "on_error": [
+            "进入关卡",
+            "任务出错"
         ],
         "focus": true,
         "focus_tip": "切换自动补给"
@@ -135,9 +260,15 @@
             "战斗点击继续"
         ],
         "interrupt": [
+            "点击确认",
             "点击加速",
+            "选择战况",
             "战斗追击",
             "重新连接"
+        ],
+        "on_error": [
+            "战斗开始出征",
+            "任务出错"
         ],
         "timeout": 60000,
         "focus": true,
@@ -149,6 +280,10 @@
         "action": "Click",
         "next": [
             "战斗船舱满退出"
+        ],
+        "on_error": [
+            "战斗船舱满",
+            "任务出错"
         ],
         "focus": true,
         "focus_tip": "船舱已满",
@@ -252,7 +387,7 @@
             "重新连接"
         ],
         "focus": true,
-        "focus_tip": "战斗开始（1）"
+        "focus_tip": "战斗开始"
     },
     "战斗阵型": {
         "recognition": "OCR",
@@ -276,7 +411,7 @@
             "重新连接"
         ],
         "focus": true,
-        "focus_tip": "选择预设阵型（1）"
+        "focus_tip": "选择预设阵型"
     },
     "战斗点击继续": {
         "recognition": "TemplateMatch",
@@ -286,7 +421,7 @@
             "战斗再点继续"
         ],
         "focus": true,
-        "focus_tip": "战斗结束（1）"
+        "focus_tip": "战斗结束"
     },
     "战斗再点继续": {
         "action": "Click",
@@ -302,7 +437,8 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
-            "战斗回港"
+            "战斗大破检测",
+            "战斗前进"
         ]
     },
     "战斗回港": {
@@ -348,7 +484,9 @@
             "战斗点击继续2"
         ],
         "interrupt": [
+            "点击确认",
             "点击加速",
+            "选择战况",
             "战斗追击",
             "重新连接"
         ],
@@ -376,7 +514,7 @@
             "重新连接"
         ],
         "focus": true,
-        "focus_tip": "战斗开始（2）"
+        "focus_tip": "战斗开始"
     },
     "战斗阵型2": {
         "recognition": "OCR",
@@ -400,7 +538,7 @@
             "重新连接"
         ],
         "focus": true,
-        "focus_tip": "选择预设阵型（2）"
+        "focus_tip": "选择预设阵型"
     },
     "战斗点击继续2": {
         "recognition": "TemplateMatch",
@@ -410,16 +548,312 @@
             "战斗再点继续2"
         ],
         "focus": true,
-        "focus_tip": "战斗结束（2）"
+        "focus_tip": "战斗结束"
     },
     "战斗再点继续2": {
         "action": "Click",
         "target": "战斗点击继续2",
         "next": [
-            "战斗回港",
+            "战斗舰队补给2",
             "战斗大破回港",
             "回到关卡了",
             "战斗再点继续2"
+        ]
+    },
+    "战斗舰队补给2": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "next": [
+            "战斗大破检测",
+            "战斗前进2"
+        ]
+    },
+    "战斗前进2": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗开始3",
+            "战斗阵型3",
+            "战斗点击继续3"
+        ],
+        "interrupt": [
+            "点击确认",
+            "点击加速",
+            "选择战况",
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "前进"
+    },
+    "战斗开始3": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗阵型3",
+            "战斗点击继续3"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "战斗开始"
+    },
+    "战斗阵型3": {
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗点击继续3"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "选择预设阵型"
+    },
+    "战斗点击继续3": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "战斗再点继续3"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "战斗再点继续3": {
+        "action": "Click",
+        "target": "战斗点击继续3",
+        "next": [
+            "战斗舰队补给3",
+            "战斗大破回港",
+            "回到关卡了",
+            "战斗再点继续3"
+        ]
+    },
+    "战斗舰队补给3": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "next": [
+            "战斗大破检测",
+            "战斗前进3"
+        ]
+    },
+    "战斗前进3": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗开始4",
+            "战斗阵型4",
+            "战斗点击继续4"
+        ],
+        "interrupt": [
+            "点击确认",
+            "点击加速",
+            "选择战况",
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "前进"
+    },
+    "战斗开始4": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗阵型4",
+            "战斗点击继续4"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "战斗开始"
+    },
+    "战斗阵型4": {
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗点击继续4"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "选择预设阵型"
+    },
+    "战斗点击继续4": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "战斗再点继续4"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "战斗再点继续4": {
+        "action": "Click",
+        "target": "战斗点击继续4",
+        "next": [
+            "战斗舰队补给4",
+            "战斗大破回港",
+            "回到关卡了",
+            "战斗再点继续4"
+        ]
+    },
+    "战斗舰队补给4": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "next": [
+            "战斗大破检测",
+            "战斗前进4"
+        ]
+    },
+    "战斗前进4": {
+        "recognition": "TemplateMatch",
+        "template": "前进.png",
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗开始5",
+            "战斗阵型5",
+            "战斗点击继续5"
+        ],
+        "interrupt": [
+            "点击确认",
+            "点击加速",
+            "选择战况",
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "前进"
+    },
+    "战斗开始5": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [
+            1039,
+            621,
+            229,
+            89
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗阵型5",
+            "战斗点击继续5"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "战斗开始"
+    },
+    "战斗阵型5": {
+        "recognition": "OCR",
+        "expected": [
+            "单横阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 90000,
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗点击继续5"
+        ],
+        "interrupt": [
+            "战斗追击",
+            "重新连接"
+        ],
+        "focus": true,
+        "focus_tip": "选择预设阵型"
+    },
+    "战斗点击继续5": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "战斗再点继续5"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "战斗再点继续5": {
+        "action": "Click",
+        "target": "战斗点击继续5",
+        "next": [
+            "战斗舰队补给5",
+            "战斗大破回港",
+            "回到关卡了",
+            "战斗再点继续5"
+        ]
+    },
+    "战斗舰队补给5": {
+        "recognition": "TemplateMatch",
+        "template": "舰队补给.png",
+        "next": [
+            "战斗大破检测",
+            "战斗前进4"
         ]
     },
     "战斗船舱满尝试拆船": {

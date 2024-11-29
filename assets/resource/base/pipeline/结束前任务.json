@@ -1,18 +1,12 @@
 {
     "收尾工作": {
         "next": [
-            "回到主界面",
-            "点击任务"
-        ]
-    },
-    "回到主界面": {
-        "recognition": "TemplateMatch",
-        "template": "退出.png",
-        "action": "Click",
-        "green_mask": true,
-        "next": [
-            "回到主界面",
-            "点击任务"
+            "点击任务",
+            "点击船坞"
+        ],
+        "interrupt": [
+            "重新连接",
+            "退出"
         ]
     },
     "点击任务": {
@@ -38,7 +32,8 @@
         "action": "Click",
         "green_mask": true,
         "next": [
-            "点击船坞"
+            "点击船坞",
+            "任务结束"
         ]
     },
     "点击船坞": {
@@ -53,7 +48,10 @@
         "recognition": "TemplateMatch",
         "template": "退出.png",
         "action": "Click",
-        "green_mask": true
+        "green_mask": true,
+        "next": [
+            "任务结束"
+        ]
     },
     "关闭游戏": {
         "action": "StopApp",

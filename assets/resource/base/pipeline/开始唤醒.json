@@ -47,6 +47,7 @@
         "action": "Click",
         "timeout": 300000,
         "next": [
+            "游戏更新",
             "进入游戏"
         ]
     },
@@ -140,6 +141,7 @@
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
-        "green_mask": true
+        "green_mask": true,
+        "action": "StopTask"
     }
 }

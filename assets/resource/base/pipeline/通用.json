@@ -53,8 +53,7 @@
         "recognition": "TemplateMatch",
         "template": "追击.png",
         "action": "Click",
-        "post_wait_freezes": 0,
-        "focus": true
+        "post_wait_freezes": 0
     },
     "退出": {
         "recognition": "TemplateMatch",
@@ -72,5 +71,37 @@
         "post_wait_freezes": 0,
         "interrupt": [],
         "on_error": []
+    },
+    "点击确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [
+            577,
+            389,
+            130,
+            39
+        ],
+        "action": "Click",
+        "post_wait_freezes": 0
+    },
+    "选择战况": {
+        "recognition": "OCR",
+        "expected": "选择战况",
+        "roi": [
+            556,
+            11,
+            174,
+            44
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "随便选一个"
+        ]
+    },
+    "随便选一个": {
+        "recognition": "TemplateMatch",
+        "template": "选择战况.png",
+        "post_wait_freezes": 0,
+        "action": "Click"
     }
 }
