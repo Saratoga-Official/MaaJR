@@ -136,6 +136,19 @@
             }
         },
         {
+            "name": "自动决战E6（测试）",
+            "entry": "开始自动决战",
+            "check": false,
+            "repeatable": true,
+            "doc": "[color:red]测试中有bug及时反馈，以下说明需完整看完[/color]\n[color:red]①使用前确认副官已开启奇尔沙治，选船配置中有且仅有一艘2-3费中型船和4费鱼[/color]\n[color:red]②剩下的位置大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船全选改造鱼[/color]\n[color:red]③如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置[/color]\n[color:red]④第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要12选同一个船，会出逻辑bug[/color]\n[color:red]⑤第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取[/color]\n[color:red]⑥支持断点续关，如果打完前一关后停止，再开将继续打下一关，但第二局开局舰船设置将无效[/color]\n[color:red]⑦决战中将自动使用快速修理[/color]",
+            "option": [
+                "第一关开局舰船1",
+                "第一关开局舰船2",
+                "第二关开局舰船",
+                "决战打完次数"
+            ]
+        },
+        {
             "name": "结束前任务",
             "entry": "收尾工作",
             "check": false,
@@ -1809,6 +1822,507 @@
                         "退出船坞": {
                             "next": [
                                 "关闭游戏"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "第一关开局舰船1": {
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "大青花鱼",
+                                "射水鱼",
+                                "U-47",
+                                "U-505",
+                                "U-81",
+                                "U-96",
+                                "U-2540",
+                                "U-1206",
+                                "U-1405"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "随机U艇",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-47",
+                                "U-505",
+                                "U-81",
+                                "U-96",
+                                "U-2540",
+                                "U-1206",
+                                "U-1405"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "大青花鱼",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "大青花鱼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "射水鱼",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "射水鱼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-47",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-47"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-505",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-505"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-81",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-81"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-96",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-96"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-2540",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-2540"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-1206",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-1206"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-1405",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-1405"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "M-296",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "M-296"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "鹦鹉螺",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "鹦鹉螺"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "达·芬奇",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "达·芬奇",
+                                "芬奇"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "鹰",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "鹰"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "K-21",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "K-21"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜甲",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "潜甲"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜乙",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "潜乙"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-441",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "U-441"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "IIIA",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "IIIA",
+                                "lllA"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "伊-201",
+                    "pipeline_override": {
+                        "检查开局舰船1": {
+                            "expected": [
+                                "伊-201"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "第一关开局舰船2": {
+            "cases": [
+                {
+                    "name": "M-296",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "M-296"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "鹦鹉螺",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "鹦鹉螺"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "达·芬奇",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "达·芬奇",
+                                "芬奇"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "鹰",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "鹰"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "K-21",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "K-21"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜甲",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "潜甲"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜乙",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "潜乙"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-441",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "U-441"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "IIIA",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "IIIA",
+                                "lllA"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "伊-201",
+                    "pipeline_override": {
+                        "检查开局舰船2": {
+                            "expected": [
+                                "伊-201"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "第二关开局舰船": {
+            "cases": [
+                {
+                    "name": "默认",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "U-1206",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-1206"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-1206"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "大青花鱼",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "大青花鱼"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "大青花鱼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "射水鱼",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "射水鱼"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "射水鱼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-47",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-47"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-47"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-505",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-505"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-505"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-81",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-81"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-81"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-96",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-96"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-96"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-2540",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-2540"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-2540"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "U-1405",
+                    "pipeline_override": {
+                        "决战检查舰船BOSS2": {
+                            "expected": [
+                                "U-1405"
+                            ]
+                        },
+                        "决战寻找特定舰船": {
+                            "expected": [
+                                "U-1405"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "决战打完次数": {
+            "cases": [
+                {
+                    "name": "不开启",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {
+                        "决战沉默战士E6": {
+                            "next": [
+                                "识别决战点"
                             ]
                         }
                     }

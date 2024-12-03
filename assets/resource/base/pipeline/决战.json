@@ -2,9 +2,10 @@
     "开始自动决战": {
         "next": [
             "自动决战",
-            "退出决战",
+            "点击决战",
+            "决战沉默战士",
             "识别决战点",
-            "结束决战"
+            "退出决战"
         ]
     },
     "自动决战": {
@@ -25,19 +26,28 @@
             "开始自动决战"
         ]
     },
-    "结束决战": {},
     "点击决战": {
         "recognition": "TemplateMatch",
         "template": "决战.png",
         "action": "Click",
+        "order_by": "Score",
         "threshold": 0.9,
         "next": [
             "决战沉默战士"
         ]
     },
     "决战沉默战士": {
-        "recognition": "TemplateMatch",
-        "template": "沉默战士.png",
+        "recognition": "OCR",
+        "expected": [
+            "舰队决战",
+            "沉默战士"
+        ],
+        "roi": [
+            96,
+            303,
+            165,
+            70
+        ],
         "action": "Click",
         "next": [
             "识别决战点"
@@ -45,8 +55,60 @@
     },
     "识别决战点": {
         "next": [
+            "重置关卡",
+            "决战沉默战士E6-3",
+            "决战沉默战士E6-23",
             "决战沉默战士E6-1"
         ]
+    },
+    "重置关卡": {
+        "recognition": "TemplateMatch",
+        "template": "重置关卡.png",
+        "next": [
+            "识别决战次数",
+            "决战次数已耗尽"
+        ]
+    },
+    "识别决战次数": {
+        "recognition": "OCR",
+        "expected": "^0/12$",
+        "roi": [
+            370,
+            652,
+            73,
+            36
+        ],
+        "inverse": true,
+        "action": "Click",
+        "target": "重置关卡",
+        "next": [
+            "重置关卡确认"
+        ]
+    },
+    "重置关卡确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "roi": [
+            442,
+            378,
+            88,
+            59
+        ],
+        "action": "Click",
+        "next": [
+            "决战沉默战士E6-1"
+        ]
+    },
+    "决战次数已耗尽": {
+        "recognition": "TemplateMatch",
+        "template": "活动退出2.png",
+        "action": "Click",
+        "next": [
+            "任务结束"
+        ],
+        "focus": true,
+        "focus_tip": "决战次数已耗尽",
+        "focus_tip_color": "Red"
     },
     "决战沉默战士E6-1": {
         "recognition": "TemplateMatch",
@@ -58,43 +120,176 @@
             247
         ],
         "next": [
-            "更换副官",
-            "进入沉默战士决战E6-1"
-        ]
-    },
-    "更换副官": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "紫貂.png",
-            "奇尔沙治.png"
+            "检查副官"
         ],
+        "focus": true,
+        "focus_tip": "进入决战沉默战士"
+    },
+    "检查副官": {
         "action": "Click",
+        "target": [
+            93,
+            329,
+            98,
+            140
+        ],
         "next": [
+            "紫貂",
             "副官翻页"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "检查副官"
     },
     "副官翻页": {
         "recognition": "TemplateMatch",
         "template": "副官翻页.png",
         "action": "Click",
+        "roi": [
+            1163,
+            353,
+            69,
+            53
+        ],
         "next": [
-            "哈巴库克",
+            "紫貂",
             "副官翻页"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "寻找副官"
     },
-    "哈巴库克": {
-        "recognition": "TemplateMatch",
-        "template": "哈巴库克.png",
+    "紫貂": {
+        "recognition": "OCR",
+        "expected": "紫貂",
+        "roi": [
+            650,
+            194,
+            159,
+            64
+        ],
         "next": [
-            "副官替换"
+            "副官替换",
+            "副官关闭"
         ]
     },
     "副官替换": {
+        "recognition": "OCR",
+        "expected": "替换",
+        "action": "Click",
+        "roi": [
+            735,
+            539,
+            231,
+            74
+        ],
+        "next": [
+            "进入沉默战士决战E6-1"
+        ],
+        "focus": true,
+        "focus_tip": "副官替换"
+    },
+    "副官关闭": {
         "recognition": "TemplateMatch",
-        "template": "副官替换.png",
+        "template": "副官关闭.png",
+        "roi": [
+            1076,
+            86,
+            70,
+            65
+        ],
         "action": "Click",
         "next": [
             "进入沉默战士决战E6-1"
+        ]
+    },
+    "决战沉默战士E6-23": {
+        "recognition": "TemplateMatch",
+        "template": "E6-2.png",
+        "roi": [
+            637,
+            353,
+            100,
+            85
+        ],
+        "next": [
+            "检查副官1"
+        ],
+        "focus": true,
+        "focus_tip": "进入决战沉默战士"
+    },
+    "检查副官1": {
+        "action": "Click",
+        "target": [
+            93,
+            329,
+            98,
+            140
+        ],
+        "next": [
+            "紫貂1",
+            "副官翻页1"
+        ],
+        "focus": true,
+        "focus_tip": "检查副官"
+    },
+    "副官翻页1": {
+        "recognition": "TemplateMatch",
+        "template": "副官翻页.png",
+        "action": "Click",
+        "roi": [
+            1163,
+            353,
+            69,
+            53
+        ],
+        "next": [
+            "紫貂1",
+            "副官翻页1"
+        ],
+        "focus": true,
+        "focus_tip": "寻找副官"
+    },
+    "紫貂1": {
+        "recognition": "OCR",
+        "expected": "紫貂",
+        "roi": [
+            650,
+            194,
+            159,
+            64
+        ],
+        "next": [
+            "副官替换1",
+            "副官关闭1"
+        ]
+    },
+    "副官替换1": {
+        "recognition": "OCR",
+        "expected": "替换",
+        "action": "Click",
+        "roi": [
+            735,
+            539,
+            231,
+            74
+        ],
+        "next": [
+            "决战沉默战士E6-22"
+        ],
+        "focus": true,
+        "focus_tip": "副官替换"
+    },
+    "副官关闭1": {
+        "recognition": "TemplateMatch",
+        "template": "副官关闭.png",
+        "roi": [
+            1076,
+            86,
+            70,
+            65
+        ],
+        "action": "Click",
+        "next": [
+            "决战沉默战士E6-22"
         ]
     },
     "进入沉默战士决战E6-1": {
@@ -109,8 +304,11 @@
         "action": "Click",
         "next": [
             "上次选船",
-            "选择前进点A1"
-        ]
+            "选择前进点A1",
+            "放弃撤退"
+        ],
+        "focus": true,
+        "focus_tip": "进入沉默战士决战E6"
     },
     "上次选船": {
         "recognition": "TemplateMatch",
@@ -118,7 +316,9 @@
         "action": "Click",
         "next": [
             "上次选船确认"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "点击上次选船"
     },
     "上次选船确认": {
         "recognition": "TemplateMatch",
@@ -126,33 +326,68 @@
         "action": "Click",
         "next": [
             "选择前进点A1"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "上次选船确认"
     },
     "选择前进点A1": {
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
+        "expected": "A1",
         "roi": [
-            418,
-            307,
-            326,
-            128
+            292,
+            213,
+            336,
+            241
         ],
-        "template": "前进点A1.png",
         "action": "Click",
         "next": [
             "前进点确认A1"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "选择前进点"
     },
     "前进点确认A1": {
         "recognition": "TemplateMatch",
         "template": "前进点确认.png",
         "action": "Click",
         "next": [
-            "初始识别1",
-            "初始识别2",
-            "初始识别3",
-            "初始识别4",
+            "检查开局舰船1",
             "战备舰队获取刷新"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "确认前进点"
+    },
+    "检查开局舰船1": {
+        "recognition": "OCR",
+        "expected": [
+            "U-47",
+            "U-1405",
+            "U-81",
+            "U-96",
+            "U-2540",
+            "U-1206",
+            "U-505"
+        ],
+        "action": "Click",
+        "next": [
+            "检查开局舰船2",
+            "战备舰队获取刷新",
+            "放弃重开"
+        ],
+        "focus": true,
+        "focus_tip": "检查到开局舰船1"
+    },
+    "检查开局舰船2": {
+        "recognition": "OCR",
+        "expected": [
+            "M-296"
+        ],
+        "action": "Click",
+        "next": [
+            "初始确定"
+        ],
+        "focus": true,
+        "focus_tip": "检查到开局舰船2"
     },
     "战备舰队获取刷新": {
         "recognition": "ColorMatch",
@@ -174,12 +409,11 @@
         ],
         "action": "Click",
         "next": [
-            "初始识别1",
-            "初始识别2",
-            "初始识别3",
-            "初始识别4",
+            "检查开局舰船1",
             "放弃重开"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "刷新初始"
     },
     "放弃重开": {
         "action": "Click",
@@ -190,8 +424,11 @@
             24
         ],
         "next": [
-            "放弃确定"
-        ]
+            "放弃确定",
+            "放弃重开"
+        ],
+        "focus": true,
+        "focus_tip": "开始SL开局"
     },
     "放弃确定": {
         "recognition": "TemplateMatch",
@@ -217,227 +454,15 @@
             "进入沉默战士决战E6-1"
         ]
     },
-    "初始识别1": {
-        "recognition": "OCR",
-        "roi": [
-            260,
-            489,
-            117,
-            25
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始识别2-2",
-            "初始识别3-2",
-            "初始识别4-2",
-            "初始识别5-2",
-            "战备舰队获取刷新",
-            "放弃重开"
-        ]
-    },
-    "初始识别2": {
-        "recognition": "OCR",
-        "roi": [
-            424,
-            490,
-            113,
-            23
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始识别3-2",
-            "初始识别4-2",
-            "初始识别5-2",
-            "战备舰队获取刷新",
-            "放弃重开"
-        ]
-    },
-    "初始识别3": {
-        "recognition": "OCR",
-        "roi": [
-            584,
-            490,
-            115,
-            24
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始识别4-2",
-            "初始识别5-2",
-            "战备舰队获取刷新",
-            "放弃重开"
-        ]
-    },
-    "初始识别4": {
-        "recognition": "OCR",
-        "roi": [
-            742,
-            489,
-            119,
-            26
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始识别5-2",
-            "战备舰队获取刷新",
-            "放弃重开"
-        ]
-    },
-    "初始识别2-2": {
-        "recognition": "OCR",
-        "roi": [
-            424,
-            490,
-            113,
-            23
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始确定"
-        ]
-    },
-    "初始识别3-2": {
-        "recognition": "OCR",
-        "roi": [
-            584,
-            490,
-            115,
-            24
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始确定"
-        ]
-    },
-    "初始识别4-2": {
-        "recognition": "OCR",
-        "roi": [
-            742,
-            489,
-            119,
-            26
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始确定"
-        ]
-    },
-    "初始识别5-2": {
-        "recognition": "OCR",
-        "roi": [
-            907,
-            490,
-            109,
-            24
-        ],
-        "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
-        ],
-        "action": "Click",
-        "next": [
-            "初始确定"
-        ]
-    },
     "初始确定": {
         "recognition": "TemplateMatch",
         "template": "战备舰队获取确定.png",
         "action": "Click",
         "next": [
-            "哈巴库克技能"
-        ]
+            "决战决策1"
+        ],
+        "focus": true,
+        "focus_tip": "确定选择初始舰船"
     },
     "哈巴库克技能": {
         "recognition": "TemplateMatch",
@@ -480,7 +505,10 @@
             "U-1206",
             "U-505",
             "M-296",
-            "伊-25"
+            "伊-25",
+            "鱼",
+            "伊",
+            "U"
         ],
         "action": "Click",
         "target": [
@@ -490,20 +518,206 @@
             24
         ],
         "next": [
-            "决战编队A1"
+            "决战决策1"
         ]
     },
-    "决战编队A1": {
+    "决战决策1": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "timeout": 120000,
+        "next": [
+            "决战进入编队界面",
+            "决战识别boss点"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募识别",
+            "决战检测紫貂技能",
+            "决战检测经验将满",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战请选择前进点": {
+        "recognition": "OCR",
+        "expected": "请选择前进点",
+        "roi": [
+            569,
+            493,
+            139,
+            39
+        ],
+        "next": [
+            "决战前进点选择X1"
+        ]
+    },
+    "决战前进点选择X1": {
+        "recognition": "TemplateMatch",
+        "template": "前进点1.png",
+        "roi": [
+            155,
+            247,
+            981,
+            173
+        ],
+        "order_by": "Score",
+        "threshold": 0.95,
+        "action": "Click",
+        "next": [
+            "决战确认前进点"
+        ],
+        "focus": true,
+        "focus_tip": "选择前进点"
+    },
+    "决战确认前进点": {
+        "recognition": "TemplateMatch",
+        "template": "前进点确认.png",
+        "action": "Click",
+        "focus": true,
+        "focus_tip": "确认选择前进点"
+    },
+    "决战检测紫貂技能": {
+        "recognition": "TemplateMatch",
+        "template": "紫貂技能.png",
+        "order_by": "Score",
+        "threshold": 0.95,
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ],
+        "next": [
+            "决战检测等级大于2",
+            "决战检测经验将满",
+            "决战进入编队"
+        ]
+    },
+    "决战检测等级大于2": {
+        "recognition": "OCR",
+        "expected": "Lv\\.[2-9]",
+        "roi": [
+            24,
+            587,
+            101,
+            32
+        ],
+        "next": [
+            "决战使用紫貂技能"
+        ],
+        "focus": true,
+        "focus_tip": "检查到紫貂技能可用"
+    },
+    "决战使用紫貂技能": {
+        "recognition": "TemplateMatch",
+        "template": "紫貂技能.png",
+        "action": "Click",
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ],
+        "next": [
+            "使用紫貂技能后购买经验"
+        ],
+        "focus": true,
+        "focus_tip": "使用紫貂技能"
+    },
+    "使用紫貂技能后购买经验": {
+        "recognition": "OCR",
+        "expected": "购买5经验值",
+        "action": "Click",
+        "roi": [
+            106,
+            652,
+            108,
+            39
+        ],
+        "next": [
+            "使用紫貂技能后购买经验1"
+        ],
+        "focus": true,
+        "focus_tip": "购买经验值"
+    },
+    "使用紫貂技能后购买经验1": {
+        "recognition": "OCR",
+        "expected": "购买5经验值",
+        "action": "Click",
+        "roi": [
+            106,
+            652,
+            108,
+            39
+        ],
+        "focus": true,
+        "focus_tip": "购买经验值"
+    },
+    "决战检测经验将满": {
+        "recognition": "OCR",
+        "expected": [
+            "[5-9]/10",
+            "(1[0-4])/15",
+            "(1[5-9])/20"
+        ],
+        "roi": [
+            24,
+            587,
+            101,
+            32
+        ],
+        "next": [
+            "决战检测拥有点数",
+            "决战进入编队"
+        ]
+    },
+    "决战检测拥有点数": {
+        "recognition": "OCR",
+        "expected": [
+            "([5-9]|[1-9][0-9]+)"
+        ],
+        "roi": [
+            93,
+            619,
+            63,
+            28
+        ],
+        "next": [
+            "决战购买经验值"
+        ],
+        "focus": true,
+        "focus_tip": "检查到可购买经验值"
+    },
+    "决战购买经验值": {
+        "recognition": "OCR",
+        "expected": "购买5经验值",
+        "action": "Click",
+        "roi": [
+            106,
+            652,
+            108,
+            39
+        ],
+        "focus": true,
+        "focus_tip": "购买经验值"
+    },
+    "决战进入编队": {
         "recognition": "TemplateMatch",
         "template": "决战编队.png",
         "action": "Click",
+        "focus": true,
+        "focus_tip": "结束战前决策，进入编队"
+    },
+    "决战进入编队界面": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
         "next": [
-            "决战自动补给A1",
-            "决战添加舰船A1",
-            "决战开始出征A1"
+            "决战自动补给",
+            "决战添加舰船"
         ]
     },
-    "决战自动补给A1": {
+    "决战自动补给": {
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
@@ -515,21 +729,24 @@
             22
         ],
         "next": [
-            "决战添加舰船A1",
-            "决战开始出征A1"
-        ]
+            "决战添加舰船"
+        ],
+        "focus": true,
+        "focus_tip": "切换自动补给"
     },
-    "决战添加舰船A1": {
+    "决战添加舰船": {
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
         "action": "Click",
         "next": [
-            "决战优先添加A1",
-            "决战次级添加A1",
-            "决战退出添加A1"
-        ]
+            "决战优先添加",
+            "决战次级添加",
+            "决战退出添加"
+        ],
+        "focus": true,
+        "focus_tip": "检查添加舰船"
     },
-    "决战优先添加A1": {
+    "决战优先添加": {
         "recognition": "OCR",
         "roi": [
             62,
@@ -541,23 +758,672 @@
             "U-47",
             "U-1405",
             "U-81",
-            "射水鱼",
-            "大青花鱼",
-            "鲃鱼",
             "U-96",
             "U-2540",
             "U-1206",
             "U-505",
-            "M-296",
-            "伊-25"
+            "U"
         ],
         "action": "Click",
         "next": [
-            "决战添加舰船A1",
-            "决战开始出征A1"
+            "决战添加舰船",
+            "决战切换策略",
+            "决战大破检测",
+            "决战开始出征"
         ]
     },
-    "决战次级添加A1": {
+    "决战次级添加": {
+        "recognition": "OCR",
+        "roi": [
+            48,
+            94,
+            146,
+            289
+        ],
+        "expected": [
+            "潜艇"
+        ],
+        "action": "Click",
+        "next": [
+            "决战添加舰船",
+            "决战切换策略",
+            "决战大破检测",
+            "决战开始出征"
+        ]
+    },
+    "决战退出添加": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "决战切换策略",
+            "决战大破检测",
+            "决战开始出征"
+        ]
+    },
+    "决战大破检测": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "next": [
+            "决战快速修理"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破舰船"
+    },
+    "决战快速修理": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "决战修理舰船"
+        ]
+    },
+    "决战修理舰船": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战修理舰船",
+            "决战开始出征"
+        ]
+    },
+    "决战开始出征": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型",
+            "决战点击继续"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战开始战斗": {
+        "recognition": "TemplateMatch",
+        "template": "开始战斗.png",
+        "action": "Click",
+        "post_wait_freezes": 0,
+        "focus": true,
+        "focus_tip": "点击开始战斗"
+    },
+    "决战阵型": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "post_wait_freezes": 0,
+        "action": "Click",
+        "timeout": 120000,
+        "next": [
+            "决战点击继续"
+        ],
+        "interrupt": [
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战追击": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "next": [
+            "决战追击检查SS1",
+            "决战追击检查SS2",
+            "决战追击检查SS3",
+            "决战追击检查SS4",
+            "决战追击检查SS5",
+            "决战追击点击"
+        ],
+        "post_wait_freezes": 0,
+        "focus": true,
+        "focus_tip": "检测是否追击"
+    },
+    "决战追击检查SS1": {
+        "recognition": "OCR",
+        "expected": [
+            "S",
+            "s"
+        ],
+        "roi": [
+            993,
+            141,
+            31,
+            32
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击检查其他船1",
+            "决战追击检查其他船2",
+            "决战追击检查其他船3",
+            "决战追击检查其他船4",
+            "决战追击检查其他船5",
+            "决战追击放弃"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇"
+    },
+    "决战追击检查SS2": {
+        "recognition": "OCR",
+        "expected": [
+            "S",
+            "s"
+        ],
+        "roi": [
+            940,
+            321,
+            28,
+            27
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击检查其他船1",
+            "决战追击检查其他船2",
+            "决战追击检查其他船3",
+            "决战追击检查其他船4",
+            "决战追击检查其他船5",
+            "决战追击放弃"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇"
+    },
+    "决战追击检查SS3": {
+        "recognition": "OCR",
+        "expected": [
+            "S",
+            "s"
+        ],
+        "roi": [
+            959,
+            467,
+            32,
+            28
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击检查其他船1",
+            "决战追击检查其他船2",
+            "决战追击检查其他船3",
+            "决战追击检查其他船4",
+            "决战追击检查其他船5",
+            "决战追击放弃"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇"
+    },
+    "决战追击检查SS4": {
+        "recognition": "OCR",
+        "expected": [
+            "S",
+            "s"
+        ],
+        "roi": [
+            1112,
+            419,
+            28,
+            25
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击检查其他船1",
+            "决战追击检查其他船2",
+            "决战追击检查其他船3",
+            "决战追击检查其他船4",
+            "决战追击检查其他船5",
+            "决战追击放弃"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇"
+    },
+    "决战追击检查SS5": {
+        "recognition": "OCR",
+        "expected": [
+            "S",
+            "s"
+        ],
+        "roi": [
+            1080,
+            256,
+            39,
+            31
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击检查其他船1",
+            "决战追击检查其他船2",
+            "决战追击检查其他船3",
+            "决战追击检查其他船4",
+            "决战追击检查其他船5",
+            "决战追击放弃"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇"
+    },
+    "决战追击检查其他船1": {
+        "recognition": "OCR",
+        "expected": [
+            "[A-R]",
+            "[T-Z]",
+            "[a-r]",
+            "[t-z]"
+        ],
+        "roi": [
+            993,
+            141,
+            31,
+            32
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击点击"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇外敌舰"
+    },
+    "决战追击检查其他船2": {
+        "recognition": "OCR",
+        "expected": [
+            "[A-R]",
+            "[T-Z]",
+            "[a-r]",
+            "[t-z]"
+        ],
+        "roi": [
+            940,
+            321,
+            28,
+            27
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击点击"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇外敌舰"
+    },
+    "决战追击检查其他船3": {
+        "recognition": "OCR",
+        "expected": [
+            "[A-R]",
+            "[T-Z]",
+            "[a-r]",
+            "[t-z]"
+        ],
+        "roi": [
+            959,
+            467,
+            32,
+            28
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击点击"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇外敌舰"
+    },
+    "决战追击检查其他船4": {
+        "recognition": "OCR",
+        "expected": [
+            "[A-R]",
+            "[T-Z]",
+            "[a-r]",
+            "[t-z]"
+        ],
+        "roi": [
+            1112,
+            419,
+            28,
+            25
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击点击"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇外敌舰"
+    },
+    "决战追击检查其他船5": {
+        "recognition": "OCR",
+        "expected": [
+            "[A-R]",
+            "[T-Z]",
+            "[a-r]",
+            "[t-z]"
+        ],
+        "roi": [
+            1080,
+            256,
+            39,
+            31
+        ],
+        "post_wait_freezes": 0,
+        "next": [
+            "决战追击点击"
+        ],
+        "focus": true,
+        "focus_tip": "尝试检测潜艇外敌舰"
+    },
+    "决战追击点击": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "focus": true,
+        "focus_tip": "允许追击"
+    },
+    "决战追击放弃": {
+        "recognition": "TemplateMatch",
+        "template": "放弃.png",
+        "action": "Click",
+        "focus": true,
+        "focus_tip": "放弃追击"
+    },
+    "决战点击继续": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续": {
+        "action": "Click",
+        "target": "决战点击继续",
+        "next": [
+            "决战决策1",
+            "决战再点继续"
+        ]
+    },
+    "决战切换策略": {
+        "recognition": "OCR",
+        "expected": "添加舰船",
+        "inverse": true,
+        "roi": [
+            651,
+            161,
+            150,
+            361
+        ],
+        "next": [
+            "决战进入编队界面2"
+        ],
+        "focus": true,
+        "focus_tip": "切换招募策略"
+    },
+    "决战进入编队界面2": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战自动补给2",
+            "决战大破检测2",
+            "决战开始出征2"
+        ]
+    },
+    "决战自动补给2": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
+        "next": [
+            "决战大破检测2",
+            "决战开始出征2"
+        ],
+        "focus": true,
+        "focus_tip": "切换自动补给"
+    },
+    "决战大破检测2": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "next": [
+            "决战快速修理2"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破舰船"
+    },
+    "决战快速修理2": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "决战修理舰船2"
+        ]
+    },
+    "决战修理舰船2": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战修理舰船2",
+            "决战开始出征2"
+        ]
+    },
+    "决战开始出征2": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型2",
+            "决战点击继续2"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战阵型2": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战点击继续2"
+        ],
+        "interrupt": [
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战点击继续2": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续2"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续2": {
+        "action": "Click",
+        "target": "决战点击继续2",
+        "next": [
+            "决战决策2",
+            "决战再点继续2"
+        ]
+    },
+    "决战决策2": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "timeout": 120000,
+        "next": [
+            "决战进入编队界面2",
+            "决战识别boss点2"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "关闭招募",
+            "决战检测等级小于9",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战检测等级小于9": {
+        "recognition": "OCR",
+        "expected": "Lv\\.[2-8]",
+        "roi": [
+            24,
+            587,
+            101,
+            32
+        ],
+        "next": [
+            "决战检测拥有点数",
+            "决战进入编队"
+        ]
+    },
+    "决战识别boss点": {
+        "recognition": "TemplateMatch",
+        "template": "决战J1.png",
+        "timeout": 120000,
+        "order_by": "Score",
+        "threshold": 0.95,
+        "next": [
+            "决战进入编队界面BOSS"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募识别",
+            "决战检测等级小于9",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战识别boss点2": {
+        "recognition": "TemplateMatch",
+        "template": "决战J1.png",
+        "timeout": 120000,
+        "order_by": "Score",
+        "threshold": 0.95,
+        "next": [
+            "决战进入编队界面BOSS"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "关闭招募",
+            "决战检测等级小于9",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战进入编队界面BOSS": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战添加舰船BOSS",
+            "决战检查舰船BOSS",
+            "决战异常报错"
+        ]
+    },
+    "决战添加舰船BOSS": {
+        "recognition": "TemplateMatch",
+        "template": "添加舰船.png",
+        "action": "Click",
+        "next": [
+            "决战优先添加BOSS",
+            "决战次级添加BOSS",
+            "决战退出添加BOSS"
+        ],
+        "focus": true,
+        "focus_tip": "检查添加舰船"
+    },
+    "决战优先添加BOSS": {
         "recognition": "OCR",
         "roi": [
             62,
@@ -566,164 +1432,1474 @@
             23
         ],
         "expected": [
-            "M-296",
-            "鹦鹉螺",
-            "达·芬奇",
-            "鹰",
-            "K-21",
-            "U-441",
-            "IIIA",
-            "伊-201",
-            "潜甲",
-            "潜乙"
+            "U-47",
+            "U-1405",
+            "U-81",
+            "U-96",
+            "U-2540",
+            "U-1206",
+            "U-505",
+            "U"
         ],
         "action": "Click",
         "next": [
-            "决战添加舰船A1",
-            "决战开始出征A1"
+            "决战添加舰船BOSS",
+            "决战检查舰船BOSS"
         ]
     },
-    "决战退出添加A1": {
+    "决战次级添加BOSS": {
+        "recognition": "OCR",
+        "roi": [
+            48,
+            94,
+            146,
+            289
+        ],
+        "expected": [
+            "潜艇"
+        ],
+        "action": "Click",
+        "next": [
+            "决战添加舰船BOSS",
+            "决战检查舰船BOSS"
+        ]
+    },
+    "决战退出添加BOSS": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
-            "决战开始出征A1"
+            "决战检查舰船BOSS",
+            "决战异常报错"
         ]
     },
-    "决战开始出征A1": {
+    "决战检查舰船BOSS": {
+        "recognition": "OCR",
+        "expected": "添加舰船",
+        "inverse": true,
+        "roi": [
+            651,
+            161,
+            150,
+            361
+        ],
+        "next": [
+            "决战检查舰船BOSS2",
+            "决战快速修理BOSS"
+        ]
+    },
+    "决战检查舰船BOSS2": {
+        "recognition": "OCR",
+        "expected": "U-1206",
+        "roi": [
+            60,
+            433,
+            886,
+            28
+        ],
+        "next": [
+            "决战快速修理BOSS2"
+        ]
+    },
+    "决战异常报错": {
+        "recognition": "OCR",
+        "expected": "添加舰船",
+        "roi": [
+            651,
+            161,
+            150,
+            361
+        ],
+        "next": [
+            "决战异常报错退出"
+        ],
+        "focus": true,
+        "focus_tip": "检查舰船数小于5，无法执行后续策略",
+        "focus_tip_color": "Red"
+    },
+    "决战异常报错退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "放弃撤退"
+        ]
+    },
+    "决战快速修理BOSS": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS",
+            "决战中破修理BOSS",
+            "决战开始出征BOSS"
+        ]
+    },
+    "决战大破修理BOSS": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS",
+            "决战中破修理BOSS",
+            "决战开始出征BOSS"
+        ]
+    },
+    "决战中破修理BOSS": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS",
+            "决战中破修理BOSS",
+            "决战开始出征BOSS"
+        ]
+    },
+    "决战开始出征BOSS": {
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
         "next": [
-            "决战开始战斗A1",
-            "决战点击继续A1"
-        ]
+            "决战阵型BOSS",
+            "决战点击继续BOSS"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
     },
-    "决战开始战斗A1": {
-        "recognition": "TemplateMatch",
-        "template": "开始战斗.png",
+    "决战快速修理BOSS2": {
+        "recognition": "OCR",
+        "expected": "快速修理",
         "action": "Click",
         "next": [
-            "决战点击继续A1"
+            "决战大破修理BOSS2",
+            "决战中破修理BOSS2",
+            "决战开始出征BOSS2"
         ]
     },
-    "决战点击继续A1": {
+    "决战大破修理BOSS2": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS2",
+            "决战中破修理BOSS2",
+            "决战开始出征BOSS2"
+        ]
+    },
+    "决战中破修理BOSS2": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS2",
+            "决战中破修理BOSS2",
+            "决战开始出征BOSS2"
+        ]
+    },
+    "决战开始出征BOSS2": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型BOSS2",
+            "决战点击继续BOSS2"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战阵型BOSS": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战点击继续BOSS"
+        ],
+        "interrupt": [
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战阵型BOSS2": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战点击继续BOSS2"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战点击继续BOSS": {
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
         "next": [
-            "决战再点继续A1"
-        ]
-    },
-    "决战再点继续A1": {
-        "action": "Click",
-        "target": "决战点击继续A1",
-        "next": [
-            "选择前进点B1"
-        ]
-    },
-    "选择前进点B1": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            418,
-            307,
-            326,
-            128
+            "决战再点继续BOSS"
         ],
-        "template": "前进点B1.png",
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续BOSS": {
         "action": "Click",
+        "target": "决战点击继续BOSS",
         "next": [
-            "前进点确认B1"
+            "决战确认通关",
+            "决战再点继续BOSS"
         ]
     },
-    "前进点确认B1": {
+    "决战点击继续BOSS2": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续BOSS2"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续BOSS2": {
+        "action": "Click",
+        "target": "决战点击继续BOSS2",
+        "next": [
+            "决战确认通关2",
+            "决战再点继续BOSS2"
+        ]
+    },
+    "决战确认通关": {
+        "recognition": "OCR",
+        "expected": "确认通关",
+        "roi": [
+            155,
+            247,
+            981,
+            173
+        ],
+        "action": "Click",
+        "next": [
+            "决战点击确认通关"
+        ],
+        "focus": true,
+        "focus_tip": "确认通关"
+    },
+    "决战确认通关2": {
+        "recognition": "OCR",
+        "expected": "确认通关",
+        "roi": [
+            155,
+            247,
+            981,
+            173
+        ],
+        "action": "Click",
+        "next": [
+            "决战点击确认通关2"
+        ],
+        "focus": true,
+        "focus_tip": "确认通关"
+    },
+    "决战点击确认通关": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [
+            579,
+            588,
+            117,
+            48
+        ],
+        "next": [
+            "决战再次确认通关"
+        ]
+    },
+    "决战点击确认通关2": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [
+            579,
+            588,
+            117,
+            48
+        ],
+        "next": [
+            "决战再次确认通关2"
+        ]
+    },
+    "决战再次确认通关": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "决战奖励舰船"
+        ]
+    },
+    "决战再次确认通关2": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "决战奖励舰船2"
+        ]
+    },
+    "决战奖励舰船": {
+        "action": "Click",
+        "target": "决战再次确认通关",
+        "next": [
+            "决战沉默战士E6-2",
+            "决战奖励舰船"
+        ]
+    },
+    "决战奖励舰船2": {
+        "action": "Click",
+        "target": "决战再次确认通关2",
+        "next": [
+            "决战沉默战士E6-22",
+            "决战奖励舰船2"
+        ]
+    },
+    "决战沉默战士E6-2": {
+        "recognition": "TemplateMatch",
+        "template": "E6-2.png",
+        "roi": [
+            637,
+            353,
+            100,
+            85
+        ],
+        "action": "Click",
+        "next": [
+            "决战E6-2凹开局"
+        ],
+        "interrupt": [
+            "决战前进点A1"
+        ],
+        "focus": true,
+        "focus_tip": "进入E6-2"
+    },
+    "决战沉默战士E6-22": {
+        "recognition": "TemplateMatch",
+        "template": "E6-2.png",
+        "roi": [
+            637,
+            353,
+            100,
+            85
+        ],
+        "action": "Click",
+        "next": [
+            "决战E6-2凹开局2",
+            "放弃撤退3"
+        ],
+        "interrupt": [
+            "决战前进点A1"
+        ],
+        "focus": true,
+        "focus_tip": "进入E6-2"
+    },
+    "决战前进点A1": {
+        "recognition": "OCR",
+        "expected": "A1",
+        "roi": [
+            292,
+            213,
+            336,
+            241
+        ],
+        "action": "Click",
+        "next": [
+            "决战确认A1"
+        ],
+        "focus": true,
+        "focus_tip": "选择前进点"
+    },
+    "决战确认A1": {
         "recognition": "TemplateMatch",
         "template": "前进点确认.png",
         "action": "Click",
+        "focus": true,
+        "focus_tip": "确认前进点"
+    },
+    "决战E6-2凹开局": {
+        "recognition": "OCR",
+        "expected": "战备舰队获取",
         "next": [
-            "关闭B1"
+            "决战寻找特定舰船",
+            "决战凹开局刷新",
+            "放弃重开2"
         ]
     },
-    "关闭B1": {
-        "recognition": "TemplateMatch",
-        "template": "决战关闭.png",
+    "放弃重开2": {
+        "recognition": "OCR",
+        "expected": "关闭",
         "action": "Click",
         "next": [
-            "编队B1"
+            "放弃撤退2"
         ]
     },
-    "编队B1": {
+    "放弃撤退2": {
+        "recognition": "TemplateMatch",
+        "template": "放弃撤退.png",
+        "action": "Click",
+        "next": [
+            "确认退出2"
+        ]
+    },
+    "确认退出2": {
+        "recognition": "TemplateMatch",
+        "template": "确认退出.png",
+        "action": "Click",
+        "next": [
+            "决战沉默战士E6-2"
+        ]
+    },
+    "放弃重开3": {
+        "recognition": "OCR",
+        "expected": "关闭",
+        "action": "Click",
+        "next": [
+            "放弃撤退3"
+        ]
+    },
+    "放弃撤退3": {
+        "recognition": "TemplateMatch",
+        "template": "放弃撤退.png",
+        "action": "Click",
+        "next": [
+            "确认退出3"
+        ]
+    },
+    "确认退出3": {
+        "recognition": "TemplateMatch",
+        "template": "确认退出.png",
+        "action": "Click",
+        "next": [
+            "决战沉默战士E6-22"
+        ]
+    },
+    "决战E6-2凹开局2": {
+        "recognition": "OCR",
+        "expected": "战备舰队获取",
+        "next": [
+            "决战随机招募"
+        ]
+    },
+    "决战凹开局确定": {
+        "recognition": "TemplateMatch",
+        "template": "战备舰队获取确定.png",
+        "action": "Click",
+        "next": [
+            "决战决策3"
+        ]
+    },
+    "决战决策3": {
         "recognition": "TemplateMatch",
         "template": "决战编队.png",
+        "timeout": 120000,
+        "next": [
+            "决战进入编队界面3",
+            "决战识别boss点3"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募",
+            "决战检测紫貂技能2",
+            "决战检测等级",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战检测紫貂技能2": {
+        "recognition": "TemplateMatch",
+        "template": "紫貂技能.png",
+        "order_by": "Score",
+        "threshold": 0.95,
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ],
+        "next": [
+            "决战检测等级大于8",
+            "决战检测拥有点数",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "检查到紫貂技能可用"
+    },
+    "决战检测等级大于8": {
+        "recognition": "OCR",
+        "expected": "Lv\\.[1-7]",
+        "inverse": true,
+        "roi": [
+            24,
+            587,
+            101,
+            32
+        ],
+        "action": "Click",
+        "target": "决战检测紫貂技能2",
+        "focus": true,
+        "focus_tip": "使用紫貂技能"
+    },
+    "决战检测等级": {
+        "recognition": "OCR",
+        "expected": [
+            "Lv\\.9",
+            "Lv\\.10"
+        ],
+        "inverse": true,
+        "roi": [
+            24,
+            587,
+            101,
+            32
+        ],
+        "next": [
+            "决战检测拥有点数",
+            "决战进入编队"
+        ]
+    },
+    "决战进入编队界面3": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战自动补给3",
+            "决战添加舰船2",
+            "决战大破检测3",
+            "决战开始出征3"
+        ]
+    },
+    "决战自动补给3": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
+        "next": [
+            "决战添加舰船2",
+            "决战大破检测3",
+            "决战开始出征3"
+        ],
+        "focus": true,
+        "focus_tip": "切换自动补给"
+    },
+    "决战添加舰船2": {
+        "recognition": "TemplateMatch",
+        "template": "添加舰船.png",
         "action": "Click",
         "next": [
-            "决战大破检测B1",
-            "决战开始出征B1"
-        ]
+            "决战添加舰船3"
+        ],
+        "focus": true,
+        "focus_tip": "检查添加舰船"
     },
-    "决战大破检测B1": {
-        "recognition": "TemplateMatch",
-        "template": "大破检测2.png",
-        "next": [
-            "决战快速修理B1"
-        ]
-    },
-    "决战快速修理B1": {
-        "recognition": "TemplateMatch",
-        "template": "快速修理2.png",
+    "决战添加舰船3": {
+        "recognition": "OCR",
+        "roi": [
+            48,
+            94,
+            146,
+            289
+        ],
+        "expected": [
+            "潜艇"
+        ],
         "action": "Click",
         "next": [
-            "决战修理舰船B1"
+            "决战大破检测3",
+            "决战开始出征3"
         ]
     },
-    "决战修理舰船B1": {
-        "recognition": "TemplateMatch",
-        "template": "大破检测2.png",
+    "决战大破检测3": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "next": [
+            "决战快速修理3"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破舰船"
+    },
+    "决战快速修理3": {
+        "recognition": "OCR",
+        "expected": "快速修理",
         "action": "Click",
         "next": [
-            "决战开始出征B1"
+            "决战修理舰船3"
         ]
     },
-    "决战开始出征B1": {
+    "决战修理舰船3": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战修理舰船3",
+            "决战开始出征3"
+        ]
+    },
+    "决战开始出征3": {
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
         "next": [
-            "决战开始战斗B1",
-            "决战点击继续B1"
-        ]
+            "决战阵型3",
+            "决战点击继续3"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
     },
-    "决战开始战斗B1": {
-        "recognition": "TemplateMatch",
-        "template": "开始战斗.png",
+    "决战阵型3": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "post_wait_freezes": 0,
         "action": "Click",
+        "timeout": 120000,
         "next": [
-            "决战点击继续B1"
-        ]
+            "决战点击继续3"
+        ],
+        "interrupt": [
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
     },
-    "决战点击继续B1": {
+    "决战点击继续3": {
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
         "next": [
-            "决战再点继续B1"
-        ]
+            "决战再点继续3"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
     },
-    "决战再点继续B1": {
+    "决战再点继续3": {
         "action": "Click",
-        "target": "决战点击继续B1",
+        "target": "决战点击继续3",
         "next": [
-            "关闭C1"
+            "决战决策3",
+            "决战再点继续3"
         ]
     },
-    "关闭C1": {
+    "决战识别boss点3": {
         "recognition": "TemplateMatch",
-        "template": "决战关闭.png",
+        "template": "决战J1.png",
+        "timeout": 120000,
+        "order_by": "Score",
+        "threshold": 0.95,
+        "next": [
+            "决战进入编队界面BOSS2"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战进入编队界面BOSS2": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战快速修理BOSS3",
+            "决战开始出征BOSS3"
+        ]
+    },
+    "决战快速修理BOSS3": {
+        "recognition": "OCR",
+        "expected": "快速修理",
         "action": "Click",
         "next": [
-            "编队B1"
+            "决战大破修理BOSS3",
+            "决战中破修理BOSS3",
+            "决战开始出征BOSS3"
+        ]
+    },
+    "决战大破修理BOSS3": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS3",
+            "决战中破修理BOSS3",
+            "决战开始出征BOSS3"
+        ]
+    },
+    "决战中破修理BOSS3": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS3",
+            "决战中破修理BOSS3",
+            "决战开始出征BOSS3"
+        ]
+    },
+    "决战开始出征BOSS3": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型BOSS3",
+            "决战点击继续BOSS3"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战阵型BOSS3": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战点击继续BOSS3"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战点击继续BOSS3": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续BOSS3"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续BOSS3": {
+        "action": "Click",
+        "target": "决战点击继续BOSS3",
+        "next": [
+            "决战确认通关3",
+            "决战再点继续BOSS3"
+        ]
+    },
+    "决战确认通关3": {
+        "recognition": "OCR",
+        "expected": "确认通关",
+        "roi": [
+            155,
+            247,
+            981,
+            173
+        ],
+        "action": "Click",
+        "next": [
+            "决战点击确认通关3"
+        ],
+        "focus": true,
+        "focus_tip": "确认通关"
+    },
+    "决战点击确认通关3": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [
+            579,
+            588,
+            117,
+            48
+        ],
+        "next": [
+            "决战再次确认通关3"
+        ]
+    },
+    "决战再次确认通关3": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "决战奖励舰船3"
+        ]
+    },
+    "决战奖励舰船3": {
+        "action": "Click",
+        "target": "决战再次确认通关3",
+        "next": [
+            "决战沉默战士E6-3",
+            "决战奖励舰船3"
+        ]
+    },
+    "决战沉默战士E6-3": {
+        "recognition": "TemplateMatch",
+        "template": "E6-3.png",
+        "roi": [
+            1065,
+            324,
+            105,
+            79
+        ],
+        "next": [
+            "更换副官"
+        ]
+    },
+    "更换副官": {
+        "action": "Click",
+        "target": [
+            93,
+            329,
+            98,
+            140
+        ],
+        "next": [
+            "奇尔沙治",
+            "副官翻页2"
+        ],
+        "focus": true,
+        "focus_tip": "更换副官"
+    },
+    "副官翻页2": {
+        "recognition": "TemplateMatch",
+        "template": "副官翻页.png",
+        "action": "Click",
+        "roi": [
+            1163,
+            353,
+            69,
+            53
+        ],
+        "next": [
+            "奇尔沙治",
+            "副官翻页2"
+        ],
+        "focus": true,
+        "focus_tip": "寻找副官"
+    },
+    "奇尔沙治": {
+        "recognition": "OCR",
+        "expected": "奇尔沙治",
+        "roi": [
+            650,
+            194,
+            159,
+            64
+        ],
+        "next": [
+            "副官替换2",
+            "副官关闭2"
+        ]
+    },
+    "副官替换2": {
+        "recognition": "OCR",
+        "expected": "替换",
+        "action": "Click",
+        "roi": [
+            735,
+            539,
+            231,
+            74
+        ],
+        "next": [
+            "进入沉默战士决战E6-3"
+        ],
+        "focus": true,
+        "focus_tip": "副官替换"
+    },
+    "副官关闭2": {
+        "recognition": "TemplateMatch",
+        "template": "副官关闭.png",
+        "roi": [
+            1076,
+            86,
+            70,
+            65
+        ],
+        "action": "Click",
+        "next": [
+            "进入沉默战士决战E6-3"
+        ]
+    },
+    "进入沉默战士决战E6-3": {
+        "recognition": "TemplateMatch",
+        "template": "E6-3.png",
+        "roi": [
+            1065,
+            324,
+            105,
+            79
+        ],
+        "action": "Click",
+        "next": [
+            "决战决策4"
+        ],
+        "focus": true,
+        "focus_tip": "进入E6-3"
+    },
+    "决战决策4": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "timeout": 120000,
+        "next": [
+            "决战进入编队界面4",
+            "决战识别boss点4"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战进入编队界面4": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战自动补给4",
+            "决战大破检测4",
+            "决战开始出征4"
+        ]
+    },
+    "决战自动补给4": {
+        "recognition": "TemplateMatch",
+        "template": "对号.png",
+        "inverse": true,
+        "action": "Click",
+        "target": [
+            56,
+            661,
+            21,
+            22
+        ],
+        "next": [
+            "决战大破检测4",
+            "决战开始出征4"
+        ],
+        "focus": true,
+        "focus_tip": "切换自动补给"
+    },
+    "决战大破检测4": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "next": [
+            "决战快速修理4"
+        ],
+        "focus": true,
+        "focus_tip": "检测到大破舰船"
+    },
+    "决战快速修理4": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "决战修理舰船4"
+        ]
+    },
+    "决战修理舰船4": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战修理舰船4",
+            "决战开始出征4"
+        ]
+    },
+    "决战开始出征4": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型4",
+            "决战点击继续4"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战阵型4": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "post_wait_freezes": 0,
+        "action": "Click",
+        "timeout": 120000,
+        "next": [
+            "决战点击继续4"
+        ],
+        "interrupt": [
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战点击继续4": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续4"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续4": {
+        "action": "Click",
+        "target": "决战点击继续4",
+        "next": [
+            "决战决策4",
+            "决战沉默战士E6",
+            "决战再点继续4"
+        ]
+    },
+    "决战识别boss点4": {
+        "recognition": "TemplateMatch",
+        "template": "决战J1.png",
+        "timeout": 120000,
+        "order_by": "Score",
+        "threshold": 0.95,
+        "next": [
+            "决战进入编队界面BOSS3"
+        ],
+        "interrupt": [
+            "决战请选择前进点",
+            "决战招募",
+            "决战使用奇尔沙治技能",
+            "决战进入编队"
+        ],
+        "focus": true,
+        "focus_tip": "战前决策"
+    },
+    "决战使用奇尔沙治技能": {
+        "recognition": "TemplateMatch",
+        "template": "奇尔沙治技能.png",
+        "order_by": "Score",
+        "threshold": 0.95,
+        "action": "Click",
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ]
+    },
+    "决战进入编队界面BOSS3": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
+            "决战快速修理BOSS4",
+            "决战开始出征BOSS4"
+        ]
+    },
+    "决战快速修理BOSS4": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS4",
+            "决战中破修理BOSS4",
+            "决战开始出征BOSS4"
+        ]
+    },
+    "决战大破修理BOSS4": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS4",
+            "决战中破修理BOSS4",
+            "决战开始出征BOSS4"
+        ]
+    },
+    "决战中破修理BOSS4": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
+        "action": "Click",
+        "next": [
+            "决战大破修理BOSS4",
+            "决战中破修理BOSS4",
+            "决战开始出征BOSS4"
+        ]
+    },
+    "决战开始出征BOSS4": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战阵型BOSS4",
+            "决战点击继续BOSS4"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "开始出征"
+    },
+    "决战阵型BOSS4": {
+        "recognition": "OCR",
+        "expected": [
+            "梯形阵"
+        ],
+        "roi": [
+            702,
+            99,
+            560,
+            612
+        ],
+        "action": "Click",
+        "timeout": 120000,
+        "post_wait_freezes": 0,
+        "next": [
+            "决战点击继续BOSS4"
+        ],
+        "interrupt": [
+            "决战开始战斗",
+            "决战追击"
+        ],
+        "focus": true,
+        "focus_tip": "点击梯形阵"
+    },
+    "决战点击继续BOSS4": {
+        "recognition": "TemplateMatch",
+        "template": "点击继续.png",
+        "action": "Click",
+        "next": [
+            "决战再点继续BOSS4"
+        ],
+        "focus": true,
+        "focus_tip": "战斗结束"
+    },
+    "决战再点继续BOSS4": {
+        "action": "Click",
+        "target": "决战点击继续BOSS4",
+        "next": [
+            "决战确认通关4",
+            "决战再点继续BOSS4"
+        ]
+    },
+    "决战确认通关4": {
+        "recognition": "OCR",
+        "expected": "确认通关",
+        "roi": [
+            155,
+            247,
+            981,
+            173
+        ],
+        "action": "Click",
+        "next": [
+            "决战点击确认通关4"
+        ],
+        "focus": true,
+        "focus_tip": "确认通关"
+    },
+    "决战点击确认通关4": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [
+            579,
+            588,
+            117,
+            48
+        ],
+        "next": [
+            "决战再次确认通关4"
+        ]
+    },
+    "决战再次确认通关4": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "决战奖励舰船4"
+        ]
+    },
+    "决战奖励舰船4": {
+        "action": "Click",
+        "target": "决战再次确认通关3",
+        "next": [
+            "决战沉默战士E6",
+            "决战奖励舰船4"
+        ]
+    },
+    "决战沉默战士E6": {
+        "recognition": "OCR",
+        "expected": "重置关卡",
+        "next": [
+            "决战结束"
+        ]
+    },
+    "决战结束": {
+        "recognition": "TemplateMatch",
+        "template": "活动退出2.png",
+        "action": "Click",
+        "next": [
+            "任务结束"
         ]
     }
 }
