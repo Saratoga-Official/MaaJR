@@ -26,94 +26,35 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 3. 自动战役
 
-4. 自动战斗
+4. 常规图（1-9章）的自动出征
 
 5. 自动演习
 
-6. 无消耗刷1-1鱼雷狗粮
+6. 无消耗刷1-1（远古黑暗炼钢）
 
 7. 自动决战E6（NEW）
 
 8. 结束前任务
 
-9. 不定期更新刷活动练级，出新活动可以找我催更
+9. 在新活动出之后更新活动练级
 
 ---
 
 ## 问题反馈或功能建议
 
-本项目目前缺少开发和测试人员，难免可能存在bug
+本项目目前缺少开发和测试人员，难免可能存在bug或者功能不完善的地方
 
-如果使用中遇到bug或有其他功能建议可以提issue或者加入QQ群457094182反馈
+如果使用中遇到bug或有其他功能建议欢迎提issue或者加入QQ群457094182反馈
 
-反馈问题请附上日志文件 debug/maa.log，谢谢！
+反馈问题请附上日志文件 debug/maa.log
 
----
-
-## 下载及安装说明
-
-下载地址：https://github.com/Saratoga-Official/MaaJR/releases
-
-### Windows
-
-- 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip，解压后运行 MaaJR.exe 即可
-
-- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip，解压后运行 MaaPiCli.exe 即可
-
-### macOS
-
-- 若使用 Intel 处理器，请下载 MaaJR-macos-x86_64-vXXX.zip
-
-- 若使用 M1, M2 等 arm 处理器，请下载 MaaJR-macos-aarch64-vXXX.zip
-
-- 使用方式：
-  
-  ```bash
-  chmod a+x MaaPiCli
-  ./MaaPiCli
-  ```
-
-### Linux
-
-~~用 Linux 的大佬应该不需要我教~~
+同时也欢迎大佬提供PR帮忙完善本项目，谢谢！
 
 ---
 
-## 使用前说明
+## 使用说明
 
-在使用工具前完成以下工作：
-
-* 确保游戏可以在模拟器上流畅运行，没有严重的卡顿和延迟
-
-* 将模拟器的分辨率调整为 16∶9 
-
-* 打开模拟器的ADB调试选项，关闭后台挂机时保活运行
-
-* 完成所有游戏资源的下载
-
-* 完成必须运行库的下载：
-  [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-  [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
-
----
-
-## 功能说明
-
-1. 自动远征：MaaJR会自动收取远征奖励并继续使用当前编队远征
-
-2. 自动战役：MaaJR会根据你的选项设置打指定战役，需提前编队
-
-3. 自动战斗：MaaJR会根据你的选项设置去指定的关卡战斗，需提前编队
-
-4. 自动演习：MaaJR会根据你的选项设置去演习，需提前编队
-
-5. 无消耗刷1-1鱼雷狗粮：MaaJR会根据你的选项设置去1-1无消耗刷鱼雷狗粮
-
-6. 自动决战E6：这里写不下，详情看gui里面的说明
-
-7. 结束前任务：在任务结束后完成一些收尾工作
-
-8. 不定期更新刷活动练级，出新活动可以找我催更
+参考文档[使用说明](https://github.com/Saratoga-Official/MaaJR/blob/main/INSTRUCTIONS.md)
 
 ---
 
