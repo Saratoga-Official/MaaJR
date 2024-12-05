@@ -9,6 +9,7 @@
             52
         ],
         "next": [
+            "点击远征",
             "无限战斗",
             "无动作结束"
         ]
@@ -217,8 +218,9 @@
             57
         ],
         "next": [
-            "自动修船"
+            "战斗快速修理"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到大破舰船",
         "focus_tip_color": "Red"
@@ -242,11 +244,73 @@
             52
         ],
         "next": [
-            "自动修船"
+            "战斗快速修理"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到中破舰船",
         "focus_tip_color": "Red"
+    },
+    "战斗快速修理": {
+        "recognition": "OCR",
+        "expected": "快速修理",
+        "action": "Click",
+        "next": [
+            "战斗修理大破舰船",
+            "战斗修理中破舰船"
+        ]
+    },
+    "战斗修理大破舰船": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            225,
+            86,
+            32
+        ],
+        "upper": [
+            229,
+            106,
+            57
+        ],
+        "action": "Click",
+        "connected": true,
+        "next": [
+            "战斗修理大破舰船",
+            "战斗修理中破舰船",
+            "战斗开始出征"
+        ]
+    },
+    "战斗修理中破舰船": {
+        "recognition": "ColorMatch",
+        "roi": [
+            60,
+            423,
+            888,
+            11
+        ],
+        "lower": [
+            233,
+            172,
+            25
+        ],
+        "upper": [
+            237,
+            182,
+            52
+        ],
+        "action": "Click",
+        "connected": true,
+        "next": [
+            "战斗修理大破舰船",
+            "战斗修理中破舰船",
+            "战斗开始出征"
+        ]
     },
     "战斗开始出征": {
         "recognition": "TemplateMatch",

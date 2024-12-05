@@ -67,6 +67,9 @@
         "next": [
             "识别决战次数",
             "决战次数已耗尽"
+        ],
+        "on_error": [
+            "决战结束"
         ]
     },
     "识别决战次数": {
@@ -304,11 +307,32 @@
         "action": "Click",
         "next": [
             "上次选船",
-            "选择前进点A1",
-            "放弃撤退"
+            "选择前进点A1"
+        ],
+        "on_error": [
+            "决战检查编队",
+            "决战解装"
         ],
         "focus": true,
         "focus_tip": "进入沉默战士决战E6"
+    },
+    "决战检查编队": {
+        "recognition": "TemplateMatch",
+        "template": "决战编队.png",
+        "action": "Click",
+        "next": [
+            "决战切换策略",
+            "决战退出编队"
+        ]
+    },
+    "决战退出编队": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "决战决策1"
+        ]
     },
     "上次选船": {
         "recognition": "TemplateMatch",
@@ -823,6 +847,7 @@
         "next": [
             "决战快速修理"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到大破舰船"
     },
@@ -853,6 +878,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战修理舰船",
             "决战开始出征"
@@ -1242,6 +1268,7 @@
         "next": [
             "决战快速修理2"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到大破舰船"
     },
@@ -1272,6 +1299,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战修理舰船2",
             "决战开始出征2"
@@ -1348,6 +1376,9 @@
             "关闭招募",
             "决战检测等级小于9",
             "决战进入编队"
+        ],
+        "on_error": [
+            "决战确认通关2"
         ],
         "focus": true,
         "focus_tip": "战前决策"
@@ -1556,6 +1587,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS",
             "决战中破修理BOSS",
@@ -1581,6 +1613,7 @@
             52
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS",
             "决战中破修理BOSS",
@@ -1633,6 +1666,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS2",
             "决战中破修理BOSS2",
@@ -1658,6 +1692,7 @@
             52
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS2",
             "决战中破修理BOSS2",
@@ -1872,6 +1907,9 @@
         "interrupt": [
             "决战前进点A1"
         ],
+        "on_error": [
+            "决战解装"
+        ],
         "focus": true,
         "focus_tip": "进入E6-2"
     },
@@ -1886,11 +1924,14 @@
         ],
         "action": "Click",
         "next": [
-            "决战E6-2凹开局2",
-            "放弃撤退3"
+            "决战E6-2凹开局2"
         ],
         "interrupt": [
             "决战前进点A1"
+        ],
+        "on_error": [
+            "决战决策3",
+            "决战解装"
         ],
         "focus": true,
         "focus_tip": "进入E6-2"
@@ -2004,6 +2045,9 @@
             "决战检测紫貂技能2",
             "决战检测等级",
             "决战进入编队"
+        ],
+        "on_error": [
+            "决战确认通关3"
         ],
         "focus": true,
         "focus_tip": "战前决策"
@@ -2137,6 +2181,7 @@
         "next": [
             "决战快速修理3"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到大破舰船"
     },
@@ -2167,6 +2212,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战修理舰船3",
             "决战开始出征3"
@@ -2284,6 +2330,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS3",
             "决战中破修理BOSS3",
@@ -2309,6 +2356,7 @@
             52
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS3",
             "决战中破修理BOSS3",
@@ -2522,6 +2570,9 @@
         "next": [
             "决战决策4"
         ],
+        "on_error": [
+            "决战解装"
+        ],
         "focus": true,
         "focus_tip": "进入E6-3"
     },
@@ -2537,6 +2588,9 @@
             "决战请选择前进点",
             "决战招募",
             "决战进入编队"
+        ],
+        "on_error": [
+            "决战确认通关4"
         ],
         "focus": true,
         "focus_tip": "战前决策"
@@ -2589,6 +2643,7 @@
         "next": [
             "决战快速修理4"
         ],
+        "connected": true,
         "focus": true,
         "focus_tip": "检测到大破舰船"
     },
@@ -2619,6 +2674,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战修理舰船4",
             "决战开始出征4"
@@ -2751,6 +2807,7 @@
             57
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS4",
             "决战中破修理BOSS4",
@@ -2776,6 +2833,7 @@
             52
         ],
         "action": "Click",
+        "connected": true,
         "next": [
             "决战大破修理BOSS4",
             "决战中破修理BOSS4",
@@ -2901,5 +2959,34 @@
         "next": [
             "任务结束"
         ]
+    },
+    "决战解装": {
+        "recognition": "OCR",
+        "expected": "解装",
+        "action": "Click",
+        "next": [
+            "决战船舱满退出"
+        ]
+    },
+    "决战船舱满退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "决战船舱满退出2"
+        ]
+    },
+    "决战船舱满退出2": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "green_mask": true,
+        "roi": [
+            13,
+            627,
+            74,
+            73
+        ],
+        "action": "Click"
     }
 }

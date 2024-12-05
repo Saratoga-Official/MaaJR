@@ -4,7 +4,7 @@
 
 ## 下载及安装说明
 
-下载地址：https://github.com/Saratoga-Official/MaaJR/releases
+[下载地址](https://github.com/Saratoga-Official/MaaJR/releases)
 
 ### Windows
 
