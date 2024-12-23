@@ -2312,20 +2312,8 @@
                     }
                 },
                 {
-                    "name": "直到捞船达到上限停止",
-                    "pipeline_override": {
-                        "无限战斗": {
-                            "recognition": "OCR",
-                            "expected": "^500/500$",
-                            "roi": [
-                                1153,
-                                19,
-                                89,
-                                30
-                            ],
-                            "inverse": true
-                        }
-                    }
+                    "name": "无限次数",
+                    "pipeline_override": {}
                 }
             ]
         },
