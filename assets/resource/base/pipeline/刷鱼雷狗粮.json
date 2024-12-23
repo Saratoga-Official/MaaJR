@@ -78,10 +78,14 @@
         ]
     },
     "点排序": {
-        "recognition": "TemplateMatch",
-        "template": "排列顺序.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "排列顺序",
+        "roi": [
+            1097,
+            334,
+            136,
+            97
+        ],
         "action": "Click",
         "next": [
             "点获得时间",
@@ -89,28 +93,42 @@
         ]
     },
     "点获得时间": {
-        "recognition": "TemplateMatch",
-        "template": "获得时间.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "获得时间",
+        "roi": [
+            382,
+            254,
+            160,
+            81
+        ],
         "action": "Click",
         "next": [
             "点排序确定"
         ]
     },
     "点排序确定": {
-        "recognition": "TemplateMatch",
-        "template": "排序确定.png",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            1026,
+            568,
+            190,
+            87
+        ],
         "action": "Click",
         "next": [
             "点类型"
         ]
     },
     "点类型": {
-        "recognition": "TemplateMatch",
-        "template": "类型.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "类型",
+        "roi": [
+            1104,
+            431,
+            129,
+            101
+        ],
         "action": "Click",
         "next": [
             "点护卫",
@@ -118,18 +136,28 @@
         ]
     },
     "点护卫": {
-        "recognition": "TemplateMatch",
-        "template": "护卫.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "护卫",
+        "roi": [
+            1123,
+            495,
+            123,
+            82
+        ],
         "action": "Click",
         "next": [
             "点类型确定"
         ]
     },
     "点类型确定": {
-        "recognition": "TemplateMatch",
-        "template": "排序确定.png",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            1026,
+            568,
+            190,
+            87
+        ],
         "action": "Click",
         "next": [
             "点狗粮"
