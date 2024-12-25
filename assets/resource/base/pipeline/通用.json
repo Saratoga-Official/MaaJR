@@ -18,20 +18,12 @@
         "post_wait_freezes": 0
     },
     "任务出错": {
-        "next": [
-            "任务出错结束"
-        ],
+        "action": "StopTask",
         "interrupt": [],
         "on_error": [],
         "focus": true,
         "focus_tip": "任务出错",
         "focus_tip_color": "Red",
-        "post_wait_freezes": 0
-    },
-    "任务出错结束": {
-        "action": "StopTask",
-        "interrupt": [],
-        "on_error": [],
         "post_wait_freezes": 0
     },
     "重新连接": {

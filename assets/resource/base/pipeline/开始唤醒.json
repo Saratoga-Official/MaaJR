@@ -79,6 +79,7 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 2000,
         "next": [
             "退出公告",
             "登录奖励",
