@@ -39,6 +39,7 @@ body:
       description: |
         **请在关闭 MAAJR 后，上传以下文件：**
           `debug` 文件夹中的 `maa.log` 和 `maa.bak.log` 日志文件，并说明问题出现的大致时间点
+          `config` 文件夹中的 `config.json` 配置文件
           如果是win-x64用户还需要上传`log` 文件夹中的 `log` 开头日志文件
         **请直接将完整的文件拖拽进来，而非自己裁切或复制的片段；若文件体积过大可压缩后再上传**
       placeholder: |
