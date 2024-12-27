@@ -143,7 +143,6 @@
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
-        "green_mask": true,
-        "action": "StopTask"
+        "green_mask": true
     }
 }

@@ -50,7 +50,7 @@ body:
       description: >-
         **After closing MAA, upload the following files:**
           The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
-
+          The `log` file in the `log` folder (If you are a Windows x64 user).
         **Please drag and drop the full file in, not your own cuttings or copies;**
         **compress it before uploading if too large.**
       placeholder: |
