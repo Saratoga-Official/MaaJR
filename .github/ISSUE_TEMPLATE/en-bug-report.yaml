@@ -38,7 +38,7 @@ body:
     attributes:
       label: Version
       description: >-
-        Please provide the MAAJR version.
+        Please provide the`MAAJR`version.
       placeholder: |
         MAAJR Version:
     validations:
@@ -48,7 +48,7 @@ body:
     attributes:
       label: Log and config files
       description: >-
-        **After closing MAAJR, upload the following files:**
+        **After closing`MAAJR`, upload the following files:**
           The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
           The `config.json` file in the `config` folder
           The `log` file in the `log` folder (If you are a Windows x64 user).
@@ -76,7 +76,7 @@ body:
         If related to this issue, please upload them together.
 
         If available, upload screenshots and recordings to help explain your problem,
-        including but not limited to screenshots of MAAJR software,
+        including but not limited to screenshots of`MAAJR`software,
         screenshots of game screens.
 
         If the problem is **recognition related**, please help by providing
