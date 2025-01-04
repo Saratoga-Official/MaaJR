@@ -1187,8 +1187,14 @@
         "focus_tip": "放弃追击"
     },
     "决战点击继续": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续"
@@ -1346,8 +1352,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续2": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续2"
@@ -1764,8 +1776,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续BOSS": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续BOSS"
@@ -1782,8 +1800,14 @@
         ]
     },
     "决战点击继续BOSS2": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续BOSS2"
@@ -2259,8 +2283,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续3": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续3"
@@ -2405,8 +2435,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续BOSS3": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续BOSS3"
@@ -2721,8 +2757,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续4": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续4"
@@ -2882,8 +2924,14 @@
         "focus_tip": "点击梯形阵"
     },
     "决战点击继续BOSS4": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "决战再点继续BOSS4"

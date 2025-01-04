@@ -421,8 +421,14 @@
         ]
     },
     "狗粮点击继续": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "next": [
             "狗粮再点继续"

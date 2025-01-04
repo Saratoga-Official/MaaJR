@@ -233,8 +233,14 @@
         ]
     },
     "演习点击继续": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "target": [
             1208,
@@ -529,8 +535,14 @@
         ]
     },
     "演习点击继续1": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "target": [
             1208,
@@ -676,8 +688,14 @@
         ]
     },
     "演习点击继续2": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "target": [
             1208,
@@ -823,8 +841,14 @@
         ]
     },
     "演习点击继续3": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "target": [
             1208,
@@ -987,8 +1011,14 @@
         ]
     },
     "演习点击继续4": {
-        "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "recognition": "OCR",
+        "expected": "点击继续",
+        "roi": [
+            957,
+            577,
+            322,
+            142
+        ],
         "action": "Click",
         "target": [
             1208,
