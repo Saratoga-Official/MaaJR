@@ -5,6 +5,22 @@
             "自动收远征"
         ]
     },
+    "远征领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "无动作结束"
+        ]
+    },
+    "远征领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "点击出征2"
+        ]
+    },
     "点击出征2": {
         "recognition": "TemplateMatch",
         "template": "出征.png",
@@ -104,6 +120,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "退出远征",
+            "远征领取奖励",
             "无动作结束"
         ]
     },
@@ -114,6 +131,7 @@
         "green_mask": true,
         "next": [
             "退出远征2",
+            "远征领取奖励2",
             "点击出征2"
         ]
     },

@@ -181,50 +181,6 @@
                     ]
                 }
             }
-        },
-        {
-            "name": "活动地峡之岚",
-            "entry": "进入活动",
-            "check": false,
-            "repeatable": true,
-            "doc": "[color:red]活动不支持自动导航，活动模式选择活动出征须在出击准备界面点开始，其余设置沿用自动出征，活动答题须在答题界面点开始，选择答题后下面设置将无效[/color]",
-            "repeat_count": 1,
-            "option": [
-                "活动模式",
-                "战斗编队",
-                "战斗阵型",
-                "活动无限次数",
-                "战斗大破/中破舰船处理",
-                "门口SL目标1",
-                "门口SL目标2",
-                "夜战追击",
-                "战斗点位",
-                "战斗使用军阶buff"
-            ],
-            "pipeline_override": {
-                "回到关卡了": {
-                    "expected": "出击准备",
-                    "roi": [
-                        980,
-                        581,
-                        254,
-                        75
-                    ],
-                    "next": [
-                        "无限战斗",
-                        "无动作结束"
-                    ]
-                },
-                "进入关卡": {
-                    "expected": "出击准备",
-                    "roi": [
-                        980,
-                        581,
-                        254,
-                        75
-                    ]
-                }
-            }
         }
     ],
     "option": {
@@ -830,7 +786,18 @@
                     "name": "第二编队",
                     "pipeline_override": {
                         "战斗编队": {
-                            "template": "2队.png"
+                            "roi": [
+                                227,
+                                94,
+                                153,
+                                44
+                            ],
+                            "target": [
+                                227,
+                                94,
+                                153,
+                                44
+                            ]
                         }
                     }
                 },
@@ -838,7 +805,18 @@
                     "name": "第三编队",
                     "pipeline_override": {
                         "战斗编队": {
-                            "template": "3队.png"
+                            "roi": [
+                                384,
+                                94,
+                                152,
+                                44
+                            ],
+                            "target": [
+                                384,
+                                94,
+                                152,
+                                44
+                            ]
                         }
                     }
                 },
@@ -846,7 +824,18 @@
                     "name": "第四编队",
                     "pipeline_override": {
                         "战斗编队": {
-                            "template": "4队.png"
+                            "roi": [
+                                544,
+                                94,
+                                150,
+                                44
+                            ],
+                            "target": [
+                                544,
+                                94,
+                                150,
+                                44
+                            ]
                         }
                     }
                 }
@@ -1057,6 +1046,15 @@
                             "expected": "潜艇"
                         }
                     }
+                },
+                {
+                    "name": "无补给",
+                    "pipeline_override": {
+                        "战斗识别SL目标1": {
+                            "expected": "补给",
+                            "inverse": true
+                        }
+                    }
                 }
             ]
         },
@@ -1115,6 +1113,15 @@
                     "pipeline_override": {
                         "战斗识别SL目标2": {
                             "expected": "潜艇"
+                        }
+                    }
+                },
+                {
+                    "name": "无补给",
+                    "pipeline_override": {
+                        "战斗识别SL目标2": {
+                            "expected": "补给",
+                            "inverse": true
                         }
                     }
                 }
@@ -1250,6 +1257,7 @@
                     "pipeline_override": {
                         "战斗船舱满退出": {
                             "next": [
+                                "拆船前领奖",
                                 "战斗船舱满尝试拆船"
                             ],
                             "interrupt": [
@@ -1265,12 +1273,16 @@
             "cases": [
                 {
                     "name": "不使用",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "启用军阶buff": {
+                            "enabled": false
+                        }
+                    }
                 },
                 {
                     "name": "战利品加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1285,7 +1297,7 @@
                 {
                     "name": "经验加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1314,7 +1326,7 @@
                 {
                     "name": "打捞加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1343,7 +1355,7 @@
                 {
                     "name": "好感度加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1372,7 +1384,7 @@
                 {
                     "name": "伤害加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1401,7 +1413,7 @@
                 {
                     "name": "学院加成",
                     "pipeline_override": {
-                        "进入关卡": {
+                        "确认进入关卡": {
                             "next": [
                                 "启用军阶buff",
                                 "战斗编队",
@@ -1482,6 +1494,7 @@
                     "pipeline_override": {
                         "退出狗粮": {
                             "next": [
+                                "拆船前领奖",
                                 "战斗船舱满尝试拆船"
                             ],
                             "interrupt": [
@@ -2295,40 +2308,6 @@
                         "决战沉默战士E6": {
                             "next": [
                                 "识别决战点"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "活动无限次数": {
-            "cases": [
-                {
-                    "name": "关闭",
-                    "pipeline_override": {
-                        "无限战斗": {
-                            "enabled": false
-                        }
-                    }
-                },
-                {
-                    "name": "无限次数",
-                    "pipeline_override": {}
-                }
-            ]
-        },
-        "活动模式": {
-            "cases": [
-                {
-                    "name": "活动出征",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "活动答题（测试功能）",
-                    "pipeline_override": {
-                        "进入活动": {
-                            "next": [
-                                "检查题目"
                             ]
                         }
                     }

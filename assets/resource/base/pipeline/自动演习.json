@@ -1,10 +1,19 @@
 {
     "开始自动演习": {
         "next": [
+            "演习领取奖励",
             "自动演习",
             "点击演习",
             "处于演习界面",
             "退出演习"
+        ]
+    },
+    "演习领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "开始自动演习"
         ]
     },
     "处于演习界面": {
@@ -133,7 +142,6 @@
         "recognition": "TemplateMatch",
         "template": "演习刷新.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "演习识别舰船",
             "演习开始挑战"
@@ -149,7 +157,7 @@
             59
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "演习编队",
             "演习自动补给",
@@ -160,7 +168,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -175,7 +182,6 @@
     "演习编队": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -248,7 +254,6 @@
             24,
             482
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "演习再点继续"
         ]
@@ -277,7 +282,6 @@
         "recognition": "TemplateMatch",
         "template": "关闭演习.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "演习刷新失败1",
             "演习向上滑"
@@ -298,7 +302,6 @@
             600
         ],
         "index": 1,
-        "post_wait_freezes": 1000,
         "next": [
             "演习识别舰船1",
             "演习开始挑战1"
@@ -329,7 +332,6 @@
         "recognition": "TemplateMatch",
         "template": "关闭演习.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "演习刷新失败2",
             "演习向上滑"
@@ -350,7 +352,6 @@
             600
         ],
         "index": 2,
-        "post_wait_freezes": 1000,
         "next": [
             "演习识别舰船2",
             "演习开始挑战2"
@@ -381,7 +382,6 @@
         "recognition": "TemplateMatch",
         "template": "关闭演习.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "演习刷新失败3",
             "演习向上滑"
@@ -402,7 +402,6 @@
             600
         ],
         "index": 3,
-        "post_wait_freezes": 1000,
         "next": [
             "演习识别舰船3",
             "演习开始挑战3"
@@ -433,7 +432,6 @@
         "recognition": "TemplateMatch",
         "template": "关闭演习.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "演习向上滑"
         ],
@@ -451,7 +449,7 @@
             59
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "演习编队1",
             "演习自动补给1",
@@ -462,7 +460,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -477,7 +474,6 @@
     "演习编队1": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -550,7 +546,6 @@
             24,
             482
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "演习再点继续1"
         ]
@@ -604,7 +599,7 @@
             59
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "演习编队2",
             "演习自动补给2",
@@ -615,7 +610,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -630,7 +624,6 @@
     "演习编队2": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -703,7 +696,6 @@
             24,
             482
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "演习再点继续2"
         ]
@@ -757,7 +749,7 @@
             59
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "演习编队3",
             "演习自动补给3",
@@ -768,7 +760,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -783,7 +774,6 @@
     "演习编队3": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -856,7 +846,6 @@
             24,
             482
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "演习再点继续3"
         ]
@@ -912,7 +901,6 @@
             109
         ],
         "index": 0,
-        "post_wait_freezes": 1000,
         "next": [
             "演习开始挑战4"
         ]
@@ -927,7 +915,7 @@
             59
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "演习编队4",
             "演习自动补给4",
@@ -938,7 +926,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -953,7 +940,6 @@
     "演习编队4": {
         "recognition": "TemplateMatch",
         "template": "队.png",
-        "post_wait_freezes": 1000,
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -1026,7 +1012,6 @@
             24,
             482
         ],
-        "post_wait_freezes": 1000,
         "next": [
             "演习再点继续4"
         ]

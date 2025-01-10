@@ -2,12 +2,21 @@
     "开始出征": {
         "next": [
             "进入关卡",
+            "出征领取奖励",
             "点击出征",
             "导航前"
         ],
         "interrupt": [
             "重新连接",
             "退出"
+        ]
+    },
+    "出征领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "点击出征"
         ]
     },
     "点击出征": {

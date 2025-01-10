@@ -1,12 +1,30 @@
 {
     "收尾工作": {
         "next": [
+            "结束领取奖励",
             "点击任务",
             "点击船坞"
         ],
         "interrupt": [
             "重新连接",
             "退出"
+        ]
+    },
+    "结束领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "收尾工作"
+        ]
+    },
+    "结束领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "点击船坞",
+            "任务结束"
         ]
     },
     "点击任务": {
@@ -32,6 +50,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "结束领取奖励2",
             "点击船坞",
             "任务结束"
         ]

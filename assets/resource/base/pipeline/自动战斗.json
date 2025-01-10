@@ -31,6 +31,14 @@
         ],
         "action": "Click",
         "next": [
+            "确认进入关卡",
+            "进入关卡"
+        ]
+    },
+    "确认进入关卡": {
+        "recognition": "TemplateMatch",
+        "template": "开始出征.png",
+        "next": [
             "战斗编队",
             "战斗自动补给",
             "战斗修理检测大破",
@@ -162,11 +170,31 @@
         ]
     },
     "战斗编队": {
-        "recognition": "TemplateMatch",
-        "template": "队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "ColorMatch",
+        "roi": [
+            70,
+            92,
+            150,
+            46
+        ],
+        "lower": [
+            16,
+            133,
+            228
+        ],
+        "upper": [
+            16,
+            133,
+            228
+        ],
         "action": "Click",
+        "inverse": true,
+        "target": [
+            70,
+            92,
+            150,
+            46
+        ],
         "next": [
             "战斗自动补给",
             "战斗修理检测大破",
@@ -188,13 +216,10 @@
             22
         ],
         "next": [
+            "战斗自动补给",
             "战斗修理检测大破",
             "战斗修理检测中破",
             "战斗开始出征"
-        ],
-        "on_error": [
-            "进入关卡",
-            "任务出错"
         ],
         "focus": true,
         "focus_tip": "切换自动补给"
@@ -330,7 +355,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "timeout": 60000,
+        "timeout": 300000,
         "focus": true,
         "focus_tip": "开始出征"
     },
@@ -436,7 +461,7 @@
             89
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗阵型",
@@ -461,7 +486,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 120000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗点击继续"
@@ -497,6 +522,19 @@
             "战斗大破回港",
             "回到关卡了",
             "战斗再点继续"
+        ],
+        "on_error": [
+            "战斗继续退出",
+            "任务出错"
+        ]
+    },
+    "战斗继续退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "回到关卡了"
         ]
     },
     "战斗舰队补给": {
@@ -512,7 +550,8 @@
         "template": "回港.png",
         "action": "Click",
         "next": [
-            "回到关卡了"
+            "回到关卡了",
+            "战斗回港"
         ],
         "focus": true,
         "focus_tip": "回港"
@@ -522,7 +561,8 @@
         "template": "大破回港.png",
         "action": "Click",
         "next": [
-            "回到关卡了"
+            "回到关卡了",
+            "战斗大破回港"
         ],
         "focus": true,
         "focus_tip": "大破回港",
@@ -542,7 +582,7 @@
         "recognition": "TemplateMatch",
         "template": "前进.png",
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗开始2",
@@ -569,7 +609,7 @@
             89
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗阵型2",
@@ -594,7 +634,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗点击继续2"
@@ -644,7 +684,7 @@
         "recognition": "TemplateMatch",
         "template": "前进.png",
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗开始3",
@@ -671,7 +711,7 @@
             89
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗阵型3",
@@ -696,7 +736,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗点击继续3"
@@ -746,7 +786,7 @@
         "recognition": "TemplateMatch",
         "template": "前进.png",
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗开始4",
@@ -773,7 +813,7 @@
             89
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗阵型4",
@@ -798,7 +838,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗点击继续4"
@@ -848,7 +888,7 @@
         "recognition": "TemplateMatch",
         "template": "前进.png",
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗开始5",
@@ -875,7 +915,7 @@
             89
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗阵型5",
@@ -900,7 +940,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
             "战斗点击继续5"
@@ -946,6 +986,14 @@
             "战斗前进4"
         ]
     },
+    "拆船前领奖": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "战斗船舱满尝试拆船"
+        ]
+    },
     "战斗船舱满尝试拆船": {
         "recognition": "TemplateMatch",
         "template": "出征2.png",
@@ -958,6 +1006,7 @@
             28
         ],
         "next": [
+            "拆船前领奖",
             "拆船点击建造"
         ]
     },
