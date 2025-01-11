@@ -15,12 +15,28 @@
         "template": "领取奖励.png",
         "action": "Click",
         "next": [
+            "确认结束领取奖励"
+        ]
+    },
+    "确认结束领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "next": [
             "收尾工作"
         ]
     },
     "结束领取奖励2": {
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "确认结束领取奖励2"
+        ]
+    },
+    "确认结束领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
         "action": "Click",
         "next": [
             "点击船坞",

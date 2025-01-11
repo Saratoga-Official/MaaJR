@@ -10,12 +10,28 @@
         "template": "领取奖励.png",
         "action": "Click",
         "next": [
+            "确认远征领取奖励"
+        ]
+    },
+    "确认远征领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "next": [
             "无动作结束"
         ]
     },
     "远征领取奖励2": {
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
+        "action": "Click",
+        "next": [
+            "确认远征领取奖励2"
+        ]
+    },
+    "确认远征领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
         "action": "Click",
         "next": [
             "点击出征2"

@@ -15,6 +15,14 @@
         "template": "领取奖励.png",
         "action": "Click",
         "next": [
+            "确认战役领取奖励"
+        ]
+    },
+    "确认战役领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "next": [
             "开始自动战役"
         ]
     },
