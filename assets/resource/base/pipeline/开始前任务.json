@@ -31,6 +31,7 @@
             572,
             255
         ],
+        "post_delay": 5000,
         "next": [
             "更新确认"
         ]
@@ -46,6 +47,7 @@
         ],
         "action": "Click",
         "timeout": 300000,
+        "post_delay": 5000,
         "next": [
             "游戏更新",
             "进入游戏"
@@ -56,12 +58,12 @@
         "template": "进入游戏.png",
         "action": "Click",
         "timeout": 300000,
+        "post_delay": 5000,
         "next": [
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
             "主界面",
-            "结束开始唤醒",
             "进入游戏"
         ]
     },
@@ -93,6 +95,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "退出公告",
             "登录奖励",
             "小长春的赠礼",
             "结束开始唤醒"
@@ -102,8 +105,22 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 3000,
         "next": [
-            "确认领取登录奖励"
+            "确认领取登录奖励",
+            "登录舰船奖励"
+        ]
+    },
+    "登录舰船奖励": {
+        "action": "Click",
+        "target": "登录奖励",
+        "next": [
+            "确认领取登录奖励",
+            "小长春的赠礼",
+            "结束开始唤醒"
+        ],
+        "on_error": [
+            "登录舰船奖励"
         ]
     },
     "确认领取登录奖励": {

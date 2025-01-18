@@ -12,14 +12,26 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "确认演习领取奖励"
+            "确认演习领取奖励",
+            "演习领奖舰船"
+        ]
+    },
+    "演习领奖舰船": {
+        "action": "Click",
+        "target": "演习领取奖励",
+        "post_delay": 5000,
+        "next": [
+            "确认演习领取奖励",
+            "开始自动演习"
         ]
     },
     "确认演习领取奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
             "开始自动演习"
         ]

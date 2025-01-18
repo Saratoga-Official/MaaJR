@@ -1,9 +1,9 @@
 {
     "开始出征": {
         "next": [
-            "进入关卡",
             "出征领取奖励",
             "点击出征",
+            "出征",
             "导航前"
         ],
         "interrupt": [
@@ -15,15 +15,27 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "确认出征领取奖励"
+            "确认出征领取奖励",
+            "出征领奖舰船"
         ]
     },
     "确认出征领取奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
+        "post_delay": 5000,
         "action": "Click",
         "next": [
+            "点击出征"
+        ]
+    },
+    "出征领奖舰船": {
+        "action": "Click",
+        "target": "出征领取奖励",
+        "post_delay": 5000,
+        "next": [
+            "确认出征领取奖励",
             "点击出征"
         ]
     },

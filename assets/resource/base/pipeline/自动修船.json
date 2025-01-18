@@ -4,6 +4,7 @@
         "template": "修理舰船.png",
         "action": "Click",
         "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
             "选择修理舰船"
         ]
@@ -92,14 +93,15 @@
         "template": "退出修理.png",
         "action": "Click",
         "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
+            "退出修理",
             "退出浴场"
         ]
     },
     "退出浴场": {
         "recognition": "TemplateMatch",
         "template": "退出浴场.png",
-        "post_wait_freezes": 0,
         "action": "Click"
     },
     "自动入浴": {
@@ -107,6 +109,7 @@
         "template": "修理舰船.png",
         "action": "Click",
         "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
             "选择入浴舰船"
         ]
@@ -115,7 +118,6 @@
         "recognition": "TemplateMatch",
         "template": "选择舰船.png",
         "action": "Click",
-        "post_wait_freezes": 0,
         "next": [
             "全部入浴"
         ]
@@ -124,7 +126,6 @@
         "recognition": "TemplateMatch",
         "template": "全部入浴.png",
         "action": "Click",
-        "post_wait_freezes": 0,
         "next": [
             "退出修理",
             "退出浴场"

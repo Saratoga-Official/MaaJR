@@ -21,7 +21,10 @@
         "action": "StopTask",
         "interrupt": [],
         "on_error": [],
-        "post_wait_freezes": 0
+        "post_wait_freezes": 0,
+        "focus": true,
+        "focus_tip": "任务出错",
+        "focus_tip_color": "Red"
     },
     "重新连接": {
         "recognition": "OCR",
@@ -50,6 +53,7 @@
         "recognition": "TemplateMatch",
         "template": "追击.png",
         "action": "Click",
+        "post_delay": 3000,
         "post_wait_freezes": 0
     },
     "退出": {

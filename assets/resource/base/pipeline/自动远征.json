@@ -9,8 +9,19 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "确认远征领取奖励"
+            "确认远征领取奖励",
+            "远征领奖舰船"
+        ]
+    },
+    "远征领奖舰船": {
+        "action": "Click",
+        "target": "远征领取奖励",
+        "post_delay": 5000,
+        "next": [
+            "确认远征领取奖励",
+            "无动作结束"
         ]
     },
     "确认远征领取奖励": {
@@ -25,14 +36,26 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "确认远征领取奖励2"
+            "确认远征领取奖励2",
+            "远征领奖舰船2"
+        ]
+    },
+    "远征领奖舰船2": {
+        "action": "Click",
+        "target": "远征领取奖励2",
+        "post_delay": 5000,
+        "next": [
+            "确认远征领取奖励2",
+            "点击出征2"
         ]
     },
     "确认远征领取奖励2": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
             "点击出征2"
         ]

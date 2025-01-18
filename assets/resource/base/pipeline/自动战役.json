@@ -14,14 +14,26 @@
         "recognition": "TemplateMatch",
         "template": "领取奖励.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "确认战役领取奖励"
+            "确认战役领取奖励",
+            "战役领奖舰船"
+        ]
+    },
+    "战役领奖舰船": {
+        "action": "Click",
+        "target": "战役领取奖励",
+        "post_delay": 5000,
+        "next": [
+            "确认战役领取奖励",
+            "开始自动战役"
         ]
     },
     "确认战役领取奖励": {
         "recognition": "TemplateMatch",
         "template": "确认签到.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
             "开始自动战役"
         ]
