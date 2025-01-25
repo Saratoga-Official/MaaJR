@@ -1,9 +1,12 @@
 {
     "收尾工作": {
+        "post_delay": 3000,
         "next": [
             "结束领取奖励",
             "点击任务",
-            "点击船坞"
+            "战斗船舱满尝试拆船",
+            "点击船坞",
+            "关闭游戏"
         ],
         "interrupt": [
             "重新连接",
@@ -38,23 +41,6 @@
             "收尾工作"
         ]
     },
-    "结束领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "next": [
-            "确认结束领取奖励2"
-        ]
-    },
-    "确认结束领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "确认签到.png",
-        "action": "Click",
-        "next": [
-            "点击船坞",
-            "任务结束"
-        ]
-    },
     "点击任务": {
         "recognition": "TemplateMatch",
         "template": "任务.png",
@@ -77,10 +63,73 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_delay": 3000,
         "next": [
             "结束领取奖励2",
             "点击船坞",
-            "任务结束"
+            "关闭游戏"
+        ]
+    },
+    "结束领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "确认结束领取奖励2",
+            "结束领奖舰船2"
+        ]
+    },
+    "结束领奖舰船2": {
+        "action": "Click",
+        "target": "结束领取奖励2",
+        "post_delay": 5000,
+        "next": [
+            "确认结束领取奖励2",
+            "战斗船舱满尝试拆船",
+            "点击船坞",
+            "关闭游戏"
+        ]
+    },
+    "确认结束领取奖励2": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "战斗船舱满尝试拆船",
+            "点击船坞",
+            "关闭游戏"
+        ]
+    },
+    "结束领取奖励3": {
+        "recognition": "TemplateMatch",
+        "template": "领取奖励.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "确认结束领取奖励3",
+            "结束领奖舰船3"
+        ]
+    },
+    "结束领奖舰船3": {
+        "action": "Click",
+        "target": "结束领取奖励3",
+        "post_delay": 5000,
+        "next": [
+            "确认结束领取奖励3",
+            "点击船坞",
+            "关闭游戏"
+        ]
+    },
+    "确认结束领取奖励3": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "点击船坞",
+            "关闭游戏"
         ]
     },
     "点击船坞": {
@@ -96,8 +145,9 @@
         "template": "退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_delay": 3000,
         "next": [
-            "任务结束"
+            "关闭游戏"
         ]
     },
     "关闭游戏": {

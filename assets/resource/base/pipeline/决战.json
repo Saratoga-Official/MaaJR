@@ -763,8 +763,8 @@
         "focus_tip": "结束战前决策，进入编队"
     },
     "决战进入编队界面": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战自动补给",
             "决战添加舰船"
@@ -834,7 +834,18 @@
             289
         ],
         "expected": [
-            "潜艇"
+            "潜艇",
+            "大青花鱼",
+            "射水鱼",
+            "鹦鹉螺",
+            "芬奇",
+            "鹰",
+            "潜",
+            "IIIA",
+            "lllA",
+            "伊-201",
+            "K-21",
+            "M-296"
         ],
         "action": "Click",
         "next": [
@@ -1258,8 +1269,8 @@
         "focus_tip": "切换招募策略"
     },
     "决战进入编队界面2": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战自动补给2",
             "决战大破检测2",
@@ -1456,7 +1467,7 @@
             "决战进入编队"
         ],
         "focus": true,
-        "focus_tip": "战前决策"
+        "focus_tip": "识别到BOSS点"
     },
     "决战识别boss点2": {
         "recognition": "TemplateMatch",
@@ -1474,11 +1485,11 @@
             "决战进入编队"
         ],
         "focus": true,
-        "focus_tip": "战前决策"
+        "focus_tip": "识别到BOSS点"
     },
     "决战进入编队界面BOSS": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战添加舰船BOSS",
             "决战检查舰船BOSS",
@@ -1530,7 +1541,18 @@
             289
         ],
         "expected": [
-            "潜艇"
+            "潜艇",
+            "大青花鱼",
+            "射水鱼",
+            "鹦鹉螺",
+            "芬奇",
+            "鹰",
+            "潜",
+            "IIIA",
+            "lllA",
+            "伊-201",
+            "K-21",
+            "M-296"
         ],
         "action": "Click",
         "next": [
@@ -2122,9 +2144,7 @@
             "决战检测等级大于8",
             "决战检测拥有点数",
             "决战进入编队"
-        ],
-        "focus": true,
-        "focus_tip": "检查到紫貂技能可用"
+        ]
     },
     "决战检测等级大于8": {
         "recognition": "OCR",
@@ -2160,8 +2180,8 @@
         ]
     },
     "决战进入编队界面3": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战自动补给3",
             "决战添加舰船2",
@@ -2352,11 +2372,11 @@
             "决战进入编队"
         ],
         "focus": true,
-        "focus_tip": "战前决策"
+        "focus_tip": "识别到BOSS点"
     },
     "决战进入编队界面BOSS2": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战快速修理BOSS3",
             "决战开始出征BOSS3"
@@ -2663,8 +2683,8 @@
         "focus_tip": "战前决策"
     },
     "决战进入编队界面4": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战自动补给4",
             "决战大破检测4",
@@ -2828,7 +2848,7 @@
             "决战进入编队"
         ],
         "focus": true,
-        "focus_tip": "战前决策"
+        "focus_tip": "识别到BOSS点"
     },
     "决战使用奇尔沙治技能": {
         "recognition": "TemplateMatch",
@@ -2844,8 +2864,8 @@
         ]
     },
     "决战进入编队界面BOSS3": {
-        "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "recognition": "OCR",
+        "expected": "开始出征",
         "next": [
             "决战快速修理BOSS4",
             "决战开始出征BOSS4"
@@ -3045,27 +3065,15 @@
         "action": "Click",
         "next": [
             "决战船舱满退出"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "船舱已满",
+        "focus_tip_color": "Red"
     },
     "决战船舱满退出": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
         "green_mask": true,
-        "action": "Click",
-        "next": [
-            "决战船舱满退出2"
-        ]
-    },
-    "决战船舱满退出2": {
-        "recognition": "TemplateMatch",
-        "template": "退出.png",
-        "green_mask": true,
-        "roi": [
-            13,
-            627,
-            74,
-            73
-        ],
         "action": "Click"
     }
 }
