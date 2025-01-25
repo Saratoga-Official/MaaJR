@@ -230,4 +230,4 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
-          body_path: ${{ github.workspace }}-CHANGELOG.md
+          body_path: ${{ github.workspace }}/CHANGELOG.md
