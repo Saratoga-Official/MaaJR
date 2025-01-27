@@ -1749,7 +1749,7 @@
                 {
                     "name": "不开启",
                     "pipeline_override": {
-                        "点击任务": {
+                        "点击船坞": {
                             "enabled": false
                         }
                     }
@@ -1765,7 +1765,7 @@
                 {
                     "name": "不开启",
                     "pipeline_override": {
-                        "点击船坞": {
+                        "点击任务": {
                             "enabled": false
                         }
                     }
