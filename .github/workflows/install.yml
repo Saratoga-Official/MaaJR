@@ -49,29 +49,6 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
-  update:
-    needs: meta
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: update
-        shell: bash
-        run: |
-          mkdir -p ./update
-          rsync -av --exclude='MaaCommonAssets' ./assets/ ./update/
-
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: update
-          path: "update"
-
   windows:
     needs: meta
     runs-on: windows-latest
@@ -247,6 +224,11 @@ jobs:
         with:
           name: MirrorChyanRes
           path: MirrorChyan
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MirrorChyanRes
+          path: "update"
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
