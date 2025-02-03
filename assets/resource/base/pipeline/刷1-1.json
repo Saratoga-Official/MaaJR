@@ -262,10 +262,14 @@
         ]
     },
     "点排序2": {
-        "recognition": "TemplateMatch",
-        "template": "排列顺序.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "排列顺序",
+        "roi": [
+            1097,
+            334,
+            136,
+            97
+        ],
         "action": "Click",
         "next": [
             "点获得时间2",
@@ -273,18 +277,28 @@
         ]
     },
     "点获得时间2": {
-        "recognition": "TemplateMatch",
-        "template": "获得时间.png",
-        "order_by": "Score",
-        "threshold": 0.95,
+        "recognition": "OCR",
+        "expected": "获得时间",
+        "roi": [
+            382,
+            254,
+            160,
+            81
+        ],
         "action": "Click",
         "next": [
             "点排序确定2"
         ]
     },
     "点排序确定2": {
-        "recognition": "TemplateMatch",
-        "template": "排序确定.png",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            1026,
+            568,
+            190,
+            87
+        ],
         "action": "Click",
         "next": [
             "点狗粮2"
