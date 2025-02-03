@@ -3,6 +3,7 @@
     "version": "DEBUG_VERSION",
     "url": "https://github.com/Saratoga-Official/MaaJR",
     "custom_title": "MaaJR",
+    "mirrorchyan_rid": "MaaJR",
     "default_controller": "adb",
     "lock_controller": true,
     "controller": [
