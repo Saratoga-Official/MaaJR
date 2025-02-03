@@ -227,8 +227,8 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MirrorChyanRes
-          path: "update"
+          name: update
+          path: MirrorChyan
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
