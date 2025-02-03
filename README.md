@@ -90,4 +90,6 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ---
 
+## Star History
+
 [![Star History Chart](https://api.star-history.com/svg?repos=Saratoga-Official/MaaJR&type=Date)](https://star-history.com/#Saratoga-Official/MaaJR&Date)
