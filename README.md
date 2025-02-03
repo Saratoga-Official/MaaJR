@@ -12,7 +12,9 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
-本项目自v2.0.0版本起采用 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 作为gui界面，仅限win-x86_64用户可用
+本项目自v2.0.0版本起采用 **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 作为gui界面，目前仅限win-x86_64用户可用
+
+本项目项目已接入 **[Mirror酱](https://mirrorc.top/zh/get-start)** 资源更新方式，目前仅限win-x86_64用户可用
 
 </div>
 
@@ -72,7 +74,13 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ## 鸣谢
 
-首先感谢玛丽和MAA
+ **[MaaAssistantArknights](https://github.com/MaaAssistantArknights/MaaAssistantArknights)** 
+
+ **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 
+
+ **[MFAWPF](https://github.com/SweetSmellFox/MFAWPF)** 
+ 
+ **[Mirror酱](https://mirrorc.top/zh/get-start)** 
 
 感谢以下开发者对本项目作出的贡献:
 
