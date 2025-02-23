@@ -45,7 +45,7 @@
             "repeatable": true,
             "doc": "[color:red]①需提前编好队，再开始[/color]\n②不开启战役打完次数将按照重复次数来执行",
             "option": [
-                "战役选择难度",
+                "战役困难难度",
                 "战役选择关卡",
                 "战役选择阵型",
                 "战役大破/中破舰船处理",
@@ -80,7 +80,7 @@
                 "战斗大破/中破舰船处理",
                 "门口SL目标1",
                 "门口SL目标2",
-                "追击设置",
+                "允许追击",
                 "战斗点位",
                 "船舱满自动拆船",
                 "战斗使用军阶buff"
@@ -193,63 +193,13 @@
                     ]
                 }
             }
-        },
-        {
-            "name": "活动零距突袭",
-            "entry": "进入关卡",
-            "check": false,
-            "repeatable": true,
-            "doc": "[color:red]①不支持导航，需在对应关卡的出击准备界面点击开始[/color]\n②其余设置沿用自动出征",
-            "repeat_count": 1,
-            "option": [
-                "战斗编队",
-                "战斗阵型",
-                "活动无限次数",
-                "战斗大破/中破舰船处理",
-                "门口SL目标1",
-                "门口SL目标2",
-                "追击设置",
-                "战斗点位",
-                "战斗使用军阶buff"
-            ],
-            "pipeline_override": {
-                "回到关卡了": {
-                    "recognition": "OCR",
-                    "expected": "出击准备",
-                    "roi": [
-                        954,
-                        557,
-                        268,
-                        104
-                    ],
-                    "next": [
-                        "无限战斗",
-                        "无动作结束"
-                    ]
-                },
-                "进入关卡": {
-                    "recognition": "OCR",
-                    "expected": "出击准备",
-                    "roi": [
-                        954,
-                        557,
-                        268,
-                        104
-                    ]
-                },
-                "无限战斗": {
-                    "next": [
-                        "进入关卡"
-                    ]
-                }
-            }
         }
     ],
     "option": {
-        "战役选择难度": {
+        "战役困难难度": {
             "cases": [
                 {
-                    "name": "普通",
+                    "name": "no",
                     "pipeline_override": {
                         "普通难度": {
                             "action": "Click",
@@ -268,7 +218,7 @@
                     }
                 },
                 {
-                    "name": "困难",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
@@ -434,11 +384,11 @@
         "战役打完次数": {
             "cases": [
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "关闭",
+                    "name": "no",
                     "pipeline_override": {
                         "战役再点继续": {
                             "next": [
@@ -453,11 +403,11 @@
         "远征等待模式": {
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {
                         "自动收远征": {
                             "next": [
@@ -1219,14 +1169,14 @@
                 }
             ]
         },
-        "追击设置": {
+        "允许追击": {
             "cases": [
                 {
-                    "name": "追击",
+                    "name": "yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "不追击",
+                    "name": "no",
                     "pipeline_override": {
                         "战斗追击": {
                             "template": "放弃.png"
@@ -1286,11 +1236,11 @@
         "船舱满自动拆船": {
             "cases": [
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {
                         "战斗船舱满退出": {
                             "next": [
@@ -1446,7 +1396,7 @@
         "1-1无限次数": {
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "no",
                     "pipeline_override": {
                         "狗粮继续": {
                             "enabled": false
@@ -1454,7 +1404,7 @@
                     }
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
@@ -1462,11 +1412,11 @@
         "刷满船舱后自动拆船": {
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {
                         "退出狗粮": {
                             "next": [
@@ -1744,11 +1694,11 @@
         "自动入浴": {
             "cases": [
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {
                         "点击船坞": {
                             "enabled": false
@@ -1760,11 +1710,11 @@
         "自动领取任务奖励": {
             "cases": [
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {
                         "点击任务": {
                             "enabled": false
@@ -1776,7 +1726,7 @@
         "自动拆船": {
             "cases": [
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {
                         "战斗船舱满尝试拆船": {
                             "enabled": false
@@ -1784,7 +1734,7 @@
                     }
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
@@ -1792,7 +1742,7 @@
         "结束后关闭游戏": {
             "cases": [
                 {
-                    "name": "不关闭",
+                    "name": "no",
                     "pipeline_override": {
                         "关闭游戏": {
                             "action": "DoNothing"
@@ -1800,7 +1750,7 @@
                     }
                 },
                 {
-                    "name": "关闭",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
@@ -2293,11 +2243,11 @@
         "决战打完次数": {
             "cases": [
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {
                         "决战沉默战士E6": {
                             "next": [
@@ -2311,11 +2261,11 @@
         "决战船舱满自动拆船": {
             "cases": [
                 {
-                    "name": "不开启",
+                    "name": "no",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "开启",
+                    "name": "yes",
                     "pipeline_override": {
                         "决战解装": {
                             "next": [
@@ -2334,7 +2284,7 @@
         "活动无限次数": {
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "no",
                     "pipeline_override": {
                         "无限战斗": {
                             "enabled": false
@@ -2342,7 +2292,7 @@
                     }
                 },
                 {
-                    "name": "无限战斗",
+                    "name": "yes",
                     "pipeline_override": {}
                 }
             ]
