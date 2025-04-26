@@ -1,6 +1,7 @@
 {
     "立体强袭开始": {
         "action": "DoNothing",
+        "post_wait_freezes": 0,
         "next": [
             "立体强袭紧急情况"
         ]
@@ -9,6 +10,7 @@
         "recognition": "TemplateMatch",
         "template": "活动紧急情况.png",
         "action": "Click",
+        "post_wait_freezes": 0,
         "next": [
             "立体强袭不处理"
         ]
@@ -17,7 +19,6 @@
         "recognition": "TemplateMatch",
         "template": "活动不处理.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "立体强袭自动补给",
             "立体强袭修理检测大破",
@@ -29,7 +30,6 @@
         "recognition": "TemplateMatch",
         "template": "对号.png",
         "inverse": true,
-        "post_wait_freezes": 1000,
         "action": "Click",
         "target": [
             56,
@@ -124,7 +124,6 @@
         ],
         "action": "Click",
         "connected": true,
-        "post_delay": 1000,
         "next": [
             "立体强袭修理大破舰船",
             "立体强袭修理中破舰船",
@@ -151,7 +150,6 @@
         ],
         "action": "Click",
         "connected": true,
-        "post_delay": 1000,
         "next": [
             "立体强袭修理大破舰船",
             "立体强袭修理中破舰船",
@@ -162,7 +160,6 @@
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "立体强袭前进",
             "立体强袭船舱满"
@@ -231,7 +228,6 @@
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "立体强袭退出2",
             "立体强袭再点继续"
@@ -240,7 +236,6 @@
     "立体强袭再点继续": {
         "action": "Click",
         "target": "立体强袭点击继续",
-        "post_wait_freezes": 1000,
         "next": [
             "立体强袭退出2",
             "立体强袭再点继续"
@@ -250,7 +245,6 @@
         "recognition": "TemplateMatch",
         "template": "活动退出2.png",
         "action": "Click",
-        "post_wait_freezes": 1000,
         "next": [
             "立体强袭确认"
         ]
@@ -258,7 +252,6 @@
     "立体强袭确认": {
         "recognition": "TemplateMatch",
         "template": "活动确认.png",
-        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "立体强袭无限战斗"
