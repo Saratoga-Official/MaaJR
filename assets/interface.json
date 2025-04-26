@@ -193,6 +193,21 @@
                     ]
                 }
             }
+        },
+        {
+            "name": "立体强袭",
+            "entry": "立体强袭开始",
+            "check": false,
+            "repeatable": true,
+            "doc": "立体强袭关卡不支持导航，需在紧急情况按钮前开始，且仅支持打第一个点。最好不要和其他任务一起使用，否则可能会无法进行",
+            "repeat_count": 1,
+            "option": [
+                "立体强袭阵型",
+                "立体强袭无限次数",
+                "立体强袭大破/中破舰船处理",
+                "立体强袭允许追击"
+            ],
+            "pipeline_override": {}
         }
     ],
     "option": {
@@ -2294,6 +2309,137 @@
                 {
                     "name": "yes",
                     "pipeline_override": {}
+                }
+            ]
+        },
+        "立体强袭阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "立体强袭无限次数": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "立体强袭无限战斗": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "立体强袭大破/中破舰船处理": {
+            "cases": [
+                {
+                    "name": "当编队存在大破舰船时快速修理大破舰船",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        },
+                        "立体强袭修理中破舰船": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "当编队存在大破舰船时快速修理中/大破舰船",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "当编队存在中破舰船时快速修理中/大破舰船",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "当编队存在大破舰船时终止战斗",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        },
+                        "立体强袭修理检测大破": {
+                            "next": [
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "当编队存在中破舰船时终止战斗",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "next": [
+                                "战斗退出"
+                            ]
+                        },
+                        "立体强袭修理检测大破": {
+                            "next": [
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "立体强袭允许追击": {
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "立体强袭追击": {
+                            "template": "放弃.png"
+                        }
+                    }
                 }
             ]
         }
