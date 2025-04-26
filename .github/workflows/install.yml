@@ -91,15 +91,10 @@ jobs:
           out-file-path: "MFA"
           extract: true
 
-      - name: Setup Embed Python
-        shell: powershell
-        run: |
-          ./tools/ci/setup_embed_python.ps1
-
       - name: Install
         shell: bash
         run: |
-          python ./tools/install.py ${{ needs.meta.outputs.tag }}
+          python ./install.py ${{ needs.meta.outputs.tag }}
           cp MFA/MFAAvalonia.exe MFA/MFAUpdater.exe MFA/MFAUpdater.dll MFA/MFAUpdater.runtimeconfig.json MFA/av_libglesv2.dll MFA/libHarfBuzzSharp.dll MFA/libonigwrap.dll MFA/libSkiaSharp.dll MFA/uiohook.dll install/
           mv install/MFAAvalonia.exe install/MaaJR.exe
           cp logo.ico install
@@ -145,7 +140,7 @@ jobs:
       - name: Install
         shell: bash
         run: |
-          python ./tools/install.py ${{ needs.meta.outputs.tag }}
+          python ./install.py ${{ needs.meta.outputs.tag }}
           platform_name="${{ matrix.os == 'ubuntu-latest' && 'linux' || 'macos' }}"
           
           # Create list of MFA files to copy
