@@ -56,7 +56,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 ## 使用说明
 
-参考文档[使用说明](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/INSTRUCTIONS.md)
+参考文档[使用说明](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/INSTRUCTIONS.md)
 
 ---
 
