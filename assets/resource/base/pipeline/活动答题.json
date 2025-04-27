@@ -44,8 +44,7 @@
             "选择ABCD",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择ABCD"
+        "focus": "选择ABCD"
     },
     "检查题目A": {
         "recognition": "OCR",
@@ -78,8 +77,7 @@
             "选择A",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择A"
+        "focus": "选择A"
     },
     "检查题目B": {
         "recognition": "OCR",
@@ -117,8 +115,7 @@
             "选择B",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择B"
+        "focus": "选择B"
     },
     "检查题目C": {
         "recognition": "OCR",
@@ -157,8 +154,7 @@
             "选择C",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择C"
+        "focus": "选择C"
     },
     "检查题目D": {
         "recognition": "OCR",
@@ -196,8 +192,7 @@
             "选择D",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择D"
+        "focus": "选择D"
     },
     "检查题目ABC": {
         "recognition": "OCR",
@@ -214,8 +209,7 @@
             "选择ABC",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择ABC"
+        "focus": "选择ABC"
     },
     "检查题目AB": {
         "recognition": "OCR",
@@ -232,8 +226,7 @@
             "选择AB",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择AB"
+        "focus": "选择AB"
     },
     "检查题目BCD": {
         "recognition": "OCR",
@@ -250,8 +243,7 @@
             "选择BCD",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择BCD"
+        "focus": "选择BCD"
     },
     "检查题目BC": {
         "recognition": "OCR",
@@ -268,8 +260,7 @@
             "选择BC",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择BC"
+        "focus": "选择BC"
     },
     "检查题目CD": {
         "recognition": "OCR",
@@ -286,8 +277,7 @@
             "选择CD",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择CD"
+        "focus": "选择CD"
     },
     "检查题目AC": {
         "recognition": "OCR",
@@ -304,8 +294,7 @@
             "选择AC",
             "正确答案"
         ],
-        "focus": true,
-        "focus_tip": "选择AC"
+        "focus": "选择AC"
     },
     "选择ABCD": {
         "recognition": "OCR",
@@ -505,7 +494,10 @@
             "C"
         ],
         "roi": [
-            71,455,196,65
+            71,
+            455,
+            196,
+            65
         ],
         "action": "Click",
         "target_offset": [

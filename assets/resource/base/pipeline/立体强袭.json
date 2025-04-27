@@ -65,9 +65,7 @@
             "立体强袭快速修理"
         ],
         "connected": true,
-        "focus": true,
-        "focus_tip": "检测到大破舰船",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]检测到大破舰船[/color]"
     },
     "立体强袭修理检测中破": {
         "recognition": "ColorMatch",
@@ -91,9 +89,7 @@
             "立体强袭快速修理"
         ],
         "connected": true,
-        "focus": true,
-        "focus_tip": "检测到中破舰船",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]检测到中破舰船[/color]"
     },
     "立体强袭快速修理": {
         "recognition": "OCR",

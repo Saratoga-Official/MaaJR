@@ -46,8 +46,7 @@
             "战斗修理检测中破",
             "战斗开始出征"
         ],
-        "focus": true,
-        "focus_tip": "进入关卡"
+        "focus": "进入关卡"
     },
     "启用军阶buff": {
         "recognition": "ColorMatch",
@@ -72,8 +71,7 @@
             "识别当前BUFF",
             "更换BUFF"
         ],
-        "focus": true,
-        "focus_tip": "选择军阶buff"
+        "focus": "选择军阶buff"
     },
     "识别当前BUFF": {
         "recognition": "OCR",
@@ -202,8 +200,7 @@
             "战斗修理检测中破",
             "战斗开始出征"
         ],
-        "focus": true,
-        "focus_tip": "切换编队"
+        "focus": "切换编队"
     },
     "战斗自动补给": {
         "recognition": "TemplateMatch",
@@ -222,8 +219,7 @@
             "战斗修理检测中破",
             "战斗开始出征"
         ],
-        "focus": true,
-        "focus_tip": "切换自动补给"
+        "focus": "切换自动补给"
     },
     "战斗修理检测大破": {
         "recognition": "ColorMatch",
@@ -247,9 +243,7 @@
             "战斗快速修理"
         ],
         "connected": true,
-        "focus": true,
-        "focus_tip": "检测到大破舰船",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]检测到大破舰船[/color]"
     },
     "战斗修理检测中破": {
         "recognition": "ColorMatch",
@@ -273,9 +267,7 @@
             "战斗快速修理"
         ],
         "connected": true,
-        "focus": true,
-        "focus_tip": "检测到中破舰船",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]检测到中破舰船[/color]"
     },
     "战斗快速修理": {
         "recognition": "OCR",
@@ -366,8 +358,7 @@
             "重新连接"
         ],
         "timeout": 300000,
-        "focus": true,
-        "focus_tip": "开始出征"
+        "focus": "开始出征"
     },
     "战斗船舱满": {
         "recognition": "TemplateMatch",
@@ -380,9 +371,7 @@
             "战斗船舱满",
             "任务出错"
         ],
-        "focus": true,
-        "focus_tip": "船舱已满",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]船舱已满[/color]"
     },
     "战斗船舱满退出": {
         "recognition": "TemplateMatch",
@@ -429,8 +418,7 @@
         "next": [
             "战斗SL"
         ],
-        "focus": true,
-        "focus_tip": "识别到SL目标"
+        "focus": "识别到SL目标"
     },
     "战斗识别SL目标2": {
         "recognition": "OCR",
@@ -444,8 +432,7 @@
         "next": [
             "战斗SL"
         ],
-        "focus": true,
-        "focus_tip": "识别到SL目标"
+        "focus": "识别到SL目标"
     },
     "战斗SL": {
         "recognition": "OCR",
@@ -481,8 +468,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "战斗开始"
+        "focus": "战斗开始"
     },
     "战斗阵型": {
         "recognition": "OCR",
@@ -505,8 +491,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "选择预设阵型"
+        "focus": "选择预设阵型"
     },
     "战斗点击继续": {
         "recognition": "OCR",
@@ -521,8 +506,7 @@
         "next": [
             "战斗再点继续"
         ],
-        "focus": true,
-        "focus_tip": "战斗结束"
+        "focus": "战斗结束"
     },
     "战斗再点继续": {
         "action": "Click",
@@ -563,8 +547,7 @@
             "回到关卡了",
             "战斗回港"
         ],
-        "focus": true,
-        "focus_tip": "回港"
+        "focus": "回港"
     },
     "战斗大破回港": {
         "recognition": "TemplateMatch",
@@ -574,9 +557,7 @@
             "回到关卡了",
             "战斗大破回港"
         ],
-        "focus": true,
-        "focus_tip": "大破回港",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]大破回港[/color]"
     },
     "战斗大破检测": {
         "recognition": "TemplateMatch",
@@ -584,9 +565,7 @@
         "next": [
             "战斗回港"
         ],
-        "focus": true,
-        "focus_tip": "检测到大破提醒",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]检测到大破提醒[/color]"
     },
     "战斗前进": {
         "recognition": "TemplateMatch",
@@ -607,8 +586,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "前进"
+        "focus": "前进"
     },
     "战斗开始2": {
         "recognition": "OCR",
@@ -630,8 +608,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "战斗开始"
+        "focus": "战斗开始"
     },
     "战斗阵型2": {
         "recognition": "OCR",
@@ -654,8 +631,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "选择预设阵型"
+        "focus": "选择预设阵型"
     },
     "战斗点击继续2": {
         "recognition": "OCR",
@@ -670,8 +646,7 @@
         "next": [
             "战斗再点继续2"
         ],
-        "focus": true,
-        "focus_tip": "战斗结束"
+        "focus": "战斗结束"
     },
     "战斗再点继续2": {
         "action": "Click",
@@ -710,8 +685,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "前进"
+        "focus": "前进"
     },
     "战斗开始3": {
         "recognition": "OCR",
@@ -733,8 +707,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "战斗开始"
+        "focus": "战斗开始"
     },
     "战斗阵型3": {
         "recognition": "OCR",
@@ -757,8 +730,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "选择预设阵型"
+        "focus": "选择预设阵型"
     },
     "战斗点击继续3": {
         "recognition": "OCR",
@@ -773,8 +745,7 @@
         "next": [
             "战斗再点继续3"
         ],
-        "focus": true,
-        "focus_tip": "战斗结束"
+        "focus": "战斗结束"
     },
     "战斗再点继续3": {
         "action": "Click",
@@ -813,8 +784,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "前进"
+        "focus": "前进"
     },
     "战斗开始4": {
         "recognition": "OCR",
@@ -836,8 +806,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "战斗开始"
+        "focus": "战斗开始"
     },
     "战斗阵型4": {
         "recognition": "OCR",
@@ -860,8 +829,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "选择预设阵型"
+        "focus": "选择预设阵型"
     },
     "战斗点击继续4": {
         "recognition": "OCR",
@@ -876,8 +844,7 @@
         "next": [
             "战斗再点继续4"
         ],
-        "focus": true,
-        "focus_tip": "战斗结束"
+        "focus": "战斗结束"
     },
     "战斗再点继续4": {
         "action": "Click",
@@ -916,8 +883,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "前进"
+        "focus": "前进"
     },
     "战斗开始5": {
         "recognition": "OCR",
@@ -939,8 +905,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "战斗开始"
+        "focus": "战斗开始"
     },
     "战斗阵型5": {
         "recognition": "OCR",
@@ -963,8 +928,7 @@
             "战斗追击",
             "重新连接"
         ],
-        "focus": true,
-        "focus_tip": "选择预设阵型"
+        "focus": "选择预设阵型"
     },
     "战斗点击继续5": {
         "recognition": "OCR",
@@ -979,8 +943,7 @@
         "next": [
             "战斗再点继续5"
         ],
-        "focus": true,
-        "focus_tip": "战斗结束"
+        "focus": "战斗结束"
     },
     "战斗再点继续5": {
         "action": "Click",

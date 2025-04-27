@@ -22,9 +22,7 @@
         "interrupt": [],
         "on_error": [],
         "post_wait_freezes": 0,
-        "focus": true,
-        "focus_tip": "任务出错",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]任务出错[/color]"
     },
     "重新连接": {
         "recognition": "OCR",
@@ -45,9 +43,7 @@
         "on_error": [
             "无动作结束"
         ],
-        "focus": true,
-        "focus_tip": "网络断开",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]网络断开[/color]"
     },
     "战斗追击": {
         "recognition": "TemplateMatch",

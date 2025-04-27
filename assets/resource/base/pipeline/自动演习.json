@@ -306,9 +306,7 @@
             "演习刷新失败1",
             "演习向上滑"
         ],
-        "focus": true,
-        "focus_tip": "放弃本次演习（共一次）",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]放弃本次演习（共一次）[/color]"
     },
     "演习刷新失败1": {
         "recognition": "TemplateMatch",
@@ -356,9 +354,7 @@
             "演习刷新失败2",
             "演习向上滑"
         ],
-        "focus": true,
-        "focus_tip": "放弃本次演习（共两次）",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]放弃本次演习（共两次）[/color]"
     },
     "演习刷新失败2": {
         "recognition": "TemplateMatch",
@@ -406,9 +402,7 @@
             "演习刷新失败3",
             "演习向上滑"
         ],
-        "focus": true,
-        "focus_tip": "放弃本次演习（共三次）",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]放弃本次演习（共三次）[/color]"
     },
     "演习刷新失败3": {
         "recognition": "TemplateMatch",
@@ -455,9 +449,7 @@
         "next": [
             "演习向上滑"
         ],
-        "focus": true,
-        "focus_tip": "放弃本次演习（共四次）",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]放弃本次演习（共四次）[/color]"
     },
     "演习开始挑战1": {
         "recognition": "TemplateMatch",

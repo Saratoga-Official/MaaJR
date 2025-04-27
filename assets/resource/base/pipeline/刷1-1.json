@@ -340,9 +340,7 @@
         "next": [
             "狗粮不满足出征要求"
         ],
-        "focus": true,
-        "focus_tip": "新获得舰船不满足出征要求，结束任务",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
     },
     "换人大破检测2": {
         "recognition": "ColorMatch",
@@ -366,9 +364,7 @@
         "next": [
             "狗粮不满足出征要求"
         ],
-        "focus": true,
-        "focus_tip": "新获得舰船不满足出征要求，结束任务",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
     },
     "狗粮不满足出征要求": {
         "recognition": "TemplateMatch",
@@ -400,9 +396,7 @@
         "next": [
             "退出狗粮"
         ],
-        "focus": true,
-        "focus_tip": "船舱已满",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]船舱已满[/color]"
     },
     "退出狗粮": {
         "recognition": "TemplateMatch",
@@ -507,8 +501,6 @@
         "next": [
             "任务结束"
         ],
-        "focus": true,
-        "focus_tip": "今日捞船已达上限",
-        "focus_tip_color": "Red"
+        "focus": "[color:red]今日捞船已达上限[/color]"
     }
 }
