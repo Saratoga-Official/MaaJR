@@ -240,7 +240,7 @@
         ],
         "interrupt": [
             "战斗追击",
-            "reconnect"
+            "重新连接"
         ],
         "timeout": 60000,
         "focus": "开始出征"
@@ -256,7 +256,7 @@
         ],
         "interrupt": [
             "战斗追击",
-            "reconnect"
+            "重新连接"
         ],
         "timeout": 90000
     },
@@ -279,7 +279,7 @@
         ],
         "interrupt": [
             "战斗追击",
-            "reconnect"
+            "重新连接"
         ]
     },
     "战役点击继续": {

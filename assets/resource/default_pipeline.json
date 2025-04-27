@@ -2,10 +2,10 @@
     "Default": {
         "post_wait_freezes": 1000,
         "interrupt": [
-            "reconnect"
+            "重新连接"
         ],
         "on_error": [
-            "taskerror"
+            "任务出错"
         ]
     },
     "OCR": {

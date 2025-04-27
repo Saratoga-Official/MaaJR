@@ -17,14 +17,14 @@
         "post_delay": 0,
         "post_wait_freezes": 0
     },
-    "taskerror": {
+    "任务出错": {
         "action": "StopTask",
         "interrupt": [],
         "on_error": [],
         "post_wait_freezes": 0,
         "focus": "[color:red]任务出错[/color]"
     },
-    "reconnect": {
+    "重新连接": {
         "recognition": "OCR",
         "expected": "重试",
         "roi": [
@@ -37,7 +37,7 @@
         "post_wait_freezes": 5000,
         "timeout": 60000,
         "next": [
-            "reconnect"
+            "重新连接"
         ],
         "interrupt": [],
         "on_error": [
