@@ -10,7 +10,7 @@
 
 - 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip，解压后运行 MaaJR.exe 即可
 
-- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip，解压后运行 MaaPiCli.exe 即可
+- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip
 
 ### macOS
 
@@ -18,7 +18,7 @@
 
 - 若使用 M1, M2 等 arm 处理器，请下载 MaaJR-macos-aarch64-vXXX.zip
 
-- 使用方式：
+- MaaPiCli使用方式：
   
   ```bash
   chmod a+x MaaPiCli
