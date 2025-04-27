@@ -106,3 +106,10 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Saratoga-Official/MaaJR&type=Date)](https://star-history.com/#Saratoga-Official/MaaJR&Date)
+
+## 赞助
+
+<!-- markdownlint-disable MD045 -->
+<a href="https://afdian.com/a/Saratoga">
+  <img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png">
+</a>

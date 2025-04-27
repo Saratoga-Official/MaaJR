@@ -4,7 +4,8 @@
 
 ## 下载及安装说明
 
-[下载地址](https://github.com/Saratoga-Official/MaaJR/releases)
+[使用github下载](https://github.com/Saratoga-Official/MaaJR/releases)
+[使用Mirror酱下载](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/Mirror酱.md)
 
 ### Windows
 
