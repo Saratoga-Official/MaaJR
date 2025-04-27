@@ -35,7 +35,7 @@ jobs:
           filetype: latest-release
           filename: "MaaJR-win-x86_64-*.zip"
           pick_files: '["resource", "interface.json"]'
-          exclude_files: '["resource/base/model/ocr/**"]'
+          exclude_files: '["resource/model/ocr/**"]'
           mirrorchyan_rid: MaaJR
 
           owner: Saratoga-Official

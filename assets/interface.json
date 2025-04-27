@@ -16,7 +16,7 @@
         {
             "name": "国服",
             "path": [
-                "{PROJECT_DIR}/resource/base"
+                "{PROJECT_DIR}/resource"
             ]
         }
     ],
