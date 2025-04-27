@@ -9,6 +9,7 @@
         ]
     },
     "OCR": {
+        "recognition": "OCR",
         "replace": [
             "鲍鱼",
             "鲃鱼"
