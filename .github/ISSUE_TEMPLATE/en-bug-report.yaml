@@ -23,6 +23,11 @@ body:
             Instead of "Some suggestions", "Stuck", etc.
           required: true
         - label: >-
+            I am using the latest version of the current update and have reviewed
+            both the updates released so far and the unreleased changes in the Pull Requests,
+            there is no mention of the bug being fixed.
+          required: true
+        - label: >-
             I have reviewed the Pinned issue (Announcements), Open issues, and Closed issues
             to ensure that my issue has not been mentioned.
           required: true
@@ -49,9 +54,10 @@ body:
       label: Log and config files
       description: >-
         **After closing`MAAJR`, upload the following files:**
-          The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
-          The `config.json` file in the `config` folder
-          The `log` file in the `log` folder (If you are a Windows x64 user).
+          1. The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
+          2. The `maa_pi_config.json`(MaaPiCli) config file in the `config` folder
+          3. The `log` file in the `log` folder 
+
         **Please drag and drop the full file in, not your own cuttings or copies;**
         **compress it before uploading if too large.**
       placeholder: |
@@ -63,7 +69,8 @@ body:
     attributes:
       label: Configuration information
       description: |
-        Please specify the operating system and version, emulator brand, emulator resolution, DPI, and frame rate.
+        Please specify the operating system and version, emulator brand, emulator resolution, DPI, and frame rate;
+        please specify whether GPU accelerated inference is enabled, and if so, provide the GPU model.
     validations:
       required: true
   - type: textarea
@@ -71,13 +78,10 @@ body:
     attributes:
       label: Screenshots or recordings
       description: >-
-        In the `debug` directory, within the functionally categorized folders, 
-        there are some error images captured automatically.
-        If related to this issue, please upload them together.
-
         If available, upload screenshots and recordings to help explain your problem,
         including but not limited to screenshots of`MAAJR`software,
-        screenshots of game screens.
+        screenshots of game screens,`MAAJR`debug screenshots (`debug/vision` path pictures,
+        after modifying `save_draw` in `config/maa_option.json` to `true`, run MXX again to obtain)
 
         If the problem is **recognition related**, please help by providing
         the **original image** taken by the emulator's own screenshot tool
