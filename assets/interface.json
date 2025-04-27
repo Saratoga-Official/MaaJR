@@ -26,14 +26,19 @@
             "entry": "开始唤醒",
             "check": true,
             "repeatable": false,
-            "doc": "用于打开游戏，领取登录奖励等\n[color:red]请将本任务放在所有任务之前[/color]"
+            "doc": [
+                "用于打开游戏，领取登录奖励等",
+                "[color:red]请将本任务放在所有任务之前[/color]"
+            ]
         },
         {
             "name": "自动远征",
             "entry": "开始自动远征",
             "check": false,
             "repeatable": false,
-            "doc": "开启远征等待模式会在程序关闭前无限等待收发远征",
+            "doc": [
+                "开启远征等待模式会在程序关闭前无限等待收发远征"
+            ],
             "option": [
                 "远征等待模式"
             ]
@@ -43,7 +48,10 @@
             "entry": "开始自动战役",
             "check": false,
             "repeatable": true,
-            "doc": "[color:red]①需提前编好队，再开始[/color]\n②不开启战役打完次数将按照重复次数来执行",
+            "doc": [
+                "[color:red]①需提前编好队，再开始[/color]",
+                "②不开启战役打完次数将按照重复次数来执行"
+            ],
             "option": [
                 "战役困难难度",
                 "战役选择关卡",
@@ -57,7 +65,10 @@
             "entry": "开始自动演习",
             "check": false,
             "repeatable": false,
-            "doc": "①目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新\n[color:red]②需提前编好队，再开始[/color]",
+            "doc": [
+                "①目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新",
+                "[color:red]②需提前编好队，再开始[/color]"
+            ],
             "option": [
                 "演习编队",
                 "演习选择阵型",
@@ -69,21 +80,37 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
-            "doc": "[color:red]①需提前编好队，满足带路条件，再开始[/color]\n②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航\n③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL\n④战斗点位，设置几点就打到几点\n[color:red]⑤自动拆船，确保船舱想保留的船均锁好才可使用[/color]\n⑥本功能使用中会自动收发远征",
+            "doc": [
+                "[color:red]①需提前编好队，满足带路条件，再开始[/color]",
+                "②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航",
+                "③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL",
+                "[color:red]④自动拆船，确保船舱想保留的船均锁好才可使用[/color]",
+                "⑤本功能会在战斗结束后自动收发远征",
+                "⑥战斗点位，设置几点就打到几点，并按该节点所选阵型和夜战追击设置操作",
+                "⑦追击设置中潜艇用智能追击属于测试功能，会检测敌方是否存在潜艇打不到的敌人从而决定是否进行夜战追击（敌方五号位会被挡住检测不到）"
+            ],
             "repeat_count": 1,
             "option": [
                 "自动导航章节",
                 "自动导航关卡",
                 "战斗编队",
-                "战斗阵型",
                 "战斗无限次数",
                 "战斗大破/中破舰船处理",
+                "船舱满自动拆船（危险功能）",
+                "战斗使用军阶buff",
+                "战斗节点",
                 "门口SL目标1",
                 "门口SL目标2",
-                "允许追击",
-                "战斗点位",
-                "船舱满自动拆船",
-                "战斗使用军阶buff"
+                "节点1阵型",
+                "节点1追击",
+                "节点2阵型",
+                "节点2追击",
+                "节点3阵型",
+                "节点3追击",
+                "节点4阵型",
+                "节点4追击",
+                "节点5阵型",
+                "节点5追击"
             ],
             "pipeline_override": {
                 "退出远征": {
@@ -101,11 +128,15 @@
             "entry": "开始出征",
             "check": false,
             "repeatable": true,
-            "doc": "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]\n[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]\n③本功能使用中会自动收发远征",
+            "doc": [
+                "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]",
+                "[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]",
+                "③本功能会在战斗结束后自动收发远征"
+            ],
             "option": [
                 "1-1编队",
                 "1-1无限次数",
-                "刷满船舱后自动拆船"
+                "刷满船舱后自动拆船（危险功能）"
             ],
             "pipeline_override": {
                 "开始导航": {
@@ -156,13 +187,21 @@
             "entry": "开始自动决战",
             "check": false,
             "repeatable": true,
-            "doc": "[color:red]①使用前确认副官已开启奇尔沙治，选船配置中有且仅有一艘2-3费中型船和4费鱼[/color]\n[color:red]②剩下的位置大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船全选改造鱼[/color]\n[color:red]③如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置[/color]\n[color:red]④第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要12选同一个船，会出逻辑bug[/color]\n[color:red]⑤第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取[/color]\n[color:red]⑥决战中将自动使用快速修理，请备好足够的桶[/color]\n[color:red]⑧由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MAAJR（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]",
+            "doc": [
+                "[color:red]①使用前确认副官已开启奇尔沙治，选船配置中有且仅有一艘2-3费中型船和4费鱼[/color]",
+                "[color:red]②剩下的位置大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船全选改造鱼[/color]",
+                "[color:red]③如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置[/color]",
+                "[color:red]④第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要选同一个船，会出逻辑bug[/color]",
+                "[color:red]⑤第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取[/color]",
+                "[color:red]⑥决战中将自动使用快速修理，请备好足够的桶[/color]",
+                "[color:red]⑦由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MAAJR（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
+            ],
             "option": [
                 "第一关开局舰船1",
                 "第一关开局舰船2",
                 "第二关开局舰船",
                 "决战打完次数",
-                "决战船舱满自动拆船"
+                "决战船舱满自动拆船（危险功能）"
             ],
             "pipeline_override": {}
         },
@@ -171,11 +210,13 @@
             "entry": "收尾工作",
             "check": false,
             "repeatable": false,
-            "doc": "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]",
+            "doc": [
+                "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]"
+            ],
             "option": [
                 "自动入浴",
                 "自动领取任务奖励",
-                "自动拆船",
+                "自动拆船（危险功能）",
                 "结束后关闭游戏"
             ],
             "pipeline_override": {
@@ -199,7 +240,11 @@
             "entry": "立体强袭开始",
             "check": false,
             "repeatable": true,
-            "doc": "立体强袭关卡不支持导航，需在紧急情况按钮前开始，且仅支持打第一个点。最好不要和其他任务一起使用，否则可能会无法进行",
+            "doc": [
+                "立体强袭关卡不支持导航，需在紧急情况按钮前开始",
+                "仅支持打第一个点",
+                "最好不要和其他任务一起使用，否则可能会无法进行"
+            ],
             "repeat_count": 1,
             "option": [
                 "立体强袭阵型",
@@ -213,6 +258,10 @@
     "option": {
         "战役困难难度": {
             "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
                 {
                     "name": "no",
                     "pipeline_override": {
@@ -231,10 +280,6 @@
                             ]
                         }
                     }
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {}
                 }
             ]
         },
@@ -1184,23 +1229,7 @@
                 }
             ]
         },
-        "允许追击": {
-            "cases": [
-                {
-                    "name": "yes",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "no",
-                    "pipeline_override": {
-                        "战斗追击": {
-                            "template": "放弃.png"
-                        }
-                    }
-                }
-            ]
-        },
-        "战斗点位": {
+        "战斗节点": {
             "cases": [
                 {
                     "name": "1",
@@ -1243,12 +1272,12 @@
                     }
                 },
                 {
-                    "name": "一直打直到结束",
+                    "name": "5及后续节点",
                     "pipeline_override": {}
                 }
             ]
         },
-        "船舱满自动拆船": {
+        "船舱满自动拆船（危险功能）": {
             "cases": [
                 {
                     "name": "no",
@@ -1424,7 +1453,7 @@
                 }
             ]
         },
-        "刷满船舱后自动拆船": {
+        "刷满船舱后自动拆船（危险功能）": {
             "cases": [
                 {
                     "name": "no",
@@ -1738,7 +1767,7 @@
                 }
             ]
         },
-        "自动拆船": {
+        "自动拆船（危险功能）": {
             "cases": [
                 {
                     "name": "no",
@@ -2273,7 +2302,7 @@
                 }
             ]
         },
-        "决战船舱满自动拆船": {
+        "决战船舱满自动拆船（危险功能）": {
             "cases": [
                 {
                     "name": "no",
@@ -2438,6 +2467,396 @@
                     "pipeline_override": {
                         "立体强袭追击": {
                             "template": "放弃.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战斗阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战斗阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战斗阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战斗阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战斗阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战斗阵型2": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战斗阵型2": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战斗阵型2": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战斗阵型2": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战斗阵型2": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战斗阵型3": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战斗阵型3": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战斗阵型3": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战斗阵型3": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战斗阵型3": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战斗阵型4": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战斗阵型4": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战斗阵型4": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战斗阵型4": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战斗阵型4": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战斗阵型5": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战斗阵型5": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战斗阵型5": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战斗阵型5": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战斗阵型5": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "战斗追击": {
+                            "template": "放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "战斗追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "战斗追击2": {
+                            "template": "放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "战斗追击2": {
+                            "action": "DoNothing",
+                            "next": [
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "战斗追击3": {
+                            "template": "放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "战斗追击3": {
+                            "action": "DoNothing",
+                            "next": [
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "战斗追击4": {
+                            "template": "放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "战斗追击4": {
+                            "action": "DoNothing",
+                            "next": [
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "战斗追击5": {
+                            "template": "放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "战斗追击5": {
+                            "action": "DoNothing",
+                            "next": [
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
                         }
                     }
                 }

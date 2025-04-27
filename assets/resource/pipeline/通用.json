@@ -52,6 +52,34 @@
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
+    "战斗追击2": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "post_wait_freezes": 0
+    },
+    "战斗追击3": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "post_wait_freezes": 0
+    },
+    "战斗追击4": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "post_wait_freezes": 0
+    },
+    "战斗追击5": {
+        "recognition": "TemplateMatch",
+        "template": "追击.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "post_wait_freezes": 0
+    },
     "退出": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
