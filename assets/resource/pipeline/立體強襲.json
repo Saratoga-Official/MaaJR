@@ -14,7 +14,8 @@
         "post_delay": 1000,
         "next": [
             "立体强袭不处理"
-        ]
+        ],
+        "focus": "紧急情况"
     },
     "立体强袭不处理": {
         "recognition": "TemplateMatch",
@@ -27,7 +28,8 @@
             "立体强袭修理检测大破",
             "立体强袭修理检测中破",
             "立体强袭开始出征"
-        ]
+        ],
+        "focus": "不处理"
     },
     "立体强袭检测等级": {
         "recognition": "OCR",
@@ -179,7 +181,8 @@
         "post_delay": 1000,
         "next": [
             "立体强袭前进"
-        ]
+        ],
+        "focus": "开始出征"
     },
     "立体强袭前进": {
         "recognition": "TemplateMatch",
@@ -189,7 +192,8 @@
         "next": [
             "立体强袭开始战斗",
             "立体强袭阵型"
-        ]
+        ],
+        "focus": "前进"
     },
     "退出立体强袭": {
         "recognition": "TemplateMatch",
@@ -211,7 +215,8 @@
         "action": "Click",
         "next": [
             "立体强袭阵型"
-        ]
+        ],
+        "focus": "开始战斗"
     },
     "立体强袭阵型": {
         "recognition": "TemplateMatch",
@@ -221,7 +226,8 @@
         "next": [
             "立体强袭追击",
             "立体强袭点击继续"
-        ]
+        ],
+        "focus": "选择阵型"
     },
     "立体强袭追击": {
         "recognition": "TemplateMatch",
@@ -231,7 +237,8 @@
         "timeout": 90000,
         "next": [
             "立体强袭点击继续"
-        ]
+        ],
+        "focus": "追击"
     },
     "立体强袭点击继续": {
         "recognition": "TemplateMatch",
@@ -241,7 +248,8 @@
         "next": [
             "立体强袭退出2",
             "立体强袭再点继续"
-        ]
+        ],
+        "focus": "战斗结束"
     },
     "立体强袭再点继续": {
         "action": "Click",
@@ -257,7 +265,8 @@
         "action": "Click",
         "next": [
             "立体强袭确认"
-        ]
+        ],
+        "focus": "退出"
     },
     "立体强袭确认": {
         "recognition": "TemplateMatch",
@@ -266,7 +275,8 @@
         "next": [
             "立体强袭无限战斗",
             "无动作结束"
-        ]
+        ],
+        "focus": "确认"
     },
     "立体强袭无限战斗": {
         "post_wait_freezes": 0,

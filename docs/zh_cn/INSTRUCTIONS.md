@@ -5,6 +5,7 @@
 ## 下载及安装说明
 
 [使用github下载](https://github.com/Saratoga-Official/MaaJR/releases)
+
 [使用Mirror酱下载](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/Mirror酱.md)
 
 ### Windows
@@ -38,14 +39,16 @@
 
 * 确保游戏可以在模拟器上流畅运行，没有严重的卡顿和延迟
 
-* 将模拟器的分辨率调整为 16∶9 
+* 将模拟器的分辨率调整为 16∶9 且为720P或1080P
 
 * 打开模拟器的ADB调试选项，关闭后台挂机时保活运行
 
 * 完成所有游戏资源的下载
 
 * 完成必须运行库的下载：
+
   [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
   [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 
 ---
@@ -64,6 +67,8 @@
 
 * 开启远征等待模式会在程序关闭前无限等待收发远征
 
+* 现在可结合定时执行功能实现定点收远征
+
 ### ③自动战役
 
 * 需提前编好队，再开始
@@ -75,6 +80,8 @@
 * 目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新
 
 * 需提前编好队，再开始
+
+* 现在可结合定时执行功能实现刷不同时间段的演习
 
 ### ⑤自动出征
 
@@ -126,7 +133,9 @@
 
 ## MaaPiCli使用说明
 
-除非需要使用MaaPiCli，否则无需阅读此说明
+<!-- markdownlint-disable -->
+
+<details><summary>除非需要使用MaaPiCli，否则无需阅读此说明</summary>
 
 ### ①
 启动后会出现:
@@ -227,3 +236,10 @@ Tasks:
 6. 开始执行任务，在这之后就会自动开始操控。
 
 如果你认为这种方式过于繁琐，也可以直接修改 `config/maa_pi_config.json`。
+
+</details>
+
+<!-- markdownlint-restore -->
+
+
+
