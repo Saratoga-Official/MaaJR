@@ -1033,6 +1033,14 @@
                             "inverse": true
                         }
                     }
+                },
+                {
+                    "name": "直到旗舰满级后停止",
+                    "pipeline_override": {
+                        "战斗检测等级": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -2325,22 +2333,6 @@
                 }
             ]
         },
-        "活动无限次数": {
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {
-                        "无限战斗": {
-                            "enabled": false
-                        }
-                    }
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {}
-                }
-            ]
-        },
         "立体强袭阵型": {
             "cases": [
                 {
@@ -2388,7 +2380,7 @@
         "立体强袭无限次数": {
             "cases": [
                 {
-                    "name": "no",
+                    "name": "关闭",
                     "pipeline_override": {
                         "立体强袭无限战斗": {
                             "enabled": false
@@ -2396,8 +2388,16 @@
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "开启",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "旗舰等级满级时终止任务",
+                    "pipeline_override": {
+                        "立体强袭检测等级": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -2434,7 +2434,7 @@
                         },
                         "立体强袭修理检测大破": {
                             "next": [
-                                "战斗退出"
+                                "退出立体强袭"
                             ]
                         }
                     }
@@ -2444,12 +2444,12 @@
                     "pipeline_override": {
                         "立体强袭修理检测中破": {
                             "next": [
-                                "战斗退出"
+                                "退出立体强袭"
                             ]
                         },
                         "立体强袭修理检测大破": {
                             "next": [
-                                "战斗退出"
+                                "退出立体强袭"
                             ]
                         }
                     }

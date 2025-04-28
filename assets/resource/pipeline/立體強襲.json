@@ -11,6 +11,7 @@
         "template": "活动紧急情况.png",
         "action": "Click",
         "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
             "立体强袭不处理"
         ]
@@ -19,12 +20,29 @@
         "recognition": "TemplateMatch",
         "template": "活动不处理.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "立体强袭自动补给",
+            "立体强袭检测等级",
             "立体强袭修理检测大破",
             "立体强袭修理检测中破",
             "立体强袭开始出征"
         ]
+    },
+    "立体强袭检测等级": {
+        "recognition": "OCR",
+        "expected": "110",
+        "roi": [
+            88,
+            408,
+            31,
+            15
+        ],
+        "next": [
+            "退出立体强袭"
+        ],
+        "enabled": false,
+        "focus": "[color:red]检测到旗舰等级已满[/color]"
     },
     "立体强袭自动补给": {
         "recognition": "TemplateMatch",
@@ -38,6 +56,8 @@
             22
         ],
         "next": [
+            "立体强袭自动补给",
+            "立体强袭检测等级",
             "立体强袭修理检测大破",
             "立体强袭修理检测中破",
             "立体强袭开始出征"
@@ -156,26 +176,19 @@
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
-            "立体强袭前进",
-            "立体强袭船舱满"
+            "立体强袭前进"
         ]
     },
     "立体强袭前进": {
         "recognition": "TemplateMatch",
         "template": "活动前进.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "立体强袭开始战斗",
             "立体强袭阵型"
-        ]
-    },
-    "立体强袭船舱满": {
-        "recognition": "TemplateMatch",
-        "template": "关闭船舱满提醒.png",
-        "action": "Click",
-        "next": [
-            "退出立体强袭"
         ]
     },
     "退出立体强袭": {
@@ -224,6 +237,7 @@
         "recognition": "TemplateMatch",
         "template": "点击继续.png",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "立体强袭退出2",
             "立体强袭再点继续"
