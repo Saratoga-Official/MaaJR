@@ -11,7 +11,7 @@
         "timeout": 300000,
         "next": [
             "游戏更新",
-            "进入游戏",
+            "进入游戏前",
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
@@ -50,6 +50,71 @@
         "post_delay": 5000,
         "next": [
             "游戏更新",
+            "更换区服",
+            "进入游戏"
+        ]
+    },
+    "更换区服": {
+        "recognition": "OCR",
+        "expected": "胡德",
+        "roi": [
+            990,
+            494,
+            217,
+            57
+        ],
+        "action": "Click",
+        "target": [
+            990,
+            494,
+            217,
+            57
+        ],
+        "next": [
+            "选择区服",
+            "切换大区"
+        ],
+        "inverse": true,
+        "enabled": false
+    },
+    "选择区服": {
+        "recognition": "OCR",
+        "expected": "胡德",
+        "roi": [
+            829,
+            4,
+            444,
+            609
+        ],
+        "action": "Click",
+        "next": [
+            "进入游戏"
+        ]
+    },
+    "切换大区": {
+        "recognition": "OCR",
+        "expected": "切换大区",
+        "roi": [
+            1043,
+            640,
+            153,
+            52
+        ],
+        "next": [
+            "任务出错"
+        ],
+        "on_error": [
+            "无动作结束"
+        ],
+        "focus": "[color:red]未识别到所选服务器，请检查当前大区是否为服务器对应大区[/color]"
+    },
+    "进入游戏前": {
+        "recognition": "TemplateMatch",
+        "template": "进入游戏.png",
+        "timeout": 300000,
+        "post_delay": 5000,
+        "next": [
+            "更换区服",
             "进入游戏"
         ]
     },
@@ -57,8 +122,6 @@
         "recognition": "TemplateMatch",
         "template": "进入游戏.png",
         "action": "Click",
-        "timeout": 300000,
-        "post_delay": 5000,
         "next": [
             "退出公告",
             "登录奖励",

@@ -28,7 +28,12 @@
             "repeatable": false,
             "doc": [
                 "用于打开游戏，领取登录奖励等",
-                "[color:red]请将本任务放在所有任务之前[/color]"
+                "[color:red]请将本任务放在所有任务之前[/color]",
+                "[color:red]切换区服不可选择非当前大区的区服[/color]",
+                "如果需要切换大区或切换账号请使用多开模拟器"
+            ],
+            "option": [
+                "切换区服"
             ]
         },
         {
@@ -37,7 +42,8 @@
             "check": false,
             "repeatable": false,
             "doc": [
-                "开启远征等待模式会在程序关闭前无限等待收发远征"
+                "开启远征等待模式会在程序关闭前无限等待收发远征",
+                "现在可结合定时执行功能实现定点收远征"
             ],
             "option": [
                 "远征等待模式"
@@ -67,7 +73,8 @@
             "repeatable": false,
             "doc": [
                 "①目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新",
-                "[color:red]②需提前编好队，再开始[/color]"
+                "[color:red]②需提前编好队，再开始[/color]",
+                "现在可结合定时执行功能实现刷不同时间段的演习"
             ],
             "option": [
                 "演习编队",
@@ -256,6 +263,82 @@
         }
     ],
     "option": {
+        "切换区服": {
+            "cases": [
+                {
+                    "name": "不切换",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "全平台-胡德",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-俾斯麦",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "俾斯麦",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "俾斯麦"
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-昆西",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "昆西",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "昆西"
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-长春",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "长春",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "长春"
+                        }
+                    }
+                },
+                {
+                    "name": "IOS-列克星敦",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "列克星敦",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "列克星敦"
+                        }
+                    }
+                },
+                {
+                    "name": "IOS-维内托",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "维内托",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "维内托"
+                        }
+                    }
+                }
+            ]
+        },
         "战役困难难度": {
             "cases": [
                 {
