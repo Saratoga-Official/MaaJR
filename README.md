@@ -27,7 +27,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 本项目自v2.4.0版本起采用 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 作为gui界面
 
-本项目项目已接入 **[Mirror酱](https://mirrorchyan.com/zh/get-start)** 资源更新方式
+本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
 
 </div>
 
