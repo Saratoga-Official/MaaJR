@@ -1157,6 +1157,12 @@
         "template": "退出.png",
         "green_mask": true,
         "action": "Click",
+        "roi": [
+            7,
+            5,
+            95,
+            705
+        ],
         "next": [
             "拆船结束退出2"
         ]

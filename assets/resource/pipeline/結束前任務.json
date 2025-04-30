@@ -1,16 +1,28 @@
 {
     "收尾工作": {
-        "post_delay": 3000,
+        "post_delay": 2000,
         "next": [
             "结束领取奖励",
+            "结束前退出",
             "点击任务",
             "战斗船舱满尝试拆船",
             "点击船坞",
             "关闭游戏"
+        ]
+    },
+    "结束前退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "roi": [
+            7,
+            5,
+            95,
+            705
         ],
-        "interrupt": [
-            "重新连接",
-            "退出"
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "收尾工作"
         ]
     },
     "结束领取奖励": {

@@ -2,11 +2,11 @@
     "开始自动决战": {
         "next": [
             "决战领取奖励",
-            "自动决战",
             "点击决战",
             "决战沉默战士",
             "识别决战点",
-            "退出决战"
+            "退出决战",
+            "自动决战"
         ]
     },
     "决战领取奖励": {
@@ -49,6 +49,12 @@
     "退出决战": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
+        "roi": [
+            7,
+            5,
+            95,
+            705
+        ],
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -2981,6 +2987,12 @@
     "决战船舱满退出": {
         "recognition": "TemplateMatch",
         "template": "退出.png",
+        "roi": [
+            7,
+            5,
+            95,
+            705
+        ],
         "green_mask": true,
         "action": "Click"
     }

@@ -15,11 +15,23 @@
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
+            "开始退出",
             "结束开始唤醒"
+        ]
+    },
+    "开始退出": {
+        "recognition": "TemplateMatch",
+        "template": "退出.png",
+        "roi": [
+            7,
+            5,
+            95,
+            705
         ],
-        "interrupt": [
-            "退出",
-            "重新连接"
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "打开游戏"
         ]
     },
     "游戏更新": {
