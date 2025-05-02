@@ -272,9 +272,9 @@
         "template": "活动退出2.png",
         "action": "Click",
         "next": [
-            "立体强袭确认"
-        ],
-        "focus": "退出"
+            "立体强袭确认",
+            "立体强袭退出2"
+        ]
     },
     "立体强袭确认": {
         "recognition": "TemplateMatch",
@@ -284,7 +284,7 @@
             "立体强袭无限战斗",
             "无动作结束"
         ],
-        "focus": "确认"
+        "focus": "退出"
     },
     "立体强袭无限战斗": {
         "post_wait_freezes": 0,
