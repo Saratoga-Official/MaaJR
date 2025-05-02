@@ -43,9 +43,9 @@ body:
     attributes:
       label: Version
       description: >-
-        Please provide the`MAAJR`version.
+        Please provide the`MRA`version.
       placeholder: |
-        MAAJR Version:
+        MRA Version:
     validations:
       required: true
   - type: textarea
@@ -53,7 +53,7 @@ body:
     attributes:
       label: Log and config files
       description: >-
-        **After closing`MAAJR`, upload the following files:**
+        **After closing`MRA`, upload the following files:**
           1. The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
           2. The `maa_pi_config.json`(MaaPiCli) config file in the `config` folder
           3. The `log` file in the `log` folder 
@@ -61,7 +61,7 @@ body:
         **Please drag and drop the full file in, not your own cuttings or copies;**
         **compress it before uploading if too large.**
       placeholder: |
-        Please confirm that MAAJR is not running before uploading files.
+        Please confirm that MRA is not running before uploading files.
     validations:
       required: true
   - type: textarea
@@ -79,8 +79,8 @@ body:
       label: Screenshots or recordings
       description: >-
         If available, upload screenshots and recordings to help explain your problem,
-        including but not limited to screenshots of`MAAJR`software,
-        screenshots of game screens,`MAAJR`debug screenshots (`debug/vision` path pictures,
+        including but not limited to screenshots of`MRA`software,
+        screenshots of game screens,`MRA`debug screenshots (`debug/vision` path pictures,
         after modifying `save_draw` in `config/maa_option.json` to `true`, run MXX again to obtain)
 
         If the problem is **recognition related**, please help by providing

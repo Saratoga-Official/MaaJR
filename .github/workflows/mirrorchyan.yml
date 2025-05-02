@@ -16,11 +16,11 @@ jobs:
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MaaJR-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
+          filename: "MRA-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
           mirrorchyan_rid: MaaJR
 
           owner: Saratoga-Official
-          repo: MaaJR
+          repo: MRA
           github_token: ${{ secrets.GITHUB_TOKEN }}
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           os: ${{ matrix.os }}
@@ -33,12 +33,12 @@ jobs:
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MaaJR-win-x86_64-*.zip"
+          filename: "MRA-win-x86_64-*.zip"
           pick_files: '["resource", "interface.json"]'
           exclude_files: '["resource/model/ocr/**"]'
           mirrorchyan_rid: MaaJR
 
           owner: Saratoga-Official
-          repo: MaaJR
+          repo: MRA
           github_token: ${{ secrets.GITHUB_TOKEN }}
           upload_token: ${{ secrets.MirrorChyanUploadToken }}

@@ -1,6 +1,6 @@
-# MaaJR使用说明
+# MRA使用说明
 
-- [MaaJR使用说明](#MaaJR使用说明)
+- [MRA使用说明](#MRA使用说明)
   - [下载及安装说明](#下载及安装说明)
   - [使用前说明](#使用前说明)
   - [功能介绍](#功能介绍)
@@ -10,23 +10,23 @@
 
 ## 下载及安装说明
 
-[使用github下载](https://github.com/Saratoga-Official/MaaJR/releases)
+[使用github下载](https://github.com/Saratoga-Official/MRA/releases)
 
-[使用Mirror酱下载](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/Mirror酱.md)
+[使用Mirror酱下载](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)
 
 ### Windows
 
 - 系统要求：Windows 10 或 Windows 11
 
-- 对于绝大部分用户，请下载 MaaJR-win-x86_64-vXXX.zip，解压后运行 MaaJR.exe 即可
+- 对于绝大部分用户，请下载 MRA-win-x86_64-vXXX.zip，解压后运行 MRA.exe 即可
 
-- 若确定自己的电脑是 arm 架构，请下载 MaaJR-win-aarch64-vXXX.zip
+- 若确定自己的电脑是 arm 架构，请下载 MRA-win-aarch64-vXXX.zip
 
 ### macOS
 
-- 若使用 Intel 处理器，请下载 MaaJR-macos-x86_64-vXXX.zip
+- 若使用 Intel 处理器，请下载 MRA-macos-x86_64-vXXX.zip
 
-- 若使用 M1, M2 等 arm 处理器，请下载 MaaJR-macos-aarch64-vXXX.zip
+- 若使用 M1, M2 等 arm 处理器，请下载 MRA-macos-aarch64-vXXX.zip
 
 ### Linux
 
@@ -122,7 +122,7 @@
 
 * 决战中将自动使用快速修理，请备好足够的桶
 
-* 由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MAAJR（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关
+* 由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关
 
 ### 自动造船
 

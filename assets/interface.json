@@ -1,8 +1,8 @@
 {
-    "name": "MaaJR",
+    "name": "MRA",
     "version": "DEBUG_VERSION",
-    "url": "https://github.com/Saratoga-Official/MaaJR",
-    "custom_title": "MaaJR",
+    "url": "https://github.com/Saratoga-Official/MRA",
+    "custom_title": "MRA",
     "mirrorchyan_rid": "MaaJR",
     "default_controller": "adb",
     "lock_controller": true,
@@ -201,7 +201,7 @@
                 "[color:red]④第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要选同一个船，会出逻辑bug[/color]",
                 "[color:red]⑤第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取[/color]",
                 "[color:red]⑥决战中将自动使用快速修理，请备好足够的桶[/color]",
-                "[color:red]⑦由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MAAJR（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
+                "[color:red]⑦由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
             ],
             "option": [
                 "第一关开局舰船1",

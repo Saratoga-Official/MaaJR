@@ -6,18 +6,18 @@
 
 <div align="center">
 
-# MaaJR
+# MRA
 
-MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控制，解放双手！
+MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控制，解放双手！
 
 </div>
 
 <p align="center">
-  <img alt="license" src="https://img.shields.io/github/license/Saratoga-Official/MaaJR">
+  <img alt="license" src="https://img.shields.io/github/license/Saratoga-Official/MRA">
   <img alt="Pipeline" src="https://img.shields.io/badge/Pipeline-%23454545?logo=paddypower&logoColor=%23FFFFFF">
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
-  <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Saratoga-Official/MaaJR">
-  <img alt="stars" src="https://img.shields.io/github/stars/Saratoga-Official/MaaJR?style=social">
+  <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Saratoga-Official/MRA">
+  <img alt="stars" src="https://img.shields.io/github/stars/Saratoga-Official/MRA?style=social">
   <a href="https://mirrorchyan.com/zh/projects" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
 </p>
 
@@ -27,7 +27,7 @@ MaaJR，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控
 
 本项目自v2.4.0版本起采用 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 作为gui界面
 
-本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
+本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
 
 </div>
 
@@ -69,7 +69,7 @@ QQ群457094182
 
 ## 使用说明
 
-参考文档[使用说明](https://github.com/Saratoga-Official/MaaJR/blob/main/docs/zh_cn/INSTRUCTIONS.md)
+参考文档[使用说明](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/INSTRUCTIONS.md)
 
 ---
 
@@ -97,15 +97,15 @@ QQ群457094182
 
 感谢以下开发者对本项目作出的贡献:
 
-<a href="https://github.com/Saratoga-Official/MaaJR/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Saratoga-Official/MaaJR&max=1000" />
+<a href="https://github.com/Saratoga-Official/MRA/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Saratoga-Official/MRA&max=1000" />
 </a>
 
 ---
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Saratoga-Official/MaaJR&type=Date)](https://star-history.com/#Saratoga-Official/MaaJR&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Saratoga-Official/MRA&type=Date)](https://star-history.com/#Saratoga-Official/MRA&Date)
 
 ## 赞助
 

@@ -96,12 +96,12 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           cp MFA/MFAAvalonia.exe MFA/MFAUpdater.exe MFA/MFAUpdater.dll MFA/MFAUpdater.runtimeconfig.json MFA/av_libglesv2.dll MFA/libHarfBuzzSharp.dll MFA/libonigwrap.dll MFA/libSkiaSharp.dll MFA/uiohook.dll install/
-          mv install/MFAAvalonia.exe install/MaaJR.exe
+          mv install/MFAAvalonia.exe install/MRA.exe
           cp logo.ico install
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaJR-win-${{ matrix.arch }}
+          name: MRA-win-${{ matrix.arch }}
           path: "install"
 
   unix:
@@ -153,7 +153,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaJR-${{ matrix.os == 'ubuntu-latest' && 'linux' || 'macos' }}-${{ matrix.arch }}
+          name: MRA-${{ matrix.os == 'ubuntu-latest' && 'linux' || 'macos' }}-${{ matrix.arch }}
           path: "install"
 
   changelog:
