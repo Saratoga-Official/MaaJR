@@ -120,7 +120,7 @@
                 "节点5追击"
             ],
             "pipeline_override": {
-                "退出远征": {
+                "退出远征1": {
                     "template": "出征1.png",
                     "green_mask": false,
                     "next": [
@@ -180,7 +180,7 @@
                         "导航前"
                     ]
                 },
-                "退出远征": {
+                "退出远征1": {
                     "template": "出征1.png",
                     "green_mask": false,
                     "next": [
