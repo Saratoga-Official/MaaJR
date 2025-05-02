@@ -178,7 +178,7 @@
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 3000,
         "next": [
             "立体强袭前进"
         ],
