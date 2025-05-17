@@ -10,6 +10,8 @@
 
 ## 下载及安装说明
 
+### 下载方式
+
 [使用github下载](https://github.com/Saratoga-Official/MRA/releases)
 
 [使用Mirror酱下载](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)
@@ -18,21 +20,49 @@
 
 - 系统要求：Windows 10 或 Windows 11
 
-- 对于绝大部分用户，请下载 MRA-win-x86_64-vXXX.zip，解压后运行 MRA.exe 即可
+- 对于绝大部分用户，请下载 MRA-win-x86_64-vXXX.zip
 
 - 若确定自己的电脑是 arm 架构，请下载 MRA-win-aarch64-vXXX.zip
 
+> [!WARNING]
+> 请注意！Windows 的电脑几乎全都是 x86\_64 的，可能占 99.999%，除非你非常确定自己是 arm，否则别下这个！
+
+- 解压后运行 `MRA.exe`（图形化界面）或 `MaaPiCli.exe`（命令行）即可
+
 ### macOS
 
-- 若使用 Intel 处理器，请下载 MRA-macos-x86_64-vXXX.zip
+- 查看处理器类型（重要：一定要选择正确版本才能正确运行）：
 
-- 若使用 M1, M2 等 arm 处理器，请下载 MRA-macos-aarch64-vXXX.zip
+  1. 点击屏幕左上角的苹果标志。
+  2. 选择“关于本机”。
+  3. 在弹出的窗口中，你可以看到处理器的信息。
+
+- 若使用 Intel X86 处理器，请下载 MRA-macos-x86_64-vXXX.zip
+
+- 若使用 Apple Silicon 系列如： M1, M2 等 ARM 架构处理器，请下载 MRA-macos-aarch64-vXXX.zip
+
+- 使用方式：
+
+    1. 打开终端，解压分发的压缩包，推荐解压到 `usr/local/bin` 中，不建议存放于 `/opt` 中避免权限问题。
+
+        ```shell
+        sudo unzip -o <下载的MRA压缩包路径> -d usr/local/bin/MRA
+        ```
+
+    2. 继续在终端中赋予UNIX可执行文件的执行权限：
+
+        ```shell
+        cd usr/local/bin/MRA
+        # 如果手动在解压好的软件根目录打开终端，可以免除执行上面这一行
+        sudo chmod 777 MaaPiCli
+        sudo ./MaaPiCli
+        ```
+
+    3. 若想使用图形操作页面请按第二步操作，执行 `MFAAvalonia` 程序。
 
 ### Linux
 
-~~用 Linux 的大佬应该不需要我教~~
-
-- 实际上是我并没有除Windows以外系统的设备，欢迎大佬提供PR补充此部分
+- 同macOS，下载对应版本的压缩包，添加权限后运行 `MaaPiCli` 即可。
 
 ---
 
@@ -48,11 +78,11 @@
 
 * 完成所有游戏资源的下载
 
-* 完成必须运行库的下载：
+* Windows系统需要下载必须运行库：
 
   [vc_redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 
-  [NET8](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
+  [NET8](https://download.visualstudio.microsoft.com/download/pr/ba3a1364-27d8-472e-a33b-5ce0937728aa/6f9495e5a587406c85af6f93b1c89295/dotnet-sdk-8.0.404-win-x64.exe)
 
 ---
 
@@ -110,15 +140,17 @@
 
 ### 自动决战E6
 
-* 使用前确认副官已开启奇尔沙治，选船配置中有且仅有一艘2-3费中型船和4费鱼
+* 使用前确认副官已开启奇尔沙治
 
-* 剩下的位置大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船全选改造鱼
+* 选船配置中大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船带一条4费鱼其余全选改造鱼
+
+* 4费船总数大于3时，需要带一艘2或3费中型船
 
 * 如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置
 
 * 第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要12选同一个船，会出逻辑bug
 
-* 第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取
+* 第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取，中途开始进入关卡除外
 
 * 决战中将自动使用快速修理，请备好足够的桶
 
