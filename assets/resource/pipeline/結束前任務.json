@@ -46,7 +46,7 @@
     },
     "确认结束领取奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "post_delay": 5000,
         "next": [
@@ -74,7 +74,7 @@
     },
     "确认全部领取奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "next": [
             "退出任务"
@@ -115,7 +115,7 @@
     },
     "确认结束领取奖励2": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "post_delay": 5000,
         "next": [
@@ -146,7 +146,7 @@
     },
     "确认结束领取奖励3": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "post_delay": 5000,
         "next": [

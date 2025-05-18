@@ -26,7 +26,7 @@
     },
     "确认远征领取奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "next": [
             "无动作结束"
@@ -53,7 +53,7 @@
     },
     "确认远征领取奖励2": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "post_delay": 5000,
         "next": [
@@ -62,7 +62,7 @@
     },
     "点击出征2": {
         "recognition": "TemplateMatch",
-        "template": "出征.png",
+        "template": "出征2.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
@@ -98,7 +98,7 @@
     },
     "自动收远征": {
         "recognition": "TemplateMatch",
-        "template": "出征.png",
+        "template": "出征2.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "green_mask": true,

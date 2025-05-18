@@ -30,7 +30,7 @@
     },
     "确认决战领取奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "post_delay": 5000,
         "next": [

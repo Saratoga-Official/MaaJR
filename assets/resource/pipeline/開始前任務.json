@@ -200,7 +200,7 @@
     },
     "确认领取登录奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认签到.png",
+        "template": "确认.png",
         "action": "Click",
         "next": [
             "小长春的赠礼",
@@ -217,7 +217,7 @@
     },
     "确认领取小长春的赠礼": {
         "recognition": "TemplateMatch",
-        "template": "确认谢礼.png",
+        "template": "确认.png",
         "action": "Click",
         "next": [
             "关闭小长春的赠礼"
