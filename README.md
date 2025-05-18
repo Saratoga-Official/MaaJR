@@ -33,7 +33,7 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
 
 ---
 
-## 亮点功能
+## 功能一览
 
 1. 常规图（1-9章）的自动出征，炸鱼，捞胖次
 
@@ -43,13 +43,11 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
 
 4. 自动演习
 
-5. 支持无消耗刷1-1
+5. 自动刷决战E6
 
-6. 自动刷决战E6
+6. 自动造船
 
-7. 自动造船（NEW）
-
-8. 在新活动更新后支持活动关卡练级
+7. 在新活动更新后支持活动关卡练级
 
 ---
 
@@ -69,7 +67,14 @@ QQ群457094182
 
 ## 使用说明
 
-参考文档[使用说明](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/INSTRUCTIONS.md)
+- [新手上路](./docs/zh_cn/新手上路.md)(**使用前必看**)
+- [功能介绍](./docs/zh_cn/功能介绍.md)
+- [MaaPiCli使用说明](./docs/zh_cn/MaaPiCli.md)
+- [连接设置](./docs/zh_cn/连接设置.md)
+- [常见问题](./docs/zh_cn/常见问题.md)
+- [Mirror酱使用说明](./docs/zh_cn/Mirror酱.md)
+- [开发文档](./docs/zh_cn/开发文档.md)
+- 更多文档请前往 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 主仓库查看
 
 ---
 
