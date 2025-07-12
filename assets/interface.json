@@ -265,25 +265,6 @@
             }
         },
         {
-            "name": "立体强袭",
-            "entry": "立体强袭开始",
-            "check": false,
-            "repeatable": true,
-            "doc": [
-                "[color:red]立体强袭关卡不支持导航，需在紧急情况按钮前开始[/color]",
-                "[color:red]仅支持打第一个点[/color]",
-                "[color:red]最好不要和其他任务一起使用，否则可能会无法进行[/color]"
-            ],
-            "repeat_count": 1,
-            "option": [
-                "立体强袭阵型",
-                "立体强袭无限次数",
-                "立体强袭大破/中破舰船处理",
-                "立体强袭允许追击"
-            ],
-            "pipeline_override": {}
-        },
-        {
             "name": "活动练级",
             "entry": "进入活动",
             "check": false,
@@ -336,6 +317,54 @@
                         581,
                         254,
                         75
+                    ]
+                }
+            }
+        },
+        {
+            "name": "立体强袭",
+            "entry": "立体强袭开始",
+            "check": false,
+            "repeatable": true,
+            "doc": [
+                "[color:red]立体强袭关卡不支持导航，需在紧急情况按钮前开始[/color]",
+                "[color:red]仅支持打第一个点[/color]",
+                "[color:red]最好不要和其他任务一起使用，否则可能会无法进行[/color]"
+            ],
+            "repeat_count": 1,
+            "option": [
+                "立体强袭阵型",
+                "立体强袭无限次数",
+                "立体强袭大破/中破舰船处理",
+                "立体强袭允许追击"
+            ],
+            "pipeline_override": {}
+        },
+        {
+            "name": "舰队问答自动答题",
+            "entry": "检查题目",
+            "check": false,
+            "repeatable": false,
+            "doc": [
+                "[color:red]需要在答题界面开始[/color]",
+                "[color:red]无脑选择选项，不追求答对[/color]"
+            ],
+            "option": [],
+            "pipeline_override": {
+                "检查题目": {
+                    "next": [
+                        "选择A",
+                        "选择B",
+                        "选择C",
+                        "选择D"
+                    ]
+                },
+                "选择确认": {
+                    "next": [
+                        "无脑取消",
+                        "选择确认1",
+                        "正确答案",
+                        "无动作结束"
                     ]
                 }
             }
@@ -3414,7 +3443,7 @@
                     }
                 },
                 {
-                    "name": "无限次数",
+                    "name": "开启",
                     "pipeline_override": {}
                 },
                 {
